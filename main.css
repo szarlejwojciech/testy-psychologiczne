@@ -1,0 +1,212 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+.nav-wrapper {
+  position: relative;
+  padding-top: 57px;
+  padding-bottom: 7px;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: white;
+  text-align: center;
+}
+
+.nav-wrapper.home-page .nav-hamburger-btn {
+  display: block;
+}
+
+.nav-wrapper .nav-hamburger-btn {
+  position: absolute;
+  top: 21px;
+  left: 18px;
+  width: 24px;
+  height: 18px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.nav-wrapper .nav-hamburger-btn span {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #292929;
+  border-radius: 50px;
+}
+
+.nav-wrapper .nav-hamburger-btn span:nth-of-type(1) {
+  top: 0;
+}
+
+.nav-wrapper .nav-hamburger-btn span:nth-of-type(2) {
+  top: calc(50% - 1px);
+}
+
+.nav-wrapper .nav-hamburger-btn span:nth-of-type(3) {
+  top: none;
+  bottom: 0;
+}
+
+.nav-wrapper .nav-header {
+  font-size: 2.6rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.nav-wrapper .nav-links-list {
+  margin-top: -25px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-wrapper .nav-links-list li + li {
+  margin-top: 47px;
+}
+
+.nav-wrapper .nav-links-list .nav-btn {
+  position: relative;
+  display: block;
+  width: 264px;
+  height: 54px;
+  line-height: 54px;
+  margin: 0 auto;
+  border-radius: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: white;
+  -webkit-box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  will-change: color;
+  -webkit-transition: 300ms color ease-out;
+  transition: 300ms color ease-out;
+}
+
+.nav-wrapper .nav-links-list .nav-btn::before, .nav-wrapper .nav-links-list .nav-btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 50px;
+}
+
+.nav-wrapper .nav-links-list .nav-btn::after {
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  left: 4px;
+  background: white;
+  z-index: -1;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  will-change: transform;
+  -webkit-transition: 300ms -webkit-transform ease-out;
+  transition: 300ms -webkit-transform ease-out;
+  transition: 300ms transform ease-out;
+  transition: 300ms transform ease-out, 300ms -webkit-transform ease-out;
+}
+
+.nav-wrapper .nav-links-list .nav-btn:hover::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.nav-wrapper .nav-links-list .nav-btn::before {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.nav-wrapper .nav-links-list .nav-btn:focus {
+  outline: none;
+}
+
+.nav-wrapper .nav-links-list .nav-btn.blue-btn::before {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#00a5fb), to(#0079b9));
+  background-image: linear-gradient(to bottom, #00a5fb, #0079b9);
+}
+
+.nav-wrapper .nav-links-list .nav-btn.blue-btn:focus {
+  -webkit-box-shadow: 0 0 0 3px white, 0 0 0 6px #00a5fb, 0 20px 20px -20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 0 3px white, 0 0 0 6px #00a5fb, 0 20px 20px -20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-wrapper .nav-links-list .nav-btn.blue-btn:hover {
+  color: #00a5fb;
+}
+
+.nav-wrapper .nav-links-list .nav-btn.green-btn::before {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#05f91d), to(#04b815));
+  background-image: linear-gradient(to bottom, #05f91d, #04b815);
+}
+
+.nav-wrapper .nav-links-list .nav-btn.green-btn:focus {
+  -webkit-box-shadow: 0 0 0 3px white, 0 0 0 6px #05f91d, 0 20px 20px -20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 0 3px white, 0 0 0 6px #05f91d, 0 20px 20px -20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-wrapper .nav-links-list .nav-btn.green-btn:hover {
+  color: #05f91d;
+}
+
+.nav-wrapper .nav-links-list .nav-btn.orange-btn::before {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fe9000), to(#bc6a00));
+  background-image: linear-gradient(to bottom, #fe9000, #bc6a00);
+}
+
+.nav-wrapper .nav-links-list .nav-btn.orange-btn:focus {
+  -webkit-box-shadow: 0 0 0 3px white, 0 0 0 6px #fe9000, 0 20px 20px -20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 0 3px white, 0 0 0 6px #fe9000, 0 20px 20px -20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-wrapper .nav-links-list .nav-btn.orange-btn:hover {
+  color: #fe9000;
+}
+
+.nav-wrapper .nav-links-list .nav-btn.red-btn::before {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fd0033), to(#bb0026));
+  background-image: linear-gradient(to bottom, #fd0033, #bb0026);
+}
+
+.nav-wrapper .nav-links-list .nav-btn.red-btn:focus {
+  -webkit-box-shadow: 0 0 0 3px white, 0 0 0 6px #fd0033, 0 20px 20px -20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 0 3px white, 0 0 0 6px #fd0033, 0 20px 20px -20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-wrapper .nav-links-list .nav-btn.red-btn:hover {
+  color: #fd0033;
+}
+/*# sourceMappingURL=main.css.map */
