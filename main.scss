@@ -16,8 +16,6 @@ $bold: 500;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  // outline: 1px red solid;
 }
 
 html {
@@ -33,14 +31,32 @@ body {
 
 .nav-wrapper {
   position: relative;
-  padding-top: 57px;
-  padding-bottom: 7px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  min-height: 100vh;
   background: white;
   text-align: center;
+  overflow: hidden;
+  padding-bottom: 5rem;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 210px;
+    background: #000;
+    opacity: 0.06;
+    transform-origin: right;
+  }
+  &::before {
+    top: 0px;
+    transform: skewY(10deg);
+  }
+  &::after {
+    bottom: 0px;
+    transform: translateY(90%) skewY(10deg);
+  }
 
   &.home-page {
     .nav-hamburger-btn {
@@ -81,125 +97,321 @@ body {
     }
   }
   .nav-header {
+    margin: 57px 0 0 0;
+
     font-size: 2.6rem;
     font-weight: $light;
     letter-spacing: 2px;
   }
-  .nav-links-list {
-    margin-top: -25px;
-    list-style-type: none;
-    padding: 0;
+  nav {
+    margin-top: 9vh;
 
-    li + li {
-      margin-top: 47px;
-    }
-    .nav-btn {
-      position: relative;
-      display: block;
-      width: 264px;
-      height: 54px;
-      line-height: 54px;
-      margin: 0 auto;
-      border-radius: 50px;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 2.4rem;
-      font-weight: $bold;
-      letter-spacing: 2px;
-      color: white;
-      box-shadow: 0 20px 20px -20px hsla(0, 0, 0, 0.3);
-      z-index: 1;
-      will-change: color;
-      transition: 300ms color ease-out;
+    .nav-links-list {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      justify-self: center;
 
-      &::before,
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
+      li + li {
+        margin-top: 47px;
+      }
+      .nav-btn {
+        position: relative;
+        width: 264px;
+        height: 54px;
+        // line-height: 54px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
         border-radius: 50px;
-      }
+        text-decoration: none;
+        color: white;
+        z-index: 1;
+        cursor: pointer;
 
-      &::after {
-        top: 4px;
-        right: 4px;
-        bottom: 4px;
-        left: 4px;
-        background: white;
-        z-index: -1;
-        transform: scale(0);
-        will-change: transform;
-        transition: 300ms transform ease-out;
-      }
+        .main-text {
+          text-transform: uppercase;
+          font-size: 2.4rem;
+          font-weight: $bold;
+          letter-spacing: 2px;
+        }
 
-      &:hover::after {
-        transform: scale(1);
+        .detail-text {
+          display: none;
+          font-size: 2rem;
+          font-weight: $light;
+          letter-spacing: 0;
+        }
+
+        &::before,
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          border-radius: 50px;
+        }
+
+        &::after {
+          top: 4px;
+          right: 4px;
+          bottom: 4px;
+          left: 4px;
+          background: white;
+          z-index: -1;
+          transform: scale(0);
+          will-change: transform;
+          transition: 300ms transform ease-out;
+        }
+
+        &:hover::after {
+          transform: scale(1);
+        }
+
+        &::before {
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -2;
+          box-shadow: 0 20px 20px -20px hsla(0, 0, 0, 0.3);
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &.blue-btn {
+          &::before {
+            background-image: $blueGradient;
+          }
+          &:focus {
+            box-shadow: 0 0 0 3px white, 0 0 0 6px $blue;
+          }
+
+          &:hover {
+            color: $blue;
+          }
+        }
+
+        &.green-btn {
+          &::before {
+            background-image: $greenGradient;
+          }
+          &:focus {
+            box-shadow: 0 0 0 3px white, 0 0 0 6px $green;
+          }
+          &:hover {
+            color: $green;
+          }
+        }
+
+        &.orange-btn {
+          &::before {
+            background-image: $orangeGradient;
+          }
+          &:focus {
+            box-shadow: 0 0 0 3px white, 0 0 0 6px $orange;
+          }
+          &:hover {
+            color: $orange;
+          }
+        }
+
+        &.red-btn {
+          &::before {
+            background-image: $redGradient;
+          }
+          &:focus {
+            box-shadow: 0 0 0 3px white, 0 0 0 6px $red;
+          }
+          &:hover {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+
+  .nav-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 7px;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (min-width: 780px) {
+    padding-bottom: 6.2rem;
+
+    &::before,
+    &::after {
+      height: 450px;
+    }
+
+    .nav-header {
+      margin-top: 120px;
+      font-size: 3.6rem;
+    }
+
+    nav .nav-links-list .nav-btn {
+      width: 424px;
+      height: 87px;
+
+      .main-text {
+        font-size: 3.7rem;
       }
 
       &::before {
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: -2;
+        box-shadow: 0 30px 20px -20px hsla(0, 0, 0, 0.3);
       }
 
-      &:focus {
-        outline: none;
+      &::after {
+        top: 6px;
+        right: 6px;
+        bottom: 6px;
+        left: 6px;
       }
 
-      &.blue-btn {
+      &.blue-btn:focus {
+        box-shadow: 0 0 0 4px white, 0 0 0 8px $blue;
+      }
+
+      &.green-btn:focus {
+        box-shadow: 0 0 0 4px white, 0 0 0 8px $green;
+      }
+
+      &.orange-btn:focus {
+        box-shadow: 0 0 0 4px white, 0 0 0 8px $orange;
+      }
+
+      &.red-btn:focus {
+        box-shadow: 0 0 0 4px white, 0 0 0 8px $red;
+      }
+    }
+    .nav-footer {
+      font-size: 2.3rem;
+      margin-bottom: 1.2rem;
+    }
+  }
+  @media screen and (orientation: landscape) and (min-width: 1000px) and (max-height: 800px) {
+    padding-bottom: 9.3rem;
+
+    &::before,
+    &::after {
+      height: 450px;
+    }
+    &::before {
+      top: -115px;
+    }
+    &::after {
+      bottom: -30px;
+    }
+    .nav-header {
+      margin-top: 130px;
+    }
+    nav {
+      margin-top: 15vh;
+    }
+    nav .nav-links-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      li + li {
+        margin: 0;
+      }
+
+      li:nth-child(-1n + 2) {
+        margin-bottom: 40px;
+      }
+      li:nth-child(odd) {
+        margin-right: 40px;
+      }
+      .nav-btn {
+        width: 442px;
+        height: 92px;
+
+        .main-text {
+          font-size: 4.5rem;
+        }
+
+        &::after {
+          top: 8px;
+          right: 8px;
+          bottom: 8px;
+          left: 8px;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    &::before,
+    &::after {
+      height: 600px;
+    }
+    &::after {
+      bottom: -50px;
+    }
+    .nav-header {
+      margin-top: 8vh;
+      font-size: 4.6rem;
+    }
+    nav {
+      margin-top: 8vh;
+    }
+    nav .nav-links-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      li + li {
+        margin: 0;
+      }
+
+      li:nth-child(-1n + 2) {
+        margin-bottom: 60px;
+      }
+      li:nth-child(odd) {
+        margin-right: 60px;
+      }
+      .nav-btn {
+        width: 632px;
+        height: 182px;
+        border-radius: 15px;
+
+        .main-text {
+          font-size: 4.5rem;
+          line-height: 110%;
+          letter-spacing: 1px;
+        }
+        .detail-text {
+          display: inline;
+          line-height: 110%;
+        }
         &::before {
-          background-image: $blueGradient;
+          border-radius: 15px;
         }
-        &:focus {
-          box-shadow: 0 0 0 3px white, 0 0 0 6px $blue,
-            0 20px 20px -20px hsla(0, 0, 0, 0.3);
-        }
-
-        &:hover {
-          color: $blue;
-        }
-      }
-
-      &.green-btn {
-        &::before {
-          background-image: $greenGradient;
-        }
-        &:focus {
-          box-shadow: 0 0 0 3px white, 0 0 0 6px $green,
-            0 20px 20px -20px hsla(0, 0, 0, 0.3);
-        }
-        &:hover {
-          color: $green;
+        &::after {
+          top: 8px;
+          right: 8px;
+          bottom: 8px;
+          left: 8px;
+          border-radius: 10px;
         }
       }
-
-      &.orange-btn {
-        &::before {
-          background-image: $orangeGradient;
-        }
-        &:focus {
-          box-shadow: 0 0 0 3px white, 0 0 0 6px $orange,
-            0 20px 20px -20px hsla(0, 0, 0, 0.3);
-        }
-        &:hover {
-          color: $orange;
-        }
-      }
-
-      &.red-btn {
-        &::before {
-          background-image: $redGradient;
-        }
-        &:focus {
-          box-shadow: 0 0 0 3px white, 0 0 0 6px $red,
-            0 20px 20px -20px hsla(0, 0, 0, 0.3);
-        }
-        &:hover {
-          color: $red;
-        }
-      }
+    }
+  }
+  @media screen and (min-width: 1700px) {
+    .nav-header {
+      margin-top: 17vh;
+      font-size: 5rem;
+    }
+    nav {
+      margin-top: 17vh;
     }
   }
 }
