@@ -96,11 +96,11 @@ body {
 }
 
 .nav-wrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
   background: white;
   text-align: center;
   padding-bottom: 5rem;
@@ -111,11 +111,13 @@ body {
   will-change: transform;
   -webkit-transition: 0.6s 0.8s transform ease-in;
   transition: 0.6s 0.8s transform ease-in;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
 }
 
 .nav-wrapper.hidden {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+  -webkit-transform: translateX(-110%);
+          transform: translateX(-110%);
 }
 
 .nav-wrapper.hidden .nav-btn {
@@ -163,7 +165,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
-  height: calc(100% - 4rem);
+  height: calc(100% - 1rem);
   position: absolute;
   top: 0;
   left: 0;
@@ -339,79 +341,83 @@ body {
   font-size: 1.5rem;
 }
 
-@media screen and (min-width: 780px) {
+@media screen and (min-width: 850px) {
   .nav-wrapper {
-    padding-bottom: 6.2rem;
+    width: 30vw;
+    min-width: 360px;
   }
-  .nav-wrapper::before, .nav-wrapper::after {
+}
+
+@media screen and (min-width: 780px) {
+  .nav-wrapper.home-page {
+    width: 100vw;
+  }
+  .nav-wrapper.home-page::before, .nav-wrapper.home-page::after {
     height: 350px;
   }
-  .nav-wrapper .nav-header {
+  .nav-wrapper.home-page .nav-header {
     margin-top: 80px;
     font-size: 3.2rem;
   }
-  .nav-wrapper .nav-content {
-    height: calc(100% - 6rem);
+  .nav-wrapper.home-page .nav-content {
+    height: calc(100% - 1.5rem);
   }
-  .nav-wrapper nav .nav-links-list .nav-btn {
+  .nav-wrapper.home-page nav .nav-links-list .nav-btn {
     width: 381.6px;
     height: 78.3px;
   }
-  .nav-wrapper nav .nav-links-list .nav-btn .main-text {
+  .nav-wrapper.home-page nav .nav-links-list .nav-btn .main-text {
     font-size: 3.2rem;
   }
-  .nav-wrapper nav .nav-links-list .nav-btn::before {
+  .nav-wrapper.home-page nav .nav-links-list .nav-btn::before {
     -webkit-box-shadow: 0 30px 20px -20px rgba(0, 0, 0, 0.3);
             box-shadow: 0 30px 20px -20px rgba(0, 0, 0, 0.3);
   }
-  .nav-wrapper nav .nav-links-list .nav-btn::after {
+  .nav-wrapper.home-page nav .nav-links-list .nav-btn::after {
     top: 6px;
     right: 6px;
     bottom: 6px;
     left: 6px;
   }
-  .nav-wrapper nav .nav-links-list .nav-btn.blue-btn:focus {
+  .nav-wrapper.home-page nav .nav-links-list .nav-btn.blue-btn:focus {
     -webkit-box-shadow: 0 0 0 4px white, 0 0 0 8px #00a5fb;
             box-shadow: 0 0 0 4px white, 0 0 0 8px #00a5fb;
   }
-  .nav-wrapper nav .nav-links-list .nav-btn.green-btn:focus {
+  .nav-wrapper.home-page nav .nav-links-list .nav-btn.green-btn:focus {
     -webkit-box-shadow: 0 0 0 4px white, 0 0 0 8px #05f91d;
             box-shadow: 0 0 0 4px white, 0 0 0 8px #05f91d;
   }
-  .nav-wrapper nav .nav-links-list .nav-btn.orange-btn:focus {
+  .nav-wrapper.home-page nav .nav-links-list .nav-btn.orange-btn:focus {
     -webkit-box-shadow: 0 0 0 4px white, 0 0 0 8px #fe9000;
             box-shadow: 0 0 0 4px white, 0 0 0 8px #fe9000;
   }
-  .nav-wrapper nav .nav-links-list .nav-btn.red-btn:focus {
+  .nav-wrapper.home-page nav .nav-links-list .nav-btn.red-btn:focus {
     -webkit-box-shadow: 0 0 0 4px white, 0 0 0 8px #fd0033;
             box-shadow: 0 0 0 4px white, 0 0 0 8px #fd0033;
   }
-  .nav-wrapper .nav-footer {
+  .nav-wrapper.home-page .nav-footer {
     font-size: 2.3rem;
     margin-bottom: 1.2rem;
   }
 }
 
 @media screen and (orientation: landscape) and (min-width: 1000px) and (max-height: 800px) {
-  .nav-wrapper {
-    padding-bottom: 9.3rem;
-  }
-  .nav-wrapper::before, .nav-wrapper::after {
+  .nav-wrapper.home-page::before, .nav-wrapper.home-page::after {
     height: 450px;
   }
-  .nav-wrapper::before {
+  .nav-wrapper.home-page::before {
     top: -115px;
   }
-  .nav-wrapper::after {
+  .nav-wrapper.home-page::after {
     bottom: -30px;
   }
-  .nav-wrapper .nav-header {
+  .nav-wrapper.home-page .nav-header {
     margin-top: 130px;
   }
-  .nav-wrapper nav {
+  .nav-wrapper.home-page nav {
     margin-top: 15vh;
   }
-  .nav-wrapper nav .nav-links-list {
+  .nav-wrapper.home-page nav .nav-links-list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -421,23 +427,23 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .nav-wrapper nav .nav-links-list li + li {
+  .nav-wrapper.home-page nav .nav-links-list li + li {
     margin: 0;
   }
-  .nav-wrapper nav .nav-links-list li:nth-child(-1n + 2) {
+  .nav-wrapper.home-page nav .nav-links-list li:nth-child(-1n + 2) {
     margin-bottom: 40px;
   }
-  .nav-wrapper nav .nav-links-list li:nth-child(odd) {
+  .nav-wrapper.home-page nav .nav-links-list li:nth-child(odd) {
     margin-right: 40px;
   }
-  .nav-wrapper nav .nav-links-list .nav-btn {
+  .nav-wrapper.home-page nav .nav-links-list .nav-btn {
     width: 442px;
     height: 92px;
   }
-  .nav-wrapper nav .nav-links-list .nav-btn .main-text {
+  .nav-wrapper.home-page nav .nav-links-list .nav-btn .main-text {
     font-size: 4.5rem;
   }
-  .nav-wrapper nav .nav-links-list .nav-btn::after {
+  .nav-wrapper.home-page nav .nav-links-list .nav-btn::after {
     top: 8px;
     right: 8px;
     bottom: 8px;
@@ -446,20 +452,20 @@ body {
 }
 
 @media screen and (min-width: 1400px) {
-  .nav-wrapper::before, .nav-wrapper::after {
+  .nav-wrapper.home-page::before, .nav-wrapper.home-page::after {
     height: 600px;
   }
-  .nav-wrapper::after {
+  .nav-wrapper.home-page::after {
     bottom: -50px;
   }
-  .nav-wrapper .nav-header {
+  .nav-wrapper.home-page .nav-header {
     margin-top: 8vh;
     font-size: 4.6rem;
   }
-  .nav-wrapper nav {
+  .nav-wrapper.home-page nav {
     margin-top: 8vh;
   }
-  .nav-wrapper nav .nav-links-list {
+  .nav-wrapper.home-page nav .nav-links-list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -469,33 +475,33 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .nav-wrapper nav .nav-links-list li + li {
+  .nav-wrapper.home-page nav .nav-links-list li + li {
     margin: 0;
   }
-  .nav-wrapper nav .nav-links-list li:nth-child(-1n + 2) {
+  .nav-wrapper.home-page nav .nav-links-list li:nth-child(-1n + 2) {
     margin-bottom: 60px;
   }
-  .nav-wrapper nav .nav-links-list li:nth-child(odd) {
+  .nav-wrapper.home-page nav .nav-links-list li:nth-child(odd) {
     margin-right: 60px;
   }
-  .nav-wrapper nav .nav-links-list .nav-btn {
+  .nav-wrapper.home-page nav .nav-links-list .nav-btn {
     width: 632px;
     height: 182px;
     border-radius: 15px;
   }
-  .nav-wrapper nav .nav-links-list .nav-btn .main-text {
+  .nav-wrapper.home-page nav .nav-links-list .nav-btn .main-text {
     font-size: 4.5rem;
     line-height: 110%;
     letter-spacing: 1px;
   }
-  .nav-wrapper nav .nav-links-list .nav-btn .detail-text {
+  .nav-wrapper.home-page nav .nav-links-list .nav-btn .detail-text {
     display: inline;
     line-height: 110%;
   }
-  .nav-wrapper nav .nav-links-list .nav-btn::before {
+  .nav-wrapper.home-page nav .nav-links-list .nav-btn::before {
     border-radius: 15px;
   }
-  .nav-wrapper nav .nav-links-list .nav-btn::after {
+  .nav-wrapper.home-page nav .nav-links-list .nav-btn::after {
     top: 8px;
     right: 8px;
     bottom: 8px;
@@ -505,11 +511,11 @@ body {
 }
 
 @media screen and (min-width: 1700px) {
-  .nav-wrapper .nav-header {
+  .nav-wrapper.home-page .nav-header {
     margin-top: 17vh;
     font-size: 5rem;
   }
-  .nav-wrapper nav {
+  .nav-wrapper.home-page nav {
     margin-top: 17vh;
   }
 }
