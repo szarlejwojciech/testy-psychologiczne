@@ -1,0 +1,1042 @@
+{
+  "adults": {
+    "male": {
+      "group-akc": [
+        {
+          "min": 0,
+          "max": 14,
+          "sten": 0
+        },
+        {
+          "min": 15,
+          "max": 39,
+          "sten": 1
+        },
+        {
+          "min": 40,
+          "max": 43,
+          "sten": 2
+        },
+        {
+          "min": 44,
+          "max": 47,
+          "sten": 3
+        },
+        {
+          "min": 48,
+          "max": 50,
+          "sten": 4
+        },
+        {
+          "min": 51,
+          "max": 55,
+          "sten": 5
+        },
+        {
+          "min": 56,
+          "max": 57,
+          "sten": 6
+        },
+        {
+          "min": 58,
+          "max": 61,
+          "sten": 7
+        },
+        {
+          "min": 62,
+          "max": 65,
+          "sten": 8
+        },
+        {
+          "min": 66,
+          "max": 72,
+          "sten": 9
+        },
+        {
+          "min": 73,
+          "max": 75,
+          "sten": 10
+        }
+      ],
+      "group-emp": [
+        {
+          "min": 0,
+          "max": 17,
+          "sten": 0
+        },
+        {
+          "min": 18,
+          "max": 42,
+          "sten": 1
+        },
+        {
+          "min": 43,
+          "max": 53,
+          "sten": 2
+        },
+        {
+          "min": 54,
+          "max": 59,
+          "sten": 3
+        },
+        {
+          "min": 60,
+          "max": 63,
+          "sten": 4
+        },
+        {
+          "min": 64,
+          "max": 67,
+          "sten": 5
+        },
+        {
+          "min": 68,
+          "max": 72,
+          "sten": 6
+        },
+        {
+          "min": 73,
+          "max": 76,
+          "sten": 7
+        },
+        {
+          "min": 77,
+          "max": 80,
+          "sten": 8
+        },
+        {
+          "min": 81,
+          "max": 87,
+          "sten": 9
+        },
+        {
+          "min": 88,
+          "max": 90,
+          "sten": 10
+        }
+      ],
+      "group-kon": [
+        {
+          "min": 0,
+          "max": 10,
+          "sten": 0
+        },
+        {
+          "min": 11,
+          "max": 19,
+          "sten": 1
+        },
+        {
+          "min": 20,
+          "max": 22,
+          "sten": 2
+        },
+        {
+          "min": 23,
+          "max": 24,
+          "sten": 3
+        },
+        {
+          "min": 25,
+          "max": 27,
+          "sten": 4
+        },
+        {
+          "min": 28,
+          "max": 33,
+          "sten": 5
+        },
+        {
+          "min": 34,
+          "max": 36,
+          "sten": 6
+        },
+        {
+          "min": 37,
+          "max": 39,
+          "sten": 7
+        },
+        {
+          "min": 40,
+          "max": 43,
+          "sten": 8
+        },
+        {
+          "min": 44,
+          "max": 47,
+          "sten": 9
+        },
+        {
+          "min": 48,
+          "max": 55,
+          "sten": 10
+        }
+      ],
+      "group-roz": [
+        {
+          "min": 0,
+          "max": 9,
+          "sten": 0
+        },
+        {
+          "min": 10,
+          "max": 21,
+          "sten": 1
+        },
+        {
+          "min": 22,
+          "max": 23,
+          "sten": 2
+        },
+        {
+          "min": 24,
+          "max": 25,
+          "sten": 3
+        },
+        {
+          "min": 26,
+          "max": 28,
+          "sten": 4
+        },
+        {
+          "min": 29,
+          "max": 32,
+          "sten": 5
+        },
+        {
+          "min": 33,
+          "max": 36,
+          "sten": 6
+        },
+        {
+          "min": 37,
+          "max": 40,
+          "sten": 7
+        },
+        {
+          "min": 41,
+          "max": 43,
+          "sten": 8
+        },
+        {
+          "min": 44,
+          "max": 45,
+          "sten": 9
+        },
+        {
+          "min": 46,
+          "max": 50,
+          "sten": 10
+        }
+      ],
+      "total": [
+        {
+          "min": 0,
+          "max": 93,
+          "sten": 0
+        },
+        {
+          "min": 94,
+          "max": 263,
+          "sten": 1
+        },
+        {
+          "min": 264,
+          "max": 283,
+          "sten": 2
+        },
+        {
+          "min": 284,
+          "max": 294,
+          "sten": 3
+        },
+        {
+          "min": 295,
+          "max": 309,
+          "sten": 4
+        },
+        {
+          "min": 310,
+          "max": 328,
+          "sten": 5
+        },
+        {
+          "min": 329,
+          "max": 353,
+          "sten": 6
+        },
+        {
+          "min": 354,
+          "max": 373,
+          "sten": 7
+        },
+        {
+          "min": 374,
+          "max": 396,
+          "sten": 8
+        },
+        {
+          "min": 397,
+          "max": 417,
+          "sten": 9
+        },
+        {
+          "min": 418,
+          "max": 470,
+          "sten": 10
+        }
+      ]
+    },
+    "female": {
+      "group-akc": [
+        {
+          "min": 0,
+          "max": 14,
+          "sten": 0
+        },
+        {
+          "min": 15,
+          "max": 37,
+          "sten": 1
+        },
+        {
+          "min": 38,
+          "max": 43,
+          "sten": 2
+        },
+        {
+          "min": 44,
+          "max": 48,
+          "sten": 3
+        },
+        {
+          "min": 49,
+          "max": 52,
+          "sten": 4
+        },
+        {
+          "min": 53,
+          "max": 56,
+          "sten": 5
+        },
+        {
+          "min": 57,
+          "max": 60,
+          "sten": 6
+        },
+        {
+          "min": 61,
+          "max": 65,
+          "sten": 7
+        },
+        {
+          "min": 66,
+          "max": 68,
+          "sten": 8
+        },
+        {
+          "min": 69,
+          "max": 72,
+          "sten": 9
+        },
+        {
+          "min": 73,
+          "max": 75,
+          "sten": 10
+        }
+      ],
+      "group-emp": [
+        {
+          "min": 0,
+          "max": 17,
+          "sten": 0
+        },
+        {
+          "min": 18,
+          "max": 47,
+          "sten": 1
+        },
+        {
+          "min": 48,
+          "max": 56,
+          "sten": 2
+        },
+        {
+          "min": 57,
+          "max": 63,
+          "sten": 3
+        },
+        {
+          "min": 64,
+          "max": 66,
+          "sten": 4
+        },
+        {
+          "min": 67,
+          "max": 70,
+          "sten": 5
+        },
+        {
+          "min": 71,
+          "max": 73,
+          "sten": 6
+        },
+        {
+          "min": 74,
+          "max": 79,
+          "sten": 7
+        },
+        {
+          "min": 80,
+          "max": 82,
+          "sten": 8
+        },
+        {
+          "min": 83,
+          "max": 87,
+          "sten": 9
+        },
+        {
+          "min": 88,
+          "max": 90,
+          "sten": 10
+        }
+      ],
+      "group-kon": [
+        {
+          "min": 0,
+          "max": 10,
+          "sten": 0
+        },
+        {
+          "min": 11,
+          "max": 16,
+          "sten": 1
+        },
+        {
+          "min": 17,
+          "max": 19,
+          "sten": 2
+        },
+        {
+          "min": 20,
+          "max": 22,
+          "sten": 3
+        },
+        {
+          "min": 23,
+          "max": 26,
+          "sten": 4
+        },
+        {
+          "min": 27,
+          "max": 30,
+          "sten": 5
+        },
+        {
+          "min": 31,
+          "max": 33,
+          "sten": 6
+        },
+        {
+          "min": 34,
+          "max": 37,
+          "sten": 7
+        },
+        {
+          "min": 38,
+          "max": 41,
+          "sten": 8
+        },
+        {
+          "min": 42,
+          "max": 46,
+          "sten": 9
+        },
+        {
+          "min": 47,
+          "max": 55,
+          "sten": 10
+        }
+      ],
+      "group-roz": [
+        {
+          "min": 0,
+          "max": 9,
+          "sten": 0
+        },
+        {
+          "min": 10,
+          "max": 18,
+          "sten": 1
+        },
+        {
+          "min": 19,
+          "max": 21,
+          "sten": 2
+        },
+        {
+          "min": 22,
+          "max": 24,
+          "sten": 3
+        },
+        {
+          "min": 25,
+          "max": 28,
+          "sten": 4
+        },
+        {
+          "min": 29,
+          "max": 33,
+          "sten": 5
+        },
+        {
+          "min": 34,
+          "max": 36,
+          "sten": 6
+        },
+        {
+          "min": 37,
+          "max": 39,
+          "sten": 7
+        },
+        {
+          "min": 40,
+          "max": 42,
+          "sten": 8
+        },
+        {
+          "min": 43,
+          "max": 44,
+          "sten": 9
+        },
+        {
+          "min": 45,
+          "max": 50,
+          "sten": 10
+        }
+      ],
+      "total": [
+        {
+          "min": 0,
+          "max": 93,
+          "sten": 0
+        },
+        {
+          "min": 94,
+          "max": 264,
+          "sten": 1
+        },
+        {
+          "min": 265,
+          "max": 278,
+          "sten": 2
+        },
+        {
+          "min": 279,
+          "max": 292,
+          "sten": 3
+        },
+        {
+          "min": 293,
+          "max": 315,
+          "sten": 4
+        },
+        {
+          "min": 316,
+          "max": 336,
+          "sten": 5
+        },
+        {
+          "min": 337,
+          "max": 360,
+          "sten": 6
+        },
+        {
+          "min": 361,
+          "max": 375,
+          "sten": 7
+        },
+        {
+          "min": 376,
+          "max": 388,
+          "sten": 8
+        },
+        {
+          "min": 389,
+          "max": 410,
+          "sten": 9
+        },
+        {
+          "min": 411,
+          "max": 470,
+          "sten": 10
+        }
+      ]
+    }
+  },
+  "pupils": {
+    "male": {
+      "group-akc": null,
+      "group-emp": [
+        {
+          "min": 0,
+          "max": 17,
+          "sten": 0
+        },
+        {
+          "min": 18,
+          "max": 44,
+          "sten": 1
+        },
+        {
+          "min": 45,
+          "max": 52,
+          "sten": 2
+        },
+        {
+          "min": 53,
+          "max": 59,
+          "sten": 3
+        },
+        {
+          "min": 60,
+          "max": 63,
+          "sten": 4
+        },
+        {
+          "min": 64,
+          "max": 66,
+          "sten": 5
+        },
+        {
+          "min": 67,
+          "max": 71,
+          "sten": 6
+        },
+        {
+          "min": 72,
+          "max": 76,
+          "sten": 7
+        },
+        {
+          "min": 77,
+          "max": 81,
+          "sten": 8
+        },
+        {
+          "min": 82,
+          "max": 83,
+          "sten": 9
+        },
+        {
+          "min": 84,
+          "max": 90,
+          "sten": 10
+        }
+      ],
+      "group-kon": [
+        {
+          "min": 0,
+          "max": 10,
+          "sten": 0
+        },
+        {
+          "min": 11,
+          "max": 19,
+          "sten": 1
+        },
+        {
+          "min": 20,
+          "max": 23,
+          "sten": 2
+        },
+        {
+          "min": 24,
+          "max": 25,
+          "sten": 3
+        },
+        {
+          "min": 26,
+          "max": 29,
+          "sten": 4
+        },
+        {
+          "min": 30,
+          "max": 32,
+          "sten": 5
+        },
+        {
+          "min": 33,
+          "max": 35,
+          "sten": 6
+        },
+        {
+          "min": 36,
+          "max": 38,
+          "sten": 7
+        },
+        {
+          "min": 39,
+          "max": 43,
+          "sten": 8
+        },
+        {
+          "min": 44,
+          "max": 46,
+          "sten": 9
+        },
+        {
+          "min": 47,
+          "max": 55,
+          "sten": 10
+        }
+      ],
+      "group-roz": [
+        {
+          "min": 0,
+          "max": 9,
+          "sten": 0
+        },
+        {
+          "min": 10,
+          "max": 20,
+          "sten": 1
+        },
+        {
+          "min": 21,
+          "max": 22,
+          "sten": 2
+        },
+        {
+          "min": 23,
+          "max": 25,
+          "sten": 3
+        },
+        {
+          "min": 26,
+          "max": 27,
+          "sten": 4
+        },
+        {
+          "min": 28,
+          "max": 31,
+          "sten": 5
+        },
+        {
+          "min": 32,
+          "max": 35,
+          "sten": 6
+        },
+        {
+          "min": 36,
+          "max": 38,
+          "sten": 7
+        },
+        {
+          "min": 39,
+          "max": 40,
+          "sten": 8
+        },
+        {
+          "min": 41,
+          "max": 44,
+          "sten": 9
+        },
+        {
+          "min": 45,
+          "max": 50,
+          "sten": 10
+        }
+      ],
+      "total": [
+        {
+          "min": 0,
+          "max": 93,
+          "sten": 0
+        },
+        {
+          "min": 94,
+          "max": 267,
+          "sten": 1
+        },
+        {
+          "min": 268,
+          "max": 283,
+          "sten": 2
+        },
+        {
+          "min": 284,
+          "max": 298,
+          "sten": 3
+        },
+        {
+          "min": 299,
+          "max": 310,
+          "sten": 4
+        },
+        {
+          "min": 311,
+          "max": 324,
+          "sten": 5
+        },
+        {
+          "min": 325,
+          "max": 344,
+          "sten": 6
+        },
+        {
+          "min": 345,
+          "max": 360,
+          "sten": 7
+        },
+        {
+          "min": 361,
+          "max": 373,
+          "sten": 8
+        },
+        {
+          "min": 374,
+          "max": 392,
+          "sten": 9
+        },
+        {
+          "min": 393,
+          "max": 470,
+          "sten": 10
+        }
+      ]
+    },
+    "female": {
+      "group-akc": null,
+      "group-emp": [
+        {
+          "min": 0,
+          "max": 17,
+          "sten": 0
+        },
+        {
+          "min": 18,
+          "max": 52,
+          "sten": 1
+        },
+        {
+          "min": 53,
+          "max": 58,
+          "sten": 2
+        },
+        {
+          "min": 59,
+          "max": 62,
+          "sten": 3
+        },
+        {
+          "min": 63,
+          "max": 66,
+          "sten": 4
+        },
+        {
+          "min": 67,
+          "max": 69,
+          "sten": 5
+        },
+        {
+          "min": 70,
+          "max": 73,
+          "sten": 6
+        },
+        {
+          "min": 74,
+          "max": 77,
+          "sten": 7
+        },
+        {
+          "min": 78,
+          "max": 82,
+          "sten": 8
+        },
+        {
+          "min": 83,
+          "max": 84,
+          "sten": 9
+        },
+        {
+          "min": 85,
+          "max": 90,
+          "sten": 10
+        }
+      ],
+      "group-kon": [
+        {
+          "min": 0,
+          "max": 10,
+          "sten": 0
+        },
+        {
+          "min": 11,
+          "max": 16,
+          "sten": 1
+        },
+        {
+          "min": 17,
+          "max": 20,
+          "sten": 2
+        },
+        {
+          "min": 21,
+          "max": 23,
+          "sten": 3
+        },
+        {
+          "min": 24,
+          "max": 26,
+          "sten": 4
+        },
+        {
+          "min": 27,
+          "max": 29,
+          "sten": 5
+        },
+        {
+          "min": 30,
+          "max": 32,
+          "sten": 6
+        },
+        {
+          "min": 33,
+          "max": 36,
+          "sten": 7
+        },
+        {
+          "min": 37,
+          "max": 39,
+          "sten": 8
+        },
+        {
+          "min": 40,
+          "max": 43,
+          "sten": 9
+        },
+        {
+          "min": 44,
+          "max": 55,
+          "sten": 10
+        }
+      ],
+      "group-roz": [
+        {
+          "min": 0,
+          "max": 9,
+          "sten": 0
+        },
+        {
+          "min": 10,
+          "max": 18,
+          "sten": 1
+        },
+        {
+          "min": 19,
+          "max": 21,
+          "sten": 2
+        },
+        {
+          "min": 22,
+          "max": 24,
+          "sten": 3
+        },
+        {
+          "min": 25,
+          "max": 26,
+          "sten": 4
+        },
+        {
+          "min": 27,
+          "max": 29,
+          "sten": 5
+        },
+        {
+          "min": 30,
+          "max": 33,
+          "sten": 6
+        },
+        {
+          "min": 34,
+          "max": 36,
+          "sten": 7
+        },
+        {
+          "min": 37,
+          "max": 39,
+          "sten": 8
+        },
+        {
+          "min": 40,
+          "max": 44,
+          "sten": 9
+        },
+        {
+          "min": 45,
+          "max": 50,
+          "sten": 10
+        }
+      ],
+      "total": [
+        {
+          "min": 0,
+          "max": 93,
+          "sten": 0
+        },
+        {
+          "min": 94,
+          "max": 272,
+          "sten": 1
+        },
+        {
+          "min": 273,
+          "max": 287,
+          "sten": 2
+        },
+        {
+          "min": 288,
+          "max": 300,
+          "sten": 3
+        },
+        {
+          "min": 301,
+          "max": 314,
+          "sten": 4
+        },
+        {
+          "min": 315,
+          "max": 325,
+          "sten": 5
+        },
+        {
+          "min": 326,
+          "max": 338,
+          "sten": 6
+        },
+        {
+          "min": 339,
+          "max": 361,
+          "sten": 7
+        },
+        {
+          "min": 362,
+          "max": 379,
+          "sten": 8
+        },
+        {
+          "min": 380,
+          "max": 400,
+          "sten": 9
+        },
+        {
+          "min": 401,
+          "max": 470,
+          "sten": 10
+        }
+      ]
+    }
+  }
+}

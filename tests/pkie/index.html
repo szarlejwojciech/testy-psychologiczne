@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="description" content="Aplikacja obliczajśca wynik RPQ-R, w różnych grópach wiekowych.">
+    <meta name="keywords" content="EPQ-R, aplikacja, ekstrawercja, psychotyzm, neurotyczność, skala kłamstwa">
+    <meta name="author" content="Wojciech Szarlej">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="https://scontent.fwaw7-1.fna.fbcdn.net/v/t1.0-9/29216768_2402364656456012_6962585467959115776_n.jpg?_nc_cat=111&_nc_oc=AQleKMrz075Lt9nB6PK9iDW6iRQprS8Vb0GYG79c7luItpAvat5N4DEm6ifPFOWwhBc&_nc_ht=scontent.fwaw7-1.fna&oh=2862bbf4481d9c1251a4d506f9208915&oe=5E2184F9" type="image/x-icon">
+    <title>Obliczanie PKIE</title>
+    <script src="scripts/pkie.js" defer></script>
+  </head>
+
+  <body>
+    <div class="app">
+      <header>
+        <h1>Obliczanie wyników testu PKIE</h1>
+      </header>
+      <main>
+        <section>
+          <h3>Wybierz grupę:</h3>
+          <div class="group-select">
+            <div class="age-group">
+              <select name="people-group" id="people-group">
+                <option value="pupils" selected>Uczniowie</option>
+                <option value="adults">Dorości</option>
+              </select>
+            </div>
+            <div class="gender">
+              <input type="radio" name="gender" id="male" value="male" checked>
+              <label class="male" for="male">mężczyźni</label>
+              <input type="radio" name="gender" id="female" value="female">
+              <label class="female" for="female"> kobiety</label>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>Zaznacz odpowiedzi:</h3>
+          <div class="answers"></div>
+          <div class="buttons">
+            <button id="result">Oblicz</button>
+            <button id="reset">Resetuj</button>
+          </div>
+        </section>
+        <div class="result-box">
+          <div class="content">
+
+            <h2>Wyniki dla <span class="display-gender"></span> z grupy <span class="display-group"></span></h2>
+            <button unsele class="close-results"></button>
+
+            <div class="boxes">
+              <!-- <div class="box">
+                <div class="wrapper">
+                  <h3>Akceptowanie</h3>
+                </div>
+                <div class="wrapper">
+                  <span>wynik surowy</span>
+                  <span>steny</span>
+                </div>
+                <div class="wrapper">
+                  <span class="group-akc-raw">0</span>
+                  <span class="group-akc-stens">0</span>
+                </div>
+              </div>
+
+              <div class="box">
+                <div class="wrapper">
+                  <h3>Empatia</h3>
+                </div>
+                <div class="wrapper">
+                  <span>wynik surowy</span>
+                  <span>steny</span>
+                </div>
+                <div class="wrapper">
+                  <span class="group-emp-raw">0</span>
+                  <span class="group-emp-stens">0</span>
+                </div>
+              </div>
+
+              <div class="box">
+                <div class="wrapper">
+                  <h3>Koncentracja</h3>
+                </div>
+                <div class="wrapper">
+                  <span>wynik surowy</span>
+                  <span>steny</span>
+                </div>
+                <div class="wrapper">
+                  <span class="group-kon-raw">0</span>
+                  <span class="group-kon-stens">0</span>
+                </div>
+              </div>
+
+              <div class="box">
+                <div class="wrapper">
+                  <h3>Rozumienie</h3>
+                </div>
+                <div class="wrapper">
+                  <span>wynik surowy</span>
+                  <span>steny</span>
+                </div>
+                <div class="wrapper">
+                  <span class="group-roz-raw">0</span>
+                  <span class="group-roz-stens">0</span>
+                </div>
+              </div>
+
+              <div class="box">
+                <div class="wrapper">
+                  <h3>Wynik ogólny</h3>
+                </div>
+                <div class="wrapper">
+                  <span>wynik surowy</span>
+                  <span>steny</span>
+                </div>
+                <div class="wrapper">
+                  <span class="total-raw">0</span>
+                  <span class="total-stens">0</span>
+                </div>
+              </div> -->
+
+            </div>
+          </div>
+      </main>
+
+    </div>
+  </body>
+
+</html>

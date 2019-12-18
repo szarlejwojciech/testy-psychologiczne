@@ -1,0 +1,672 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.app {
+  width: 93vw;
+  max-width: 1250px;
+  margin: 30px auto;
+  padding-bottom: 60px;
+}
+
+.app h1 {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.app section {
+  margin: 15px 0;
+  text-align: left;
+}
+
+.app section h3 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+.app section h3::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  border-bottom: 2px solid black;
+  width: 140%;
+}
+
+.app section .group-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 16px;
+}
+
+.app section .group-select .gender {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1em;
+}
+
+.app section .group-select .gender input {
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 1.1em;
+  cursor: pointer;
+}
+
+.app section .group-select .gender input:last-of-type {
+  margin-left: 1.1em;
+}
+
+.app section .group-select .gender label {
+  font-weight: 300;
+  cursor: pointer;
+  position: relative;
+}
+
+.app section .answers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.app section .answers .answer-box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 30px;
+  border-radius: 4px;
+  background: white;
+  margin: 5px;
+  -webkit-box-shadow: 0 7px 18px -4px rgba(0, 0, 0, 0.17);
+          box-shadow: 0 7px 18px -4px rgba(0, 0, 0, 0.17);
+}
+
+.app section .answers .answer-box ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  width: inherit;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.app section .answers .answer-box ul li + li {
+  margin-left: 10px;
+}
+
+.app section .answers .answer-box ul li:nth-of-type(2) label {
+  background: red;
+}
+
+.app section .answers .answer-box ul li:nth-of-type(3) label {
+  background: #ffaa00;
+}
+
+.app section .answers .answer-box ul li:nth-of-type(4) label {
+  background: #aaff00;
+}
+
+.app section .answers .answer-box ul li:nth-of-type(5) label {
+  background: lime;
+}
+
+.app section .answers .answer-box ul li {
+  width: 30px;
+  height: 30px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-radius: 4px;
+}
+
+.app section .answers .answer-box ul li label {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 500;
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  opacity: 0.4;
+  border-radius: inherit;
+  will-change: opacity, outline;
+  -webkit-transition: opacity 0.2s ease-out, outline 0.2s ease-out;
+  transition: opacity 0.2s ease-out, outline 0.2s ease-out;
+  cursor: pointer;
+}
+
+.app section .answers .answer-box ul li label::before, .app section .answers .answer-box ul li label::after {
+  content: "";
+  position: absolute;
+}
+
+.app section .answers .answer-box ul li label::before {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: inherit;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.app section .answers .answer-box ul li label::after {
+  top: 50%;
+  left: 50%;
+  width: 48%;
+  height: 18.5%;
+  border: 3px solid white;
+  border-right: none;
+  border-top: none;
+  -webkit-transform: translate(-50%, -75%) rotate(-45deg) scale(0);
+          transform: translate(-50%, -75%) rotate(-45deg) scale(0);
+  will-change: transform;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+
+.app section .answers .answer-box ul li input {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  background: red;
+  border: transparent;
+}
+
+.app section .answers .answer-box ul li input:focus + label,
+.app section .answers .answer-box ul li input:hover + label {
+  outline: rgba(0, 0, 0, 0.2) 3px solid;
+  outline-offset: 2px;
+  opacity: 0.7;
+}
+
+.app section .answers .answer-box ul li input:checked + label {
+  opacity: 1;
+  -webkit-box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+          box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  color: transparent;
+  text-shadow: none;
+}
+
+.app section .answers .answer-box ul li input:checked + label::after {
+  -webkit-transform: translate(-50%, -75%) rotate(-45deg) scale(1);
+          transform: translate(-50%, -75%) rotate(-45deg) scale(1);
+}
+
+.app section .buttons {
+  margin-top: 27px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 15px 0;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  -webkit-box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.app section .buttons button {
+  font-size: 16px;
+  padding: 0.3em 2em;
+  color: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#00d2df), to(#001a9f));
+  background-image: linear-gradient(#00d2df, #001a9f);
+  border: none;
+  border-radius: 60px;
+  -webkit-box-shadow: 0 20px 15px -15px rgba(0, 0, 0, 0.1), 0 10px 10px -10px rgba(0, 0, 0, 0.1), 0 5px 5px -4px rgba(0, 0, 0, 0.2), 0 2px 3px -2px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 20px 15px -15px rgba(0, 0, 0, 0.1), 0 10px 10px -10px rgba(0, 0, 0, 0.1), 0 5px 5px -4px rgba(0, 0, 0, 0.2), 0 2px 3px -2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  will-change: transform;
+  -webkit-transition: 0.15s -webkit-transform ease-in-out;
+  transition: 0.15s -webkit-transform ease-in-out;
+  transition: 0.15s transform ease-in-out;
+  transition: 0.15s transform ease-in-out, 0.15s -webkit-transform ease-in-out;
+  position: relative;
+}
+
+.app section .buttons button::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  left: 0;
+  top: 0;
+  -webkit-box-shadow: inset 0 20px 20px -15px black;
+          box-shadow: inset 0 20px 20px -15px black;
+  opacity: 0;
+  will-change: opacity;
+  -webkit-transition: 0.15s opacity ease-in-out;
+  transition: 0.15s opacity ease-in-out;
+}
+
+.app section .buttons button#reset {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fc5d5d), to(#7d0000));
+  background-image: linear-gradient(#fc5d5d, #7d0000);
+  margin-left: 20px;
+}
+
+.app section .buttons button:hover, .app section .buttons button:focus {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.app section .buttons button:hover::before, .app section .buttons button:focus::before {
+  opacity: 0.4;
+}
+
+.app .result-box {
+  width: 97%;
+  display: inline-block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: black;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+  -webkit-transition: 0.2s opacity ease-in;
+  transition: 0.2s opacity ease-in;
+  z-index: 20;
+}
+
+.app .result-box.visible {
+  opacity: 1;
+  pointer-events: all;
+  max-height: 98vh;
+}
+
+.app .result-box.visible .content {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 98vh;
+}
+
+.app .result-box::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 101vw;
+  height: 101vh;
+  background: #000;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.app .result-box .content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
+  will-change: transform;
+  -webkit-transition: 0.2s -webkit-transform ease-in;
+  transition: 0.2s -webkit-transform ease-in;
+  transition: 0.2s transform ease-in;
+  transition: 0.2s transform ease-in, 0.2s -webkit-transform ease-in;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.app .result-box .content h2 {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0.6em 1.2em;
+  margin: 10px 0 0 0;
+  border-radius: 14px;
+}
+
+.app .result-box .content .close-results {
+  position: absolute;
+  font-size: 10px;
+  right: 0.5em;
+  top: 0.5em;
+  width: 5em;
+  height: 5em;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  will-change: transform;
+  -webkit-transition: 0.3s 0.3s transform ease-out;
+  transition: 0.3s 0.3s transform ease-out;
+}
+
+.app .result-box .content .close-results::before, .app .result-box .content .close-results::after {
+  content: "";
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  -webkit-transform: translate(50%, -50%) rotate(45deg);
+          transform: translate(50%, -50%) rotate(45deg);
+  width: 65%;
+  height: 0.3em;
+  background: #000;
+  will-change: transform;
+  -webkit-transition: 0.3s -webkit-transform ease-out;
+  transition: 0.3s -webkit-transform ease-out;
+  transition: 0.3s transform ease-out;
+  transition: 0.3s transform ease-out, 0.3s -webkit-transform ease-out;
+}
+
+.app .result-box .content .close-results::before {
+  -webkit-transform: translate(50%, -50%) rotate(-45deg);
+          transform: translate(50%, -50%) rotate(-45deg);
+}
+
+.app .result-box .content .close-results:hover, .app .result-box .content .close-results:focus {
+  -webkit-transition: 0.3s -webkit-transform ease-out;
+  transition: 0.3s -webkit-transform ease-out;
+  transition: 0.3s transform ease-out;
+  transition: 0.3s transform ease-out, 0.3s -webkit-transform ease-out;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.app .result-box .content .close-results:hover::before, .app .result-box .content .close-results:hover::after, .app .result-box .content .close-results:focus::before, .app .result-box .content .close-results:focus::after {
+  -webkit-transition: 0.3s 0.3s transform ease-out;
+  transition: 0.3s 0.3s transform ease-out;
+}
+
+.app .result-box .content .close-results:hover::before, .app .result-box .content .close-results:focus::before {
+  -webkit-transform: translate(50%, -50%) rotate(45deg);
+          transform: translate(50%, -50%) rotate(45deg);
+}
+
+.app .result-box .content .close-results:hover::after, .app .result-box .content .close-results:focus::after {
+  -webkit-transform: translate(50%, -50%) rotate(-45deg);
+          transform: translate(50%, -50%) rotate(-45deg);
+}
+
+.app .result-box .content .boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.app .result-box .content .boxes .box {
+  width: 100%;
+  margin: 10px 0;
+  padding: 7.5px;
+  -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.app .result-box .content .boxes .box .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 35px;
+  font-size: 15px;
+}
+
+.app .result-box .content .boxes .box .wrapper:first-child {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.app .result-box .content .boxes .box .wrapper h3 {
+  font-size: 1em;
+  font-weight: 500;
+  letter-spacing: 0px;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
+}
+
+.app .result-box .content .boxes .box .wrapper span {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-shadow: 0 0 0 1px #e6e6e6;
+          box-shadow: 0 0 0 1px #e6e6e6;
+  line-height: 35px;
+  background: #fff;
+}
+
+.app .result-box .content .boxes .box:nth-of-type(1) .wrapper:first-child {
+  background: -webkit-gradient(linear, left top, right top, from(#be7ee7), to(#8733c8));
+  background: linear-gradient(90deg, #be7ee7 0%, #8733c8 100%);
+}
+
+.app .result-box .content .boxes .box:nth-of-type(2) .wrapper:first-child {
+  background: -webkit-gradient(linear, left top, right top, from(#ffb06c), to(#f87300));
+  background: linear-gradient(90deg, #ffb06c 0%, #f87300 100%);
+}
+
+.app .result-box .content .boxes .box:nth-of-type(3) .wrapper:first-child {
+  background: -webkit-gradient(linear, left top, right top, from(#ff99d6), to(#ff00c7));
+  background: linear-gradient(90deg, #ff99d6 0%, #ff00c7 100%);
+}
+
+.app .result-box .content .boxes .box:nth-of-type(4) .wrapper:first-child {
+  background: -webkit-gradient(linear, left top, right top, from(#ffd64f), to(#f7be01));
+  background: linear-gradient(90deg, #ffd64f 0%, #f7be01 100%);
+}
+
+.app .result-box .content .boxes .box:nth-of-type(5) .wrapper:first-child {
+  background: -webkit-gradient(linear, left top, right top, from(#25c6fb), to(#0b96d2));
+  background: linear-gradient(90deg, #25c6fb 0%, #0b96d2 100%);
+}
+
+.app .result-box .content .boxes .box:nth-of-type(6) .wrapper:first-child {
+  background: -webkit-gradient(linear, left top, right top, from(#ff4040), to(#e90603));
+  background: linear-gradient(90deg, #ff4040 0%, #e90603 100%);
+}
+
+@media screen and (min-width: 420px) {
+  .app section .answers button {
+    width: 4em;
+    height: 4em;
+  }
+  .app .result-box .content h2 {
+    font-size: 1.2em;
+  }
+  .app .result-box .content .boxes .box .wrapper h3 {
+    font-size: 1.2em;
+    letter-spacing: 2px;
+  }
+}
+
+@media screen and (min-width: 620px) {
+  .app h1 {
+    font-size: 32px;
+  }
+  .app section h3 {
+    font-size: 20px;
+  }
+  .app section .answers .answer-box {
+    padding: 25px;
+  }
+  .app section .answers .answer-box ul li {
+    width: 27px;
+    height: 27px;
+  }
+  .app .result-box .content h2 {
+    font-size: 1.3em;
+  }
+  .app .result-box .content .boxes .box {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 calc(50% - 20px);
+            flex: 1 0 calc(50% - 20px);
+    margin: 10px;
+    padding: 7.5px;
+  }
+  .app .result-box .content .boxes .box .wrapper:first-of-type {
+    height: 3.5em;
+  }
+  .app .result-box .content .boxes .box .wrapper h3 {
+    font-size: 1.4em;
+    line-height: 1em;
+  }
+  .app .result-box .content .boxes .box .wrapper span {
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .app h1 {
+    font-size: 34px;
+  }
+  .app section .answers .answer-box {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 2 0px;
+            flex: 0 2 0;
+    padding: 20px;
+    margin: 10px;
+  }
+  .app .result-box .content h2 {
+    font-size: 1.4em;
+  }
+}
+
+@media screen and (min-width: 965px) {
+  .app h1 {
+    font-size: 40px;
+  }
+  .app section .answers .answer-box {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 2 0px;
+            flex: 0 2 0;
+    margin: 10px;
+  }
+  .app .result-box {
+    width: 80%;
+  }
+  .app .result-box .content {
+    padding: 15px 30px 30px;
+  }
+  .app .result-box .content h2 {
+    font-size: 1.5em;
+  }
+  .app .result-box .content .boxes .box .wrapper span {
+    height: 36px;
+    line-height: 36px;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .app .result-box {
+    max-width: 900px;
+  }
+  .app .result-box .content {
+    padding: 20px 40px 40px;
+  }
+  .app .result-box .content h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 1.5em;
+  }
+  .app .result-box .content .boxes {
+    margin: 0;
+  }
+  .app .result-box .content .boxes .box {
+    margin: 20px;
+    padding: 15px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 calc(50% - 40px);
+            flex: 1 0 calc(50% - 40px);
+  }
+  .app .result-box .content .boxes .box .wrapper h3 {
+    letter-spacing: 0;
+  }
+  .app .result-box .content .boxes .box .wrapper:nth-of-type(n + 1) span {
+    font-size: 1.3em;
+  }
+}
+/*# sourceMappingURL=style.css.map */

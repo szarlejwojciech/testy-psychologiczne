@@ -11,3 +11,7 @@
 # MD files in folders
 tests/**/*.md
 tests/**/*.MD
+
+# oder repositories
+tests/**/.git/
+tests/**/.git/
