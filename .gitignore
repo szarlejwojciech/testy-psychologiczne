@@ -7,6 +7,7 @@
 *.css.map
 *.sass.map
 *.scss.map
+*.scss
 
 # MD files in folders
 tests/**/*.md
