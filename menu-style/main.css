@@ -18,13 +18,120 @@ body {
   font-weight: 300;
 }
 
+.app {
+  margin-top: 50px;
+}
+
+@media screen and (min-width: 600px) {
+  .app {
+    margin-top: 30px;
+  }
+}
+
+.nav-hamburger-btn {
+  position: absolute;
+  z-index: 99999;
+  top: 21px;
+  left: 18px;
+  width: 24px;
+  height: 18px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.nav-hamburger-btn:focus {
+  outline-offset: 10px;
+  outline: 2px solid #94cbff;
+}
+
+.nav-hamburger-btn:active {
+  opacity: 0.5;
+}
+
+.nav-hamburger-btn.hidden span:first-of-type {
+  -webkit-transform: translateY(400%) rotateZ(-45deg);
+          transform: translateY(400%) rotateZ(-45deg);
+}
+
+.nav-hamburger-btn.hidden span:nth-of-type(2) {
+  -webkit-transform: translateX(1000%);
+          transform: translateX(1000%);
+  opacity: 0;
+}
+
+.nav-hamburger-btn.hidden span:last-of-type {
+  -webkit-transform: translateY(-400%) rotateZ(45deg);
+          transform: translateY(-400%) rotateZ(45deg);
+}
+
+.nav-hamburger-btn span {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #292929;
+  border-radius: 50px;
+  -webkit-transition: 0.6s 0.2s transform ease-out, 0.6s 0.2s opacity ease-out;
+  transition: 0.6s 0.2s transform ease-out, 0.6s 0.2s opacity ease-out;
+}
+
+.nav-hamburger-btn span:nth-of-type(1) {
+  top: 0;
+}
+
+.nav-hamburger-btn span:nth-of-type(2) {
+  top: calc(50% - 1px);
+}
+
+.nav-hamburger-btn span:nth-of-type(3) {
+  top: none;
+  bottom: 0;
+}
+
+.nav-hamburger-btn:focus {
+  outline-offset: 4px;
+}
+
 .nav-wrapper {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   min-height: 100vh;
+  width: 100%;
   background: white;
   text-align: center;
-  overflow: hidden;
   padding-bottom: 5rem;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  z-index: 10;
+  overflow: hidden;
+  will-change: transform;
+  -webkit-transition: 0.6s 0.8s transform ease-in;
+  transition: 0.6s 0.8s transform ease-in;
+}
+
+.nav-wrapper.hidden {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.nav-wrapper.hidden .nav-btn {
+  -webkit-transition: 0s 1.6s visibility;
+  transition: 0s 1.6s visibility;
+  visibility: hidden;
+}
+
+.nav-wrapper.home-page {
+  width: 100%;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  overflow: unset;
+  -webkit-transition: none;
+  transition: none;
+  will-change: unset;
 }
 
 .nav-wrapper::before, .nav-wrapper::after {
@@ -52,47 +159,18 @@ body {
           transform: translateY(90%) skewY(10deg);
 }
 
-.nav-wrapper.home-page .nav-hamburger-btn {
-  display: block;
-}
-
-.nav-wrapper .nav-hamburger-btn {
-  position: absolute;
-  top: 21px;
-  left: 18px;
-  width: 24px;
-  height: 18px;
-  padding: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.nav-wrapper .nav-hamburger-btn span {
-  position: absolute;
-  left: 0;
-  display: block;
+.nav-wrapper .nav-content {
+  overflow-y: auto;
+  overflow-x: hidden;
   width: 100%;
-  height: 2px;
-  background: #292929;
-  border-radius: 50px;
-}
-
-.nav-wrapper .nav-hamburger-btn span:nth-of-type(1) {
+  height: calc(100% - 4rem);
+  position: absolute;
   top: 0;
-}
-
-.nav-wrapper .nav-hamburger-btn span:nth-of-type(2) {
-  top: calc(50% - 1px);
-}
-
-.nav-wrapper .nav-hamburger-btn span:nth-of-type(3) {
-  top: none;
-  bottom: 0;
+  left: 0;
 }
 
 .nav-wrapper .nav-header {
-  margin: 57px 0 0 0;
+  margin: 80px 0 0 0;
   font-size: 2.6rem;
   font-weight: 300;
   letter-spacing: 2px;
@@ -165,7 +243,8 @@ body {
   right: 4px;
   bottom: 4px;
   left: 4px;
-  background: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(70%, white), to(#d9d9d9));
+  background-image: linear-gradient(to bottom, white 70%, #d9d9d9);
   z-index: -1;
   -webkit-transform: scale(0);
           transform: scale(0);
@@ -265,18 +344,21 @@ body {
     padding-bottom: 6.2rem;
   }
   .nav-wrapper::before, .nav-wrapper::after {
-    height: 450px;
+    height: 350px;
   }
   .nav-wrapper .nav-header {
-    margin-top: 120px;
-    font-size: 3.6rem;
+    margin-top: 80px;
+    font-size: 3.2rem;
+  }
+  .nav-wrapper .nav-content {
+    height: calc(100% - 6rem);
   }
   .nav-wrapper nav .nav-links-list .nav-btn {
-    width: 424px;
-    height: 87px;
+    width: 381.6px;
+    height: 78.3px;
   }
   .nav-wrapper nav .nav-links-list .nav-btn .main-text {
-    font-size: 3.7rem;
+    font-size: 3.2rem;
   }
   .nav-wrapper nav .nav-links-list .nav-btn::before {
     -webkit-box-shadow: 0 30px 20px -20px rgba(0, 0, 0, 0.3);

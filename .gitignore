@@ -1,0 +1,13 @@
+
+
+
+
+# sass
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+# MD files in folders
+tests/**/*.md
+tests/**/*.MD
