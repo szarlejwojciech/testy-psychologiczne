@@ -147,7 +147,8 @@ const defaultAnswers = () => {
   return array;
 };
 
-const answers = JSON.parse(localStorage.getItem("answers")) || defaultAnswers();
+const answers =
+  JSON.parse(localStorage.getItem("answersEPQR")) || defaultAnswers();
 
 //preveiw boxes
 const answersDiv = document.querySelector(".answers"),
@@ -170,7 +171,8 @@ const resultBox = document.querySelector(".result-box"),
   titleGroup = resultBox.querySelector("span.group");
 
 const calculateAnswers = array => {
-  return [{
+  return [
+    {
       items: array.filter(
         item => item.type === "psyhotyzm-yes" && item.answer === "yes"
       ),
@@ -230,9 +232,9 @@ const calculateAnswers = array => {
 const renderPreview = array => {
   array.map(
     el =>
-    (el.divName.innerHTML = el.items
-      .map(item => `<li class="${item.className}">${item.id}</li>`)
-      .join(""))
+      (el.divName.innerHTML = el.items
+        .map(item => `<li class="${item.className}">${item.id}</li>`)
+        .join(""))
   );
 };
 
@@ -240,7 +242,7 @@ const render = array => {
   answersDiv.innerHTML = array
     .map(
       item =>
-      `<button class="${item.className}" data-id="${item.id}" data-type="${item.type}" data-answer="${item.answer}" >${item.id}</button>`
+        `<button class="${item.className}" data-id="${item.id}" data-type="${item.type}" data-answer="${item.answer}" >${item.id}</button>`
     )
     .join("");
   const newArray = calculateAnswers(array);
@@ -262,7 +264,7 @@ const changeAnswer = e => {
     answers[index].answer = "none";
     answers[index].className = "default";
   }
-  localStorage.setItem("answers", JSON.stringify(answers));
+  localStorage.setItem("answersEPQR", JSON.stringify(answers));
   render(answers);
   document.querySelectorAll(".answers button")[index].focus();
 };
@@ -337,7 +339,7 @@ const resetAnswers = array => {
     el.answer = "none";
   });
 
-  localStorage.setItem("answers", JSON.stringify(array));
+  localStorage.setItem("answersEPQR", JSON.stringify(array));
   render(array);
 };
 
