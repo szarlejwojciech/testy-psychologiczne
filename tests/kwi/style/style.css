@@ -42,6 +42,63 @@ body.no-scroll {
 .app section {
   margin: 15px 0;
   text-align: left;
+  /* .buttons {
+      margin-top: 27px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      padding: 15px 0;
+      background: rgba(255, 255, 255, 0.9);
+      text-align: center;
+
+      box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.1);
+
+      button {
+        font-size: 16px;
+        padding: 0.3em 2em;
+        color: white;
+        // background-image: linear-gradient(#00d2df, #001a9f);
+        background-color: #3298dc;
+        border: none;
+        border-radius: 60px;
+        box-shadow: 0 20px 15px -15px rgba(0, 0, 0, 0.1), 0 10px 10px -10px rgba(0, 0, 0, 0.1), 0 5px 5px -4px rgba(0, 0, 0, 0.2), 0 2px 3px -2px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        will-change: transform;
+        transition: 0.15s transform ease-in-out;
+        position: relative;
+
+        &:hover {
+          background-color: #2793da;
+        }
+        &:active {
+          background-color: #238cd1;
+        }
+
+        &#reset {
+          // background-image: linear-gradient(#fc5d5d, #7d0000);
+          background-image: none;
+          background-color: #f14668;
+          margin-left: 20px;
+          &:hover {
+            background-color: #f03a5f;
+          }
+          &:active {
+            background-color: #ef2e55;
+          }
+        }
+
+        // &:hover,
+        // &:focus {
+        //   transform: scale(0.95);
+
+        //   &::before {
+        //     opacity: 0.4;
+        //   }
+        // }
+      }
+    } */
 }
 
 .app section h3 {
@@ -224,71 +281,6 @@ body.no-scroll {
 .app section .answers .answer-box ul li input:checked + label::after {
   -webkit-transform: translate(-50%, -75%) rotate(-45deg) scale(1);
           transform: translate(-50%, -75%) rotate(-45deg) scale(1);
-}
-
-.app section .buttons {
-  margin-top: 27px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  padding: 15px 0;
-  background: rgba(255, 255, 255, 0.9);
-  text-align: center;
-  -webkit-box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.1);
-}
-
-.app section .buttons button {
-  font-size: 16px;
-  padding: 0.3em 2em;
-  color: white;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#00d2df), to(#001a9f));
-  background-image: linear-gradient(#00d2df, #001a9f);
-  border: none;
-  border-radius: 60px;
-  -webkit-box-shadow: 0 20px 15px -15px rgba(0, 0, 0, 0.1), 0 10px 10px -10px rgba(0, 0, 0, 0.1), 0 5px 5px -4px rgba(0, 0, 0, 0.2), 0 2px 3px -2px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 20px 15px -15px rgba(0, 0, 0, 0.1), 0 10px 10px -10px rgba(0, 0, 0, 0.1), 0 5px 5px -4px rgba(0, 0, 0, 0.2), 0 2px 3px -2px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  will-change: transform;
-  -webkit-transition: 0.15s -webkit-transform ease-in-out;
-  transition: 0.15s -webkit-transform ease-in-out;
-  transition: 0.15s transform ease-in-out;
-  transition: 0.15s transform ease-in-out, 0.15s -webkit-transform ease-in-out;
-  position: relative;
-}
-
-.app section .buttons button::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  left: 0;
-  top: 0;
-  -webkit-box-shadow: inset 0 20px 20px -15px black;
-          box-shadow: inset 0 20px 20px -15px black;
-  opacity: 0;
-  will-change: opacity;
-  -webkit-transition: 0.15s opacity ease-in-out;
-  transition: 0.15s opacity ease-in-out;
-}
-
-.app section .buttons button#reset {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fc5d5d), to(#7d0000));
-  background-image: linear-gradient(#fc5d5d, #7d0000);
-  margin-left: 20px;
-}
-
-.app section .buttons button:hover, .app section .buttons button:focus {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
-}
-
-.app section .buttons button:hover::before, .app section .buttons button:focus::before {
-  opacity: 0.4;
 }
 
 .app .result-box {

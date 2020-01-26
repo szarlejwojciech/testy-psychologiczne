@@ -1,6 +1,6 @@
-const defaultAnswers = groupAssignment;
+const defaultAnswers = groupAssignment(pkieDefault);
 
-const answers = JSON.parse(localStorage.getItem("answersPKIE")) || defaultAnswers();
+const answers = JSON.parse(localStorage.getItem(localStorageNames.pkie)) || defaultAnswers;
 
 //containers
 const answersDiv = document.querySelector(".answers");
@@ -9,47 +9,7 @@ const resultBox = document.querySelector(".result-box");
 const resetBtn = document.getElementById("reset");
 const resultBtn = document.getElementById("result");
 
-//render results boxes
-const render = array => {
-  answersDiv.innerHTML = array
-    .map(
-      ({ id, type, answer }) =>
-        `<div class="answer-box" id="box${id}" data-type="${type}">
-          <ul>
-            <li>${id}</li>
-            <li>
-              <input id="answer-${id}-1" data-key="${id}" type="radio" name="answer-${id}" ${answer === 1 ? "checked" : ""} value="1">
-              <label for="answer-${id}-1">1</label>
-            </li>
-            <li>
-              <input id="answer-${id}-2" data-key="${id}" type="radio" name="answer-${id}" ${answer === 2 ? "checked" : ""} value="2">
-              <label for="answer-${id}-2">2</label>
-            </li>
-            <li>
-              <input id="answer-${id}-3" data-key="${id}" type="radio" name="answer-${id}" ${answer === 3 ? "checked" : ""} value="3">
-              <label for="answer-${id}-3">3</label>
-            </li>
-            <li>
-              <input id="answer-${id}-4" data-key="${id}" type="radio" name="answer-${id}" ${answer === 4 ? "checked" : ""} value="4">
-              <label for="answer-${id}-4">4</label>
-            </li>
-            <li>
-              <input id="answer-${id}-5" data-key="${id}" type="radio" name="answer-${id}" ${answer === 5 ? "checked" : ""} value="5">
-              <label for="answer-${id}-5">5</label>
-            </li>
-          </ul>
-        </div>`
-    )
-    .join("");
-};
-render(answers);
-
-const resetAnswers = answers => {
-  answers.forEach(el => (el.answer = null));
-
-  localStorage.setItem("answersPKIE", JSON.stringify(answers));
-  render(answers);
-};
+renderAnswers(pkieDefault.testName, answers, answersDiv);
 
 const renderResultBox = (container, groupName, raw, stens) => {
   let polishGroupName = "";
@@ -142,18 +102,8 @@ const displayResult = async answers => {
   }
 };
 
-const closeResultBox = e => {
-  if (e.target === resultBox || e.target.classList.contains("close-results")) {
-    resultBox.classList.remove("visible");
-    document.body.classList.remove("no-scroll");
-  }
-};
-
-answersDiv.addEventListener("click", e => changeAnswer(e, answers, "answersPKIE"));
-// answersDiv.addEventListener("touchstart", e => changeAnswer(e, answers));
+answersDiv.addEventListener("click", e => changeAnswer(e, answers, localStorageNames.pkie));
+resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.body));
 
 resultBtn.addEventListener("click", () => displayResult(answers));
-resetBtn.addEventListener("click", () => resetAnswers(answers));
-
-resultBox.addEventListener("click", closeResultBox);
-// resultBox.addEventListener("touchstart", closeResultBox);
+resetBtn.addEventListener("click", () => resetAnswers(answers, localStorageNames.pkie, pkieDefault.testName, renderAnswers, answersDiv));

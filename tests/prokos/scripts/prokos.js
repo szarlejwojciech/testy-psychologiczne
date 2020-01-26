@@ -1,6 +1,6 @@
 const defaultAnswers = groupAssignment(prokosDefault);
 
-const answers = JSON.parse(localStorage.getItem("answersPROKOS")) || defaultAnswers;
+const answers = JSON.parse(localStorage.getItem(localStorageNames.prokos)) || defaultAnswers;
 
 //containers
 const answersDiv = document.querySelector(".answers");
@@ -9,43 +9,7 @@ const resultBox = document.querySelector(".result-box");
 const resetBtn = document.getElementById("reset");
 const resultBtn = document.getElementById("result");
 
-//render results boxes
-const render = array => {
-  answersDiv.innerHTML = array
-    .map(
-      ({ id, type, answer }) =>
-        `<div class="answer-box" id="box${id}" data-type="${type}">
-          <ul>
-            <li>${id}</li>
-            <li>
-              <input id="answer-${id}-1" data-key="${id}" type="radio" name="answer-${id}" ${answer === 1 ? "checked" : ""} value="1">
-              <label for="answer-${id}-1">1</label>
-            </li>
-            <li>
-              <input id="answer-${id}-2" data-key="${id}" type="radio" name="answer-${id}" ${answer === 2 ? "checked" : ""} value="2">
-              <label for="answer-${id}-2">2</label>
-            </li>
-            <li>
-              <input id="answer-${id}-3" data-key="${id}" type="radio" name="answer-${id}" ${answer === 3 ? "checked" : ""} value="3">
-              <label for="answer-${id}-3">3</label>
-            </li>
-            <li>
-              <input id="answer-${id}-4" data-key="${id}" type="radio" name="answer-${id}" ${answer === 4 ? "checked" : ""} value="4">
-              <label for="answer-${id}-4">4</label>
-            </li>
-          </ul>
-        </div>`
-    )
-    .join("");
-};
-render(answers);
-
-const resetAnswers = answers => {
-  answers.forEach(el => (el.answer = null));
-
-  localStorage.setItem("answersPROKOS", JSON.stringify(answers));
-  render(answers);
-};
+renderAnswers(prokosDefault.testName, answers, answersDiv);
 
 const displayResult = answers => {
   const STENS_URL = "./scripts/stens.json";
@@ -86,22 +50,13 @@ const displayResult = answers => {
     } catch (err) {
       console.error(`Brak danych. Błąd: ${err}`);
     }
-
     //display in spans groups & overall result
     groupSpanRaw.textContent = groupName === "total" ? overallResult : groupTotal;
   });
 };
 
-const closeResultBox = e => {
-  if (e.target === resultBox || e.target.classList.contains("close-results")) {
-    resultBox.classList.remove("visible");
-    document.body.classList.remove("no-scroll");
-  }
-};
-
-answersDiv.addEventListener("click", e => changeAnswer(e, answers, "answersPROKOS"));
+answersDiv.addEventListener("click", e => changeAnswer(e, answers, localStorageNames.prokos));
 resultBtn.addEventListener("click", () => displayResult(answers));
-resetBtn.addEventListener("click", () => resetAnswers(answers));
+resetBtn.addEventListener("click", () => resetAnswers(answers, localStorageNames.prokos, prokosDefault.testName, renderAnswers, answersDiv));
 
-resultBox.addEventListener("click", closeResultBox);
-resultBox.addEventListener("touchstart", closeResultBox);
+resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.body));

@@ -1,6 +1,6 @@
 const defaultAnswers = groupAssignment(kwiDefault); //"imported" from helpers.js
 
-const answers = JSON.parse(localStorage.getItem("answersKWI")) || defaultAnswers;
+const answers = JSON.parse(localStorage.getItem(localStorageNames.kwi)) || defaultAnswers;
 
 //containers
 const answersDiv = document.querySelector(".answers");
@@ -10,13 +10,6 @@ const resetBtn = document.getElementById("reset");
 const resultBtn = document.getElementById("result");
 
 renderAnswers(kwiDefault.testName, answers, answersDiv);
-
-const resetAnswers = answers => {
-  answers.forEach(el => (el.answer = null));
-
-  localStorage.setItem("answersKWI", JSON.stringify(answers));
-  renderAnswers(kwiDefault.testName, answers, answersDiv);
-};
 
 const getPercentCords = (container, box) => {
   const { x: containerX, y: containerY, width: containerW, height: containerH } = container.getBoundingClientRect();
@@ -66,14 +59,7 @@ const displayResult = answers => {
   });
 };
 
-const closeResultBox = e => {
-  if (e.target === resultBox || e.target.classList.contains("close-results")) {
-    resultBox.classList.remove("visible");
-    document.body.classList.remove("no-scroll");
-  }
-};
-
-answersDiv.addEventListener("click", e => changeAnswer(e, answers, "answersKWI"));
+answersDiv.addEventListener("click", e => changeAnswer(e, answers, localStorageNames.kwi));
 resultBtn.addEventListener("click", () => displayResult(answers));
-resetBtn.addEventListener("click", () => resetAnswers(answers));
-resultBox.addEventListener("click", closeResultBox);
+resetBtn.addEventListener("click", () => resetAnswers(answers, localStorageNames.kwi, kwiDefault.testName, renderAnswers, answersDiv));
+resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.body));
