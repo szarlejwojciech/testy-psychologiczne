@@ -1,3 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
 .app {
   width: 93vw;
   max-width: 800px;
@@ -14,64 +34,6 @@
 .app section {
   margin: 15px 0;
   text-align: left;
-  /* .buttons {
-      margin-top: 27px;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 2;
-      padding: 15px 0;
-      background: rgba(255, 255, 255, 0.9);
-      text-align: center;
-
-      box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.1);
-
-      button {
-        font-size: 16px;
-        padding: 0.3em 2em;
-        color: white;
-        background-image: linear-gradient(#00d2df, #001a9f);
-        border: none;
-        border-radius: 60px;
-        box-shadow: 0 20px 15px -15px rgba(0, 0, 0, 0.1),
-          0 10px 10px -10px rgba(0, 0, 0, 0.1),
-          0 5px 5px -4px rgba(0, 0, 0, 0.2), 0 2px 3px -2px rgba(0, 0, 0, 0.3);
-        cursor: pointer;
-        will-change: transform;
-        transition: 0.15s transform ease-in-out;
-        position: relative;
-
-        &::before {
-          content: "";
-          position: absolute;
-          display: block;
-          width: 100%;
-          height: 100%;
-          border-radius: inherit;
-          left: 0;
-          top: 0;
-          box-shadow: inset 0 20px 20px -15px black;
-          opacity: 0;
-          will-change: opacity;
-          transition: 0.15s opacity ease-in-out;
-        }
-
-        &#reset {
-          background-image: linear-gradient(#fc5d5d, #7d0000);
-          margin-left: 20px;
-        }
-
-        &:hover,
-        &:focus {
-          transform: scale(0.95);
-
-          &::before {
-            opacity: 0.4;
-          }
-        }
-      }
-    } */
 }
 
 .app section h3 {
@@ -288,7 +250,7 @@
   background-image: radial-gradient(ellipse at top, #ffffff, #f7f7f7);
 }
 
-.app .previev .container {
+.app section.preview .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -299,7 +261,7 @@
           justify-content: space-between;
 }
 
-.app .previev .container > div {
+.app section.preview .container > div {
   margin: 5px 0;
   padding: 8px;
   width: 100%;
@@ -310,7 +272,7 @@
   background-color: #fff;
 }
 
-.app .previev .container > div h4 {
+.app section.preview .container > div h4 {
   display: inline-block;
   margin-bottom: 5px;
   font-size: 14px;
@@ -321,7 +283,13 @@
           box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.1);
 }
 
-.app .previev .container > div div {
+@media screen and (min-width: 800px) {
+  .app section.preview .container > div h4 {
+    font-size: 18px;
+  }
+}
+
+.app section.preview .container > div div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -330,12 +298,18 @@
           align-items: center;
 }
 
-.app .previev .container > div div span {
+.app section.preview .container > div div span {
   font-weight: 400;
   font-size: 13px;
 }
 
-.app .previev .container > div div ul {
+@media screen and (min-width: 800px) {
+  .app section.preview .container > div div span {
+    font-size: 13px;
+  }
+}
+
+.app section.preview .container > div div ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -346,7 +320,7 @@
   list-style-type: none;
 }
 
-.app .previev .container > div div ul li {
+.app section.preview .container > div div ul li {
   font-size: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -364,12 +338,18 @@
   color: white;
 }
 
-.app .previev .container > div div ul li.yes {
+.app section.preview .container > div div ul li.yes {
   background-image: radial-gradient(ellipse at top, #37c960, #0f7068);
 }
 
-.app .previev .container > div div ul li.no {
+.app section.preview .container > div div ul li.no {
   background-image: radial-gradient(ellipse at top, #ed213a, #93291e);
+}
+
+@media screen and (min-width: 800px) {
+  .app section.preview .container > div div ul li {
+    font-size: 13px;
+  }
 }
 
 .app .result-box {
@@ -389,20 +369,6 @@
   transition: 0.2s opacity ease-in;
 }
 
-.app .result-box.visible {
-  opacity: 1;
-  pointer-events: all;
-  max-height: 98vh;
-}
-
-.app .result-box.visible .content {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  overflow-y: auto;
-  overflow-x: hidden;
-  max-height: 98vh;
-}
-
 .app .result-box::after {
   content: "";
   position: absolute;
@@ -418,91 +384,25 @@
 }
 
 .app .result-box .content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  background: #fff;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
-  will-change: transform;
-  -webkit-transition: 0.2s -webkit-transform ease-in;
-  transition: 0.2s -webkit-transform ease-in;
-  transition: 0.2s transform ease-in;
-  transition: 0.2s transform ease-in, 0.2s -webkit-transform ease-in;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-}
+  /* position: relative;
+      width: 100%;
+      height: 100%;
+      padding: $padding;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
+      will-change: transform;
+      transition: 0.2s transform ease-in;
+      transform: scale(0);
 
-.app .result-box .content h2 {
-  display: inline-block;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 0.6em 1.2em;
-  margin: 10px 0 0 0;
-  border-radius: 14px;
-}
-
-.app .result-box .content .close-results {
-  position: absolute;
-  font-size: 10px;
-  right: 0.5em;
-  top: 0.5em;
-  width: 5em;
-  height: 5em;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  will-change: transform;
-  -webkit-transition: 0.3s 0.3s transform ease-out;
-  transition: 0.3s 0.3s transform ease-out;
-}
-
-.app .result-box .content .close-results::before, .app .result-box .content .close-results::after {
-  content: "";
-  position: absolute;
-  right: 50%;
-  top: 50%;
-  -webkit-transform: translate(50%, -50%) rotate(45deg);
-          transform: translate(50%, -50%) rotate(45deg);
-  width: 65%;
-  height: 0.3em;
-  background: #000;
-  will-change: transform;
-  -webkit-transition: 0.3s -webkit-transform ease-out;
-  transition: 0.3s -webkit-transform ease-out;
-  transition: 0.3s transform ease-out;
-  transition: 0.3s transform ease-out, 0.3s -webkit-transform ease-out;
-}
-
-.app .result-box .content .close-results::before {
-  -webkit-transform: translate(50%, -50%) rotate(-45deg);
-          transform: translate(50%, -50%) rotate(-45deg);
-}
-
-.app .result-box .content .close-results:hover, .app .result-box .content .close-results:focus {
-  -webkit-transition: 0.3s -webkit-transform ease-out;
-  transition: 0.3s -webkit-transform ease-out;
-  transition: 0.3s transform ease-out;
-  transition: 0.3s transform ease-out, 0.3s -webkit-transform ease-out;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-.app .result-box .content .close-results:hover::before, .app .result-box .content .close-results:hover::after, .app .result-box .content .close-results:focus::before, .app .result-box .content .close-results:focus::after {
-  -webkit-transition: 0.3s 0.3s transform ease-out;
-  transition: 0.3s 0.3s transform ease-out;
-}
-
-.app .result-box .content .close-results:hover::before, .app .result-box .content .close-results:focus::before {
-  -webkit-transform: translate(50%, -50%) rotate(45deg);
-          transform: translate(50%, -50%) rotate(45deg);
-}
-
-.app .result-box .content .close-results:hover::after, .app .result-box .content .close-results:focus::after {
-  -webkit-transform: translate(50%, -50%) rotate(-45deg);
-          transform: translate(50%, -50%) rotate(-45deg);
+      h2 {
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 0.6em 1.2em;
+        margin: $padding 0 0 0;
+        border-radius: 14px;
+      } */
 }
 
 .app .result-box .content .boxes {
@@ -584,11 +484,6 @@
     width: 4em;
     height: 4em;
   }
-  .app .result-box .content .boxes .box {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 65vw;
-            flex: 0 1 65vw;
-  }
 }
 
 @media screen and (min-width: 600px) {
@@ -613,16 +508,8 @@
   .app section .group-select .gender input {
     margin: 0.3em 1.1em 0 0;
   }
-  .app section .buttons button {
-    font-size: 18px;
-  }
   .app section .legend span:first-of-type {
     display: inline;
-  }
-  .app .result-box .content {
-    padding: 10px;
-    max-width: 660px;
-    margin: 0 auto;
   }
   .app .result-box .content .boxes .box {
     -webkit-box-flex: 0;
@@ -642,31 +529,11 @@
   .app section .legend {
     font-size: 14px;
   }
-  .app section.previev .container > div h4 {
-    font-size: 18px;
-  }
-  .app section.previev .container > div div span {
-    font-size: 13px;
-  }
-  .app section.previev .container > div div ul li {
-    font-size: 13px;
-  }
-  .app section .buttons button {
-    font-size: 20px;
-  }
 }
 
 @media screen and (min-width: 1000px) {
   .app h1 {
     font-size: 40px;
-  }
-  .app .result-box .content {
-    padding: 20px;
-    max-width: 930px;
-    margin: 0 auto;
-  }
-  .app .result-box .content h2 {
-    font-size: 25px;
   }
   .app .result-box .content .boxes .box {
     -webkit-box-flex: 0;

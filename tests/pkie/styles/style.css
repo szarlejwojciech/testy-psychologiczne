@@ -374,91 +374,26 @@ body.no-scroll {
 }
 
 .app .result-box .content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  background: #fff;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
-  will-change: transform;
-  -webkit-transition: 0.2s -webkit-transform ease-in;
-  transition: 0.2s -webkit-transform ease-in;
-  transition: 0.2s transform ease-in;
-  transition: 0.2s transform ease-in, 0.2s -webkit-transform ease-in;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-}
+  /* 
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: $padding;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
+      will-change: transform;
+      transition: 0.2s transform ease-in;
+      transform: scale(0);
 
-.app .result-box .content h2 {
-  display: inline-block;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 0.6em 1.2em;
-  margin: 10px 0 0 0;
-  border-radius: 14px;
-}
-
-.app .result-box .content .close-results {
-  position: absolute;
-  font-size: 10px;
-  right: 0.5em;
-  top: 0.5em;
-  width: 5em;
-  height: 5em;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  will-change: transform;
-  -webkit-transition: 0.3s 0.3s transform ease-out;
-  transition: 0.3s 0.3s transform ease-out;
-}
-
-.app .result-box .content .close-results::before, .app .result-box .content .close-results::after {
-  content: "";
-  position: absolute;
-  right: 50%;
-  top: 50%;
-  -webkit-transform: translate(50%, -50%) rotate(45deg);
-          transform: translate(50%, -50%) rotate(45deg);
-  width: 65%;
-  height: 0.3em;
-  background: #000;
-  will-change: transform;
-  -webkit-transition: 0.3s -webkit-transform ease-out;
-  transition: 0.3s -webkit-transform ease-out;
-  transition: 0.3s transform ease-out;
-  transition: 0.3s transform ease-out, 0.3s -webkit-transform ease-out;
-}
-
-.app .result-box .content .close-results::before {
-  -webkit-transform: translate(50%, -50%) rotate(-45deg);
-          transform: translate(50%, -50%) rotate(-45deg);
-}
-
-.app .result-box .content .close-results:hover, .app .result-box .content .close-results:focus {
-  -webkit-transition: 0.3s -webkit-transform ease-out;
-  transition: 0.3s -webkit-transform ease-out;
-  transition: 0.3s transform ease-out;
-  transition: 0.3s transform ease-out, 0.3s -webkit-transform ease-out;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-.app .result-box .content .close-results:hover::before, .app .result-box .content .close-results:hover::after, .app .result-box .content .close-results:focus::before, .app .result-box .content .close-results:focus::after {
-  -webkit-transition: 0.3s 0.3s transform ease-out;
-  transition: 0.3s 0.3s transform ease-out;
-}
-
-.app .result-box .content .close-results:hover::before, .app .result-box .content .close-results:focus::before {
-  -webkit-transform: translate(50%, -50%) rotate(45deg);
-          transform: translate(50%, -50%) rotate(45deg);
-}
-
-.app .result-box .content .close-results:hover::after, .app .result-box .content .close-results:focus::after {
-  -webkit-transform: translate(50%, -50%) rotate(-45deg);
-          transform: translate(50%, -50%) rotate(-45deg);
+      h2 {
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 0.6em 1.2em;
+        margin: $padding 0 0 0;
+        border-radius: 14px;
+      } */
 }
 
 .app .result-box .content .boxes {
@@ -560,9 +495,6 @@ body.no-scroll {
     width: 4em;
     height: 4em;
   }
-  .app .result-box .content h2 {
-    font-size: 1.2em;
-  }
   .app .result-box .content .boxes .box .wrapper h3 {
     font-size: 1.2em;
     letter-spacing: 2px;
@@ -597,9 +529,6 @@ body.no-scroll {
   .app section .answers .answer-box ul li {
     width: 27px;
     height: 27px;
-  }
-  .app .result-box .content h2 {
-    font-size: 1.3em;
   }
   .app .result-box .content .boxes .box {
     -webkit-box-flex: 1;
@@ -638,9 +567,6 @@ body.no-scroll {
     outline: rgba(0, 0, 0, 0.2) 3px solid;
     outline-offset: 2px;
   }
-  .app .result-box .content h2 {
-    font-size: 1.4em;
-  }
 }
 
 @media screen and (min-width: 965px) {
@@ -656,12 +582,6 @@ body.no-scroll {
   .app .result-box {
     width: 80%;
   }
-  .app .result-box .content {
-    padding: 15px 30px 30px;
-  }
-  .app .result-box .content h2 {
-    font-size: 1.5em;
-  }
   .app .result-box .content .boxes .box .wrapper span {
     height: 36px;
     line-height: 36px;
@@ -673,12 +593,13 @@ body.no-scroll {
     max-width: 900px;
   }
   .app .result-box .content {
-    padding: 20px 40px 40px;
-  }
-  .app .result-box .content h2 {
-    padding: 0;
-    margin: 0;
-    font-size: 1.5em;
+    /* padding: $margim * 2 $margim * 4 $margim * 4;
+
+      h2 {
+        padding: 0;
+        margin: 0;
+        font-size: 1.5em;
+      } */
   }
   .app .result-box .content .boxes {
     margin: 0;

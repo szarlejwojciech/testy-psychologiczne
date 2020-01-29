@@ -124,10 +124,10 @@ const epqrDefault = {
 };
 //local storage names for all tests
 const localStorageNames = {
-  pkie: "answersPKIE",
-  kwi: "answersKWI",
-  prokos: "answersPROKOS",
-  epqr: "answersEPQR"
+  pkie: "answersPKIE0123",
+  kwi: "answersKWI0123",
+  prokos: "answersPROKOS0123",
+  epqr: "answersEPQR0123"
 };
 
 //main functions for all tests
@@ -223,6 +223,7 @@ const renderAnswers = (testName, answersArray, container) => {
 };
 
 const changeAnswer = (e, answers, localStorageName) => {
+  console.log(e.target);
   if (localStorageName === localStorageNames.epqr) {
     if (e.target.tagName !== "BUTTON") return;
     const index = e.target.dataset.id - 1;
@@ -264,4 +265,13 @@ const closeResultBox = (e, resultBox, body) => {
     resultBox.classList.remove("visible");
     body.classList.remove("no-scroll");
   }
+};
+
+const displayError = (error, container) => {
+  const errorBox = document.createElement("div");
+  errorBox.classList.add("error-message");
+  container.innerHTML = "";
+  errorBox.innerHTML = '<button class="close-results"></button><span>Coś poszło nie tak, odśwież stronę lub spróbuj ponownie później!</span>';
+  // errorBox.textContent = "";
+  container.appendChild(errorBox);
 };

@@ -355,67 +355,6 @@ body.no-scroll {
   border-radius: 14px;
 }
 
-.app .result-box .content .close-results {
-  position: absolute;
-  font-size: 10px;
-  right: 0.5em;
-  top: 0.5em;
-  width: 5em;
-  height: 5em;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  will-change: transform;
-  -webkit-transition: 0.3s 0.3s transform ease-out;
-  transition: 0.3s 0.3s transform ease-out;
-}
-
-.app .result-box .content .close-results::before, .app .result-box .content .close-results::after {
-  content: "";
-  position: absolute;
-  right: 50%;
-  top: 50%;
-  -webkit-transform: translate(50%, -50%) rotate(45deg);
-          transform: translate(50%, -50%) rotate(45deg);
-  width: 65%;
-  height: 0.3em;
-  background: #000;
-  will-change: transform;
-  -webkit-transition: 0.3s -webkit-transform ease-out;
-  transition: 0.3s -webkit-transform ease-out;
-  transition: 0.3s transform ease-out;
-  transition: 0.3s transform ease-out, 0.3s -webkit-transform ease-out;
-}
-
-.app .result-box .content .close-results::before {
-  -webkit-transform: translate(50%, -50%) rotate(-45deg);
-          transform: translate(50%, -50%) rotate(-45deg);
-}
-
-.app .result-box .content .close-results:hover, .app .result-box .content .close-results:focus {
-  -webkit-transition: 0.3s -webkit-transform ease-out;
-  transition: 0.3s -webkit-transform ease-out;
-  transition: 0.3s transform ease-out;
-  transition: 0.3s transform ease-out, 0.3s -webkit-transform ease-out;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-.app .result-box .content .close-results:hover::before, .app .result-box .content .close-results:hover::after, .app .result-box .content .close-results:focus::before, .app .result-box .content .close-results:focus::after {
-  -webkit-transition: 0.3s 0.3s transform ease-out;
-  transition: 0.3s 0.3s transform ease-out;
-}
-
-.app .result-box .content .close-results:hover::before, .app .result-box .content .close-results:focus::before {
-  -webkit-transform: translate(50%, -50%) rotate(45deg);
-          transform: translate(50%, -50%) rotate(45deg);
-}
-
-.app .result-box .content .close-results:hover::after, .app .result-box .content .close-results:focus::after {
-  -webkit-transform: translate(50%, -50%) rotate(-45deg);
-          transform: translate(50%, -50%) rotate(-45deg);
-}
-
 .app .result-box .content .boxes {
   display: -webkit-box;
   display: -ms-flexbox;
