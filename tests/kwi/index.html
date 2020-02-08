@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="HandheldFriendly" content="true">
-    <title>Kwestionariusz Wielorakiej Inteligencji</title>
+    <title>Test kwi</title>
     <meta name="description" content="Aplikacja obliczajśca wynik wielorakiej inteligencji.">
     <meta name="keywords" content="Kwestionariusz Wielorakiej Inteligencji, kwi, lingwistyczna, matematyczno-logiczna, wizualno-przestrzenna, muzyczna, interpersonalna,intrapersonalna,kinestetyczna">
     <meta name="author" content="Wojciech Szarlej">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap&subset=latin-ext" rel="stylesheet">
     <link rel="shortcut icon" href="https://scontent.fwaw7-1.fna.fbcdn.net/v/t1.0-9/29216768_2402364656456012_6962585467959115776_n.jpg?_nc_cat=111&_nc_oc=AQleKMrz075Lt9nB6PK9iDW6iRQprS8Vb0GYG79c7luItpAvat5N4DEm6ifPFOWwhBc&_nc_ht=scontent.fwaw7-1.fna&oh=2862bbf4481d9c1251a4d506f9208915&oe=5E2184F9" type="image/x-icon">
-    <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="../../menu-style/main.css">
     <link rel="stylesheet" href="../../main-styles/mainStyles.css">
     <script src="../../helpers/helpers.js"></script>
@@ -70,18 +69,18 @@
       <main>
         <section>
           <h3>Zaznacz odpowiedzi:</h3>
-          <div class="answers"></div>
+          <div class="answers kwi"></div>
           <div class="buttons">
             <button id="result">Oblicz</button>
             <button id="reset">Resetuj</button>
           </div>
         </section>
-        <div class="result-box">
+        <div class="result-box with-chart">
           <div class="content">
             <header class="result-title">
-              <h2>Wyniki</h2>
+              <h2>Wyniki testu</h2>
+              <button unsele class="close-results"></button>
             </header>
-            <button unsele class="close-results"></button>
             <div class="boxes">
               <div class="column column-left">
                 <div class="box">
@@ -183,45 +182,47 @@
                     <span class="visual-total">0</span>
                   </div>
                 </div>
-                <div class="result-chart">
-                  <ul class="points">
-                    <li>
-                      <div class="point-container">
-                        <div class="point-box linguistic-point-box">01</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="point-container">
-                        <div class="point-box math-point-box">02</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="point-container">
-                        <div class="point-box visual-point-box">03</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="point-container">
-                        <div class="point-box music-point-box">04</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="point-container">
-                        <div class="point-box interpersonal-point-box">05</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="point-container">
-                        <div class="point-box intrapersonal-point-box">06</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="point-container">
-                        <div class="point-box kinesthetic-point-box">07</div>
-                      </div>
-                    </li>
-                  </ul>
-                  <div class="path"></div>
+                <div class="box chart-box">
+                  <div class="chart-wrapper">
+                    <ul class="points">
+                      <li>
+                        <div class="point-container">
+                          <div class="point-box linguistic-point-box">01</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="point-container">
+                          <div class="point-box math-point-box">02</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="point-container">
+                          <div class="point-box visual-point-box">03</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="point-container">
+                          <div class="point-box music-point-box">04</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="point-container">
+                          <div class="point-box interpersonal-point-box">05</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="point-container">
+                          <div class="point-box intrapersonal-point-box">06</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="point-container">
+                          <div class="point-box kinesthetic-point-box">07</div>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="path"></div>
+                  </div>
                 </div>
               </div>
             </div>
