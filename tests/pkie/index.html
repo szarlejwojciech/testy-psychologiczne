@@ -13,11 +13,11 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap&subset=latin-ext" rel="stylesheet">
     <link rel="shortcut icon" href="https://scontent.fwaw7-1.fna.fbcdn.net/v/t1.0-9/29216768_2402364656456012_6962585467959115776_n.jpg?_nc_cat=111&_nc_oc=AQleKMrz075Lt9nB6PK9iDW6iRQprS8Vb0GYG79c7luItpAvat5N4DEm6ifPFOWwhBc&_nc_ht=scontent.fwaw7-1.fna&oh=2862bbf4481d9c1251a4d506f9208915&oe=5E2184F9" type="image/x-icon">
     <title>Test pkie</title>
-    <link rel="stylesheet" href="../../menu-style/main.css">
     <link rel="stylesheet" href="../../main-styles/mainStyles.css">
+    <script src="../../scripts/time.js"></script>
+    <script src="../../scripts/menuSlide.js" defer></script>
     <script src="../../helpers/helpers.js"></script>
     <script src="./scripts/pkie.js" defer></script>
-    <script src="../../menu-scripts/menu.js" defer></script>
   </head>
 
   <body>
@@ -60,27 +60,41 @@
           </ul>
         </nav>
       </div>
-      <footer class="nav-footer">© copyright 2019</footer>
+      <footer class="nav-footer">© copyright 2019 - <span id="current-year"></span></footer>
     </div>
     <div class="app">
-      <header>
-        <h1>Obliczanie wyników testu PKIE</h1>
+      <header class="pkie">
+        <h1>
+          <span class="for-desktop">Obliczanie wyników testu&nbsp;PKIE</span>
+          <span class="for-mobile">Test PKIE</span>
+        </h1>
       </header>
       <main>
         <section>
-          <h3>Wybierz grupę:</h3>
           <div class="group-select">
             <div class="age-group">
-              <select name="people-group" id="people-group">
-                <option value="pupils" selected>Uczniowie</option>
-                <option value="adults">Dorości</option>
-              </select>
+              <fieldset>
+                <legend>
+                  <label for="people-group">
+                    <h3>Wybierz grupę:</h3>
+                  </label>
+                </legend>
+                <select name="people-group" id="people-group">
+                  <option value="pupils" selected>Uczniowie</option>
+                  <option value="adults">Dorości</option>
+                </select>
+              </fieldset>
             </div>
             <div class="gender">
-              <input type="radio" name="gender" id="male" value="male" checked>
-              <label class="male" for="male">mężczyźni</label>
-              <input type="radio" name="gender" id="female" value="female">
-              <label class="female" for="female"> kobiety</label>
+              <fieldset>
+                <legend>
+                  <h3>Wybierz płeć:</h3>
+                </legend>
+                <input type="radio" name="gender" id="male" value="male" checked>
+                <label class="male" for="male">mężczyźni</label>
+                <input type="radio" name="gender" id="female" value="female">
+                <label class="female" for="female"> kobiety</label>
+              </fieldset>
             </div>
           </div>
         </section>
@@ -90,12 +104,13 @@
           <div class="buttons">
             <button id="result">Oblicz</button>
             <button id="reset">Resetuj</button>
+            <button class="theme-btn"></button>
           </div>
         </section>
         <div class="result-box">
           <div class="content">
 
-            <header class="result-title">
+            <header class="result-title pkie">
               <h2>Wyniki dla <span class="display-gender"></span> z grupy <span class="display-group"></span></h2>
               <button unsele class="close-results"></button>
             </header>

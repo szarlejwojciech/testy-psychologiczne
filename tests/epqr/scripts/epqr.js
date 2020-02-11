@@ -15,6 +15,11 @@ const resultBox = document.querySelector(".result-box"),
   titleGender = resultBox.querySelector("span.gender"),
   titleGroup = resultBox.querySelector("span.group");
 
+//theme
+const currentTheme = localStorage.getItem("current-theme") || "light";
+const themeToggler = document.querySelector(".theme-btn");
+themeToggler.addEventListener("click", () => themeToggle(currentTheme));
+
 const calculateAnswers = array => {
   return [
     {
@@ -199,3 +204,7 @@ resultBtn.addEventListener("click", () => displayResult(answers));
 resetBtn.addEventListener("click", () => resetAnswers(answers, localStorageNames.epqr, epqrDefault.testName, renderAnswers, answersDiv));
 
 resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.body));
+document.addEventListener("DOMContentLoaded", () => {
+  if (currentTheme === "dark") document.body.classList.add("dark-theme");
+  else document.body.classList.remove("dark-theme");
+});

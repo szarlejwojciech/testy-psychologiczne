@@ -8,6 +8,9 @@ const resultBox = document.querySelector(".result-box");
 //btns
 const resetBtn = document.getElementById("reset");
 const resultBtn = document.getElementById("result");
+//theme
+const currentTheme = localStorage.getItem("current-theme") || "light";
+const themeToggler = document.querySelector(".theme-btn");
 
 renderAnswers(pkieDefault.testName, answers, answersDiv);
 
@@ -107,3 +110,9 @@ resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.b
 
 resultBtn.addEventListener("click", () => displayResult(answers));
 resetBtn.addEventListener("click", () => resetAnswers(answers, localStorageNames.pkie, pkieDefault.testName, renderAnswers, answersDiv));
+
+themeToggler.addEventListener("click", () => themeToggle(currentTheme));
+document.addEventListener("DOMContentLoaded", () => {
+  if (currentTheme === "dark") document.body.classList.add("dark-theme");
+  else document.body.classList.remove("dark-theme");
+});

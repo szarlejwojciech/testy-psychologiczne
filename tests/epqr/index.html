@@ -15,10 +15,10 @@
     <link rel="shortcut icon" href="https://scontent.fwaw7-1.fna.fbcdn.net/v/t1.0-9/29216768_2402364656456012_6962585467959115776_n.jpg?_nc_cat=111&_nc_oc=AQleKMrz075Lt9nB6PK9iDW6iRQprS8Vb0GYG79c7luItpAvat5N4DEm6ifPFOWwhBc&_nc_ht=scontent.fwaw7-1.fna&oh=2862bbf4481d9c1251a4d506f9208915&oe=5E2184F9" type="image/x-icon">
     <title>Test epq-r</title>
     <link rel="stylesheet" href="../../main-styles/mainStyles.css">
+    <script src="../../scripts/time.js"></script>
+    <script src="../../scripts/menuSlide.js" defer></script>
     <script src="../../helpers/helpers.js"></script>
-    <script src="./scripts/stens.js" defer></script>
     <script src="./scripts/epqr.js" defer></script>
-    <script src="../../menu-scripts/menu.js" defer></script>
 
   </head>
 
@@ -62,11 +62,14 @@
           </ul>
         </nav>
       </div>
-      <footer class="nav-footer">© copyright 2019</footer>
+      <footer class="nav-footer">© copyright 2019 - <span id="current-year"></span></footer>
     </div>
     <div class="app">
-      <header>
-        <h1>Obliczanie wyników&nbsp;EPQ&nbsp;-&nbsp;R</h1>
+      <header class="epqr">
+        <h1>
+          <span class="for-desktop">Obliczanie wyników testu&nbsp;EPQ&nbsp;-&nbsp;R</span>
+          <span class="for-mobile">Test EPQ&nbsp;-&nbsp;R</span>
+        </h1>
       </header>
 
       <main>
@@ -74,17 +77,29 @@
           <h3>Wybierz grupę:</h3>
           <div class="group-select">
             <div class="age-group">
-              <select name="people-group" id="people-group">
-                <option value="students" selected>Studenci</option>
-                <option value="pupils">Uczniowie</option>
-                <option value="adults">Dorości</option>
-              </select>
+              <fieldset>
+                <legend>
+                  <label for="people-group">
+                    <h3>Wybierz grupę:</h3>
+                  </label>
+                </legend>
+                <select name="people-group" id="people-group">
+                  <option value="students" selected>Studenci</option>
+                  <option value="pupils">Uczniowie</option>
+                  <option value="adults">Dorości</option>
+                </select>
+              </fieldset>
             </div>
             <div class="gender">
-              <input type="radio" name="gender" id="male" value="male" checked>
-              <label for="male">mężczyźni</label>
-              <input type="radio" name="gender" id="female" value="female">
-              <label for="female">kobiety</label>
+              <fieldset>
+                <legend>
+                  <h3>Wybierz płeć:</h3>
+                </legend>
+                <input type="radio" name="gender" id="male" value="male" checked>
+                <label for="male">mężczyźni</label>
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">kobiety</label>
+              </fieldset>
             </div>
           </div>
         </section>
@@ -103,7 +118,7 @@
 
         <div class="result-box">
           <div class="content">
-            <header class="result-title">
+            <header class="result-title epqr">
               <h2>Wyniki dla <span class="display-gender"></span> z&nbsp;grupy&nbsp;<span class="display-group"></span></h2>
               <button class="close-results"></button>
             </header>
@@ -113,7 +128,9 @@
       </main>
     </div>
     <div class="buttons">
-      <button id="result">Oblicz</button><button id="reset">Resetuj</button>
+      <button id="result">Oblicz</button>
+      <button id="reset">Resetuj</button>
+      <button class="theme-btn"></button>
     </div>
   </body>
 
