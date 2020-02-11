@@ -8,6 +8,9 @@ const resultBox = document.querySelector(".result-box");
 //btns
 const resetBtn = document.getElementById("reset");
 const resultBtn = document.getElementById("result");
+//theme
+const currentTheme = localStorage.getItem("current-theme") || "light";
+const themeToggler = document.querySelector(".theme-btn");
 
 renderAnswers(kwiDefault.testName, answers, answersDiv);
 
@@ -63,3 +66,9 @@ answersDiv.addEventListener("click", e => changeAnswer(e, answers, localStorageN
 resultBtn.addEventListener("click", () => displayResult(answers));
 resetBtn.addEventListener("click", () => resetAnswers(answers, localStorageNames.kwi, kwiDefault.testName, renderAnswers, answersDiv));
 resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.body));
+themeToggler.addEventListener("click", () => themeToggle(currentTheme));
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (currentTheme === "dark") document.body.classList.add("dark-theme");
+  else document.body.classList.remove("dark-theme");
+});

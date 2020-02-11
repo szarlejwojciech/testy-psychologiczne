@@ -1,17 +1,22 @@
 :root {
-  --main-bg: hsl(0, 0%, 98%);
-  --second-bg: hsl(0, 0%, 100%);
-  --main-fg: hsl(0, 0%, 13%);
-  --second-fg: hsl(0, 0%, 100%);
-  --no-btn-bg: hsl(353, 85%, 53%);
-  --yes-btn-bg: hsl(137, 57%, 50%);
-  --default-btn-bg: hsl(0, 0%, 100%);
-  --result-title-bg: hsl(0, 0%, 93%);
+  --primary-bg: #fafafa;
+  --secondary-bg: #ffffff;
+  --primary-text: #212121;
+  --secondary-text: #ffffff;
+  --no-btn-bg: #ed2139;
+  --yes-btn-bg: #37c860;
+  --default-btn-bg: #ffffff;
+  --accent: #238cd1;
+  --danger: #ef2e55;
+  --result-title-bg: rgb(237, 237, 237);
+  --border: #e6e6e6;
   --shadow-1dp: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
   --shadow-2dp: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
   --shadow-6dp: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
   --shadow-12dp: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12);
   --shadow-24dp: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+  --fw400: 400;
+  --fw500: 500;
 }
 
 *,
@@ -21,7 +26,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -38,10 +43,10 @@ html {
 body {
   margin: 0;
   font-size: 1.6rem;
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  background-color: var(--main-bg);
-  color: var(--main-fg);
+  font-family: "Montserrat", sans-serif;
+  font-weight: var(--fw400);
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
   text-align: center;
 }
 
@@ -58,7 +63,7 @@ body.no-scroll {
 
 .app h1 {
   font-size: 2.5rem;
-  font-weight: 600;
+  font-weight: var(--fw500);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-top: 1em;
@@ -74,7 +79,7 @@ body.no-scroll {
   display: inline-block;
   margin-bottom: 1.8rem;
   font-size: 1.6rem;
-  font-weight: 300;
+  font-weight: var(--fw400);
   letter-spacing: 0.1em;
 }
 
@@ -83,7 +88,7 @@ body.no-scroll {
   position: absolute;
   bottom: -0.7rem;
   left: 0;
-  border-bottom: 2px solid var(--main-fg);
+  border-bottom: 2px solid var(--primary-text);
   width: 140%;
 }
 
@@ -110,7 +115,7 @@ body.no-scroll {
 .app section .group-select .age-group select {
   width: 15em;
   padding: 0.7em 1.3em;
-  font-weight: 300;
+  font-weight: var(--fw400);
   -webkit-box-shadow: var(--shadow-1dp);
           box-shadow: var(--shadow-1dp);
 }
@@ -144,7 +149,7 @@ body.no-scroll {
 }
 
 .app section .group-select .gender label {
-  font-weight: 300;
+  font-weight: var(--fw400);
   cursor: pointer;
   position: relative;
 }
@@ -174,7 +179,7 @@ body.no-scroll {
   width: 3em;
   height: 3em;
   margin: 4px;
-  font-weight: 300;
+  font-weight: var(--fw400);
   border-radius: 50%;
   border: none;
   background-color: transparent;
@@ -219,7 +224,7 @@ body.no-scroll {
 }
 
 .app section .answers button.yes {
-  color: var(--second-fg);
+  color: var(--secondary-text);
 }
 
 .app section .answers button.yes::after {
@@ -233,7 +238,7 @@ body.no-scroll {
 }
 
 .app section .answers button.no {
-  color: var(--second-fg);
+  color: var(--secondary-text);
 }
 
 .app section .answers button.no::after {
@@ -247,7 +252,7 @@ body.no-scroll {
 }
 
 .app section .answers button.default {
-  color: var(--main-fg);
+  color: var(--primary-text);
 }
 
 .app section .answers button.default::after {
@@ -395,12 +400,12 @@ body.no-scroll {
   position: relative;
   padding: 3rem;
   border-radius: 4px;
-  background: var(--second-bg);
+  background: var(--secondary-bg);
   margin: 5px;
 }
 
 .app section .answers .answer-box::before, .app section .answers .answer-box::after {
-  background: var(--second-bg);
+  background: var(--secondary-bg);
   content: "";
   z-index: -1;
   position: absolute;
@@ -436,16 +441,10 @@ body.no-scroll {
           justify-content: space-evenly;
 }
 
-.app section .answers .answer-box ul li:not(:last-of-type) {
-  margin-right: 1rem;
-}
-
 .app section .answers .answer-box ul li {
+  position: relative;
   width: 3rem;
   height: 3rem;
-  background-color: var(--second-bg);
-  -webkit-box-shadow: inset 0 0.1rem 0.1rem rgba(0, 0, 0, 0.2), var(--shadow-1dp);
-          box-shadow: inset 0 0.1rem 0.1rem rgba(0, 0, 0, 0.2), var(--shadow-1dp);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -455,6 +454,46 @@ body.no-scroll {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   border-radius: 4px;
+  background-color: var(--secondary-bg);
+  opacity: 0.9;
+  z-index: 0;
+  will-change: opacity;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.app section .answers .answer-box ul li:not(:last-of-type) {
+  margin-right: 1rem;
+}
+
+.app section .answers .answer-box ul li:first-child::before {
+  opacity: 0.3;
+}
+
+.app section .answers .answer-box ul li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background: var(--secondary-bg);
+  z-index: -1;
+  -webkit-box-shadow: var(--shadow-1dp);
+          box-shadow: var(--shadow-1dp);
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  will-change: opacity;
+}
+
+.app section .answers .answer-box ul li:hover {
+  opacity: 1;
+}
+
+.app section .answers .answer-box ul li:hover::before {
+  opacity: 0.3;
 }
 
 .app section .answers .answer-box ul li label {
@@ -470,11 +509,11 @@ body.no-scroll {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-weight: 500;
+  font-weight: var(--fw500);
   font-size: 2rem;
-  color: var(--second-fg);
+  color: var(--secondary-text);
   text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
-  opacity: 0.4;
+  opacity: 0.6;
   border-radius: inherit;
   will-change: opacity, outline;
   -webkit-transition: opacity 0.2s ease-out, outline 0.1s ease-out;
@@ -493,8 +532,6 @@ body.no-scroll {
   left: 0;
   right: 0;
   border-radius: inherit;
-  -webkit-box-shadow: inset 0 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
-          box-shadow: inset 0 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
 }
 
 .app section .answers .answer-box ul li label::after {
@@ -502,7 +539,7 @@ body.no-scroll {
   left: 50%;
   width: 48%;
   height: 18.5%;
-  border: 3px solid var(--second-bg);
+  border: 3px solid var(--secondary-bg);
   border-right: none;
   border-top: none;
   -webkit-transform: translate(-50%, -75%) rotate(-45deg) scale(0);
@@ -523,8 +560,6 @@ body.no-scroll {
 
 .app section .answers .answer-box ul li input:checked + label {
   opacity: 1;
-  -webkit-box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.8);
-          box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.8);
   color: transparent;
   text-shadow: none;
 }
@@ -546,7 +581,7 @@ body.no-scroll {
   position: absolute;
   top: -0.5rem;
   left: 0;
-  border-top: 1px solid var(--main-fg);
+  border-top: 1px solid var(--primary-text);
   width: 50%;
 }
 
@@ -601,9 +636,8 @@ body.no-scroll {
   width: 100%;
   padding: 0.8rem;
   margin: 0.3rem 0;
-  border: 1px solid rgba(112, 112, 112, 0.15);
   border-radius: 6px;
-  background-color: var(--second-bg);
+  background-color: var(--secondary-bg);
   -webkit-box-shadow: var(--shadow-2dp);
           box-shadow: var(--shadow-2dp);
 }
@@ -612,10 +646,10 @@ body.no-scroll {
   display: inline-block;
   margin-bottom: 0.4em;
   font-size: 1.4rem;
-  font-weight: 300;
+  font-weight: var(--fw400);
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--main-fg);
+  color: var(--primary-text);
   -webkit-box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.1);
 }
@@ -630,7 +664,7 @@ body.no-scroll {
 }
 
 .app section.preview .container > div div span {
-  font-weight: 400;
+  font-weight: var(--fw400);
   font-size: 1.3rem;
 }
 
@@ -660,7 +694,7 @@ body.no-scroll {
   height: 2.2em;
   margin: 3px;
   border-radius: 50%;
-  color: var(--second-fg);
+  color: var(--secondary-text);
 }
 
 .app section.preview .container > div div ul li.yes {
@@ -683,17 +717,17 @@ body.no-scroll {
   right: 0;
   z-index: 2;
   padding: 1.5rem 0;
-  background: var(--second-bg);
+  background: var(--secondary-bg);
   text-align: center;
   -webkit-box-shadow: var(--shadow-6dp), var(--shadow-6dp);
           box-shadow: var(--shadow-6dp), var(--shadow-6dp);
 }
 
-.buttons button {
+.buttons button:not(:last-child) {
   position: relative;
-  padding: 0.3em 2em;
+  padding: 0.3em 1.5em;
   font-size: 1.6rem;
-  color: var(--second-fg);
+  color: var(--secondary-text);
   border: none;
   border-radius: 6rem;
   cursor: pointer;
@@ -702,9 +736,11 @@ body.no-scroll {
   transition: 0.15s -webkit-transform ease-in-out;
   transition: 0.15s transform ease-in-out;
   transition: 0.15s transform ease-in-out, 0.15s -webkit-transform ease-in-out;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
-.buttons button::before, .buttons button::after {
+.buttons button:not(:last-child)::before, .buttons button:not(:last-child)::after {
   content: "";
   z-index: -1;
   position: absolute;
@@ -714,10 +750,9 @@ body.no-scroll {
   right: 0;
   bottom: 0;
   border-radius: inherit;
-  background-color: #3298dc;
 }
 
-.buttons button::before {
+.buttons button:not(:last-child)::before {
   z-index: -2;
   -webkit-box-shadow: var(--shadow-6dp);
           box-shadow: var(--shadow-6dp);
@@ -728,41 +763,46 @@ body.no-scroll {
   will-change: transform;
   -webkit-transform-origin: top;
           transform-origin: top;
+  -webkit-transform: translateZ(-10px);
+          transform: translateZ(-10px);
 }
 
-.buttons button::after {
-  -webkit-transition: color 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out;
-  will-change: color;
+.buttons button:not(:last-child)::after {
+  background-color: var(--danger);
+  opacity: 0.8;
+  -webkit-transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
+  will-change: opacity;
 }
 
-.buttons button:hover::before {
-  -webkit-transform: scale(0.85);
-          transform: scale(0.85);
+.buttons button:not(:last-child):hover::before {
+  -webkit-transform: translateZ(-10px) scale(0.85);
+          transform: translateZ(-10px) scale(0.85);
 }
 
-.buttons button:hover::after {
-  background-color: #2793da;
+.buttons button:not(:last-child):hover::after {
+  opacity: 0.9;
 }
 
-.buttons button:active::after {
-  background-color: #238cd1;
+.buttons button:not(:last-child):active::after {
+  opacity: 1;
 }
 
-.buttons button#reset {
-  margin-left: 2rem;
+.buttons button:not(:last-child)#reset {
+  margin-left: 1rem;
 }
 
-.buttons button#reset::after {
-  background-color: #f14668;
+.buttons button:not(:last-child)#reset::after {
+  background-color: var(--accent);
+  opacity: 0.8;
 }
 
-.buttons button#reset:hover::after {
-  background-color: #f03a5f;
+.buttons button:not(:last-child)#reset:hover::after {
+  opacity: 0.9;
 }
 
-.buttons button#reset:active::after {
-  background-color: #ef2e55;
+.buttons button:not(:last-child)#reset:active::after {
+  opacity: 1;
 }
 
 .result-box {
@@ -772,7 +812,7 @@ body.no-scroll {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  color: black;
+  color: var(--primary-text);
   opacity: 0;
   pointer-events: none;
   will-change: opacity;
@@ -814,7 +854,7 @@ body.no-scroll {
   width: 100%;
   height: 100%;
   padding: 0;
-  background: var(--second-bg);
+  background: var(--primary-bg);
   border-radius: 5px;
   -webkit-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
           box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
@@ -851,7 +891,7 @@ body.no-scroll {
 
 .result-box .content .result-title h2 {
   font-size: inherit;
-  font-weight: 300;
+  font-weight: var(--fw400);
   left: 50%;
   position: relative;
   -webkit-transform: translateX(-55%);
@@ -897,15 +937,39 @@ body.no-scroll {
 }
 
 .result-box .content .boxes .box {
+  position: relative;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 100%;
           flex: 1 0 100%;
   margin: 1rem 0;
   padding: 0.75rem;
-  -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  background: var(--second-bg);
+  background: var(--secondary-bg);
+}
+
+.result-box .content .boxes .box:not(.chart-box)::before, .result-box .content .boxes .box:not(.chart-box)::after {
+  background: var(--secondary-bg);
+  content: "";
+  z-index: -1;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+}
+
+.result-box .content .boxes .box:not(.chart-box)::before {
+  -webkit-box-shadow: var(--shadow-2dp);
+          box-shadow: var(--shadow-2dp);
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  will-change: opacity;
+}
+
+.result-box .content .boxes .box:not(.chart-box):hover::before {
+  opacity: 0.3;
 }
 
 .result-box .content .boxes .box .wrapper {
@@ -923,10 +987,10 @@ body.no-scroll {
 }
 
 .result-box .content .boxes .box .wrapper h3 {
-  color: var(--second-fg);
+  color: var(--secondary-text);
   text-transform: uppercase;
   font-size: 1.7rem;
-  font-weight: 500;
+  font-weight: var(--fw500);
   letter-spacing: 2px;
   text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
 }
@@ -935,14 +999,14 @@ body.no-scroll {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  -webkit-box-shadow: 0 0 0 1px #e6e6e6;
-          box-shadow: 0 0 0 1px #e6e6e6;
+  -webkit-box-shadow: 0 0 0 1px var(--border);
+          box-shadow: 0 0 0 1px var(--border);
   line-height: 2.5em;
-  background: var(--second-bg);
+  background: var(--secondary-bg);
 }
 
 .result-box .content .boxes .box .wrapper span .answer-number {
-  font-weight: 700;
+  font-weight: var(--fw500);
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -1053,9 +1117,9 @@ body.no-scroll {
           justify-content: center;
   width: 1.6em;
   height: 100%;
-  font-weight: 600;
-  background: var(--second-bg);
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-weight: var(--fw500);
+  background: var(--secondary-bg);
+  border: 1px solid var(--border);
   border-radius: 4px;
   -webkit-transform: translateX(50%);
           transform: translateX(50%);
@@ -1168,7 +1232,7 @@ body.no-scroll {
           transform: translate(50%, -50%) rotate(45deg);
   width: 1em;
   height: 0.2em;
-  background: var(--second-bg);
+  background: var(--secondary-bg);
   will-change: transform;
   -webkit-transition: 0.3s -webkit-transform ease-out;
   transition: 0.3s -webkit-transform ease-out;
@@ -1221,13 +1285,13 @@ body.no-scroll {
   padding: 2rem 4rem 2rem 2.4rem;
   font-size: 1.6rem;
   line-height: 1.5;
-  color: var(--second-fg);
+  color: var(--secondary-text);
   border-radius: 4px;
-  font-weight: 300;
+  font-weight: var(--fw400);
 }
 
 .result-box .error-message .close-results::before, .result-box .error-message .close-results::after {
-  background: var(--second-bg);
+  background: var(--secondary-bg);
 }
 
 .result-box .error-message .close-results:focus {
@@ -1236,6 +1300,9 @@ body.no-scroll {
 }
 
 @media screen and (min-width: 420px) {
+  .nav-hamburger-btn {
+    left: 1.8rem;
+  }
   .app section .answers button {
     font-size: 1.5rem;
   }
@@ -1248,6 +1315,10 @@ body.no-scroll {
 }
 
 @media screen and (min-width: 620px) {
+  .nav-hamburger-btn {
+    font-size: 1.5rem;
+    bottom: 1.1rem;
+  }
   .app h1 {
     font-size: 3.2rem;
   }
@@ -1287,7 +1358,7 @@ body.no-scroll {
   .app section .legend span:first-of-type {
     display: inline;
   }
-  .buttons button {
+  .buttons button:not(:last-child) {
     font-size: 1.8rem;
   }
   .result-box {
@@ -1323,12 +1394,15 @@ body.no-scroll {
   .result-box .content .boxes .box .chart-wrapper {
     height: 40vw;
     width: 40vw;
-    max-height: 28rem;
-    max-width: 28rem;
+    max-height: 27rem;
+    max-width: 27rem;
   }
 }
 
 @media screen and (min-width: 800px) {
+  .nav-hamburger-btn {
+    top: 2rem;
+  }
   .app h1 {
     font-size: 34px;
   }
@@ -1338,9 +1412,6 @@ body.no-scroll {
             flex: 0 1 calc(50% - 2rem);
     padding: 2rem;
     margin: 1rem;
-  }
-  .app section .answers .answer-box ul li input:hover + label {
-    opacity: 0.7;
   }
   .app section .answers .answer-box ul li input:focus + label {
     outline: 2px solid;
@@ -1358,8 +1429,16 @@ body.no-scroll {
   .app section .legend {
     font-size: 1.5rem;
   }
-  .buttons button {
+  .buttons button:not(:last-child) {
     font-size: 2rem;
+    padding: 0.3em 2em;
+  }
+  .buttons button:not(:last-child)#reset {
+    margin-left: 2rem;
+  }
+  .buttons .theme-btn {
+    font-size: 1.5rem;
+    bottom: 1.1rem;
   }
   .result-box .content .result-title {
     font-size: 1.8rem;
@@ -1399,7 +1478,7 @@ body.no-scroll {
   }
   .result-box .content .boxes .box .wrapper h3 {
     font-size: 1.8rem;
-    font-weight: 400;
+    font-weight: var(--fw400);
   }
   .result-box .content .boxes .box .wrapper span {
     height: 3.6rem;
@@ -1416,6 +1495,9 @@ body.no-scroll {
 }
 
 @media screen and (min-width: 1150px) {
+  .app {
+    width: 87vw;
+  }
   .result-box {
     max-width: 900px;
   }

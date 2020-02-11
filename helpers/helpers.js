@@ -279,3 +279,10 @@ const displayError = (error, container) => {
   // errorBox.textContent = "";
   container.appendChild(errorBox);
 };
+
+const themeToggle = theme => {
+  document.body.classList.toggle("dark-theme");
+  console.log(document.body.classList);
+  if (theme === "light") localStorage.setItem("current-theme", "dark");
+  else localStorage.setItem("current-theme", "light");
+};
