@@ -59,7 +59,7 @@ const displayResult = async answers => {
   const ageGroup = document.querySelector(".age-group input:checked").value;
   const displayGenderSpan = resultBox.querySelector(".display-gender");
   const displayAgeGroupSpan = resultBox.querySelector(".display-group");
-  let boxesContainer = resultBox.querySelector(".boxes");
+  const boxesContainer = resultBox.querySelector(".boxes");
   const groupNamesList = ["group-akc", "group-emp", "group-kon", "group-roz", "total"];
   boxesContainer.innerHTML = "";
   resultBox.classList.add("visible");
@@ -74,8 +74,6 @@ const displayResult = async answers => {
     if (!answ.answer) return total + 0;
     else return total + (answ.reverseScoring ? 6 - answ.answer : answ.answer);
   }, 0);
-
-  console.log("gender" + gender, "age" + ageGroup);
 
   //fetch data
   try {
@@ -105,7 +103,7 @@ const displayResult = async answers => {
       renderResultBox(boxesContainer, groupName, groupName === "total" ? overallResult : groupTotal, sten);
     });
   } catch (err) {
-    console.error(`Brak danych. Błąd: ${err}`);
+    displayError(err, resultBox);
   }
 };
 

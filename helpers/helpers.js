@@ -153,8 +153,6 @@ const groupAssignment = testDefault => {
 
       if (reverseScoring && reverseScoring.find(id => id === question)) item.reverseScoring = true;
 
-      // if (testDefault.testName === epqrDefault.testName) item.className = "default";
-
       if (yes && yes.find(id => id === question)) item.type = `${type}-yes`;
 
       if (no && no.find(id => id === question)) item.type = `${type}-no`;
@@ -227,21 +225,17 @@ const renderAnswers = (testName, answersArray, container) => {
 };
 
 const changeAnswer = (e, answers, localStorageName) => {
-  console.log(e.target);
   if (localStorageName === localStorageNames.epqr) {
     if (e.target.tagName !== "BUTTON") return;
     const index = e.target.dataset.id - 1;
     if (!answers[index].answer) {
       answers[index].answer = "yes";
-      // answers[index].className = "yes";
       e.target.className = "yes";
     } else if (answers[index].answer === "yes") {
       answers[index].answer = "no";
-      // answers[index].className = "no";
       e.target.className = "no";
     } else if (answers[index].answer === "no") {
       answers[index].answer = null;
-      // answers[index].className = "default";
       e.target.className = "default";
     }
     localStorage.setItem(localStorageName, JSON.stringify(answers));
@@ -259,7 +253,6 @@ const changeAnswer = (e, answers, localStorageName) => {
 
 const resetAnswers = (answers, localStorageName, testName, renderFn, answersDiv) => {
   answers.forEach(el => (el.answer = null));
-
   localStorage.setItem(localStorageName, JSON.stringify(answers));
   renderFn(testName, answers, answersDiv);
 };
@@ -275,14 +268,13 @@ const displayError = (error, container) => {
   const errorBox = document.createElement("div");
   errorBox.classList.add("error-message");
   container.innerHTML = "";
-  errorBox.innerHTML = '<button class="close-results"></button><span>Coś poszło nie tak, odśwież stronę lub spróbuj ponownie później!</span>';
+  errorBox.innerHTML = `<button class="close-results"></button><span>Coś poszło nie tak, odśwież stronę lub spróbuj ponownie później!</span>`;
   container.appendChild(errorBox);
   console.error(error);
 };
 
 const themeToggle = theme => {
   document.body.classList.toggle("dark-theme");
-  console.log(document.body.classList);
   if (theme === "light") localStorage.setItem("current-theme", "dark");
   else localStorage.setItem("current-theme", "light");
 };
