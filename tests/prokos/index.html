@@ -71,17 +71,33 @@
       </header>
       <main>
         <section>
+          <h3>Wybierz grupę:</h3>
+          <div class="group-select prokos">
 
-          <div class="group-select">
-            <div class="gender">
+            <div class="gender-group">
               <fieldset>
                 <legend>
-                  <h3>Wybierz płeć:</h3>
+                  <h4>płeć</h4>
                 </legend>
-                <input type="radio" name="gender" id="male" value="male" checked>
-                <label class="male" for="male">mężczyźni</label>
-                <input type="radio" name="gender" id="female" value="female">
-                <label class="female" for="female"> kobiety</label>
+                <div class="field-body">
+
+                  <div class="wrapper">
+                    <input type="radio" name="gender" id="male" value="male" checked>
+                    <label class="male" for="male">
+                      <span class="icon"></span>
+                      <span class="label-text">męszczna</span>
+                    </label>
+                  </div>
+
+                  <div class="wrapper">
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label class="female" for="female">
+                      <span class="icon"></span>
+                      <span class="label-text">kobieta</span>
+                    </label>
+                  </div>
+
+                </div>
               </fieldset>
             </div>
           </div>

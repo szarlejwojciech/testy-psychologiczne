@@ -163,21 +163,21 @@ const renderResultBox = (container, groupName, raw, stens) => {
 const displayResult = async answers => {
   resultBox.classList.add("visible");
   document.body.classList.add("no-scroll");
+  const STENS_URL = "./scripts/stens.json";
+  const gender = document.querySelector(".gender-group input:checked").value;
+  const ageGroup = document.querySelector(".age-group input:checked").value;
+  const displayGenderSpan = resultBox.querySelector(".display-gender");
+  const displayAgeGroupSpan = resultBox.querySelector(".display-group");
+  const boxesContainer = resultBox.querySelector(".boxes");
+  const groupNamesList = ["psyhotyzm", "extroversion", "neuroticism", "lie"];
+  boxesContainer.innerHTML = "";
+
+  displayGenderSpan.textContent = gender === "male" ? "męszczyzn" : "kobiet";
+  if (ageGroup === "pupils") displayAgeGroupSpan.textContent = '"uczniowie"';
+  else if (ageGroup === "adults") displayAgeGroupSpan.textContent = '"dorośli"';
+  else displayAgeGroupSpan.textContent = '"studenci"';
+
   try {
-    const STENS_URL = "./scripts/stens.json";
-    const gender = document.querySelector(".gender input:checked").value;
-    const ageGroup = document.querySelector("#people-group").value;
-    const displayGenderSpan = resultBox.querySelector(".display-gender");
-    const displayAgeGroupSpan = resultBox.querySelector(".display-group");
-    const boxesContainer = resultBox.querySelector(".boxes");
-    const groupNamesList = ["psyhotyzm", "extroversion", "neuroticism", "lie"];
-    boxesContainer.innerHTML = "";
-
-    displayGenderSpan.textContent = gender === "male" ? "męszczyzn" : "kobiet";
-    if (ageGroup === "pupils") displayAgeGroupSpan.textContent = '"uczniowie"';
-    else if (ageGroup === "adults") displayAgeGroupSpan.textContent = '"dorośli"';
-    else displayAgeGroupSpan.textContent = '"studenci"';
-
     const response = await fetch(STENS_URL);
     const data = await response.json();
 

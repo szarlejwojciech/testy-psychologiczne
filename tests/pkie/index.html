@@ -71,29 +71,62 @@
       </header>
       <main>
         <section>
-          <div class="group-select">
+          <h3>Wybierz grupę:</h3>
+          <div class="group-select pkie">
+
+            <div class="gender-group">
+              <fieldset>
+                <legend>
+                  <h4>płeć</h3>
+                </legend>
+                <div class="field-body">
+
+                  <div class="wrapper">
+                    <input type="radio" name="gender" id="male" value="male" checked>
+                    <label class="male" for="male">
+                      <span class="icon"></span>
+                      <span class="label-text">męszczna</span>
+                    </label>
+                  </div>
+
+                  <div class="wrapper">
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label class="female" for="female">
+                      <span class="icon"></span>
+                      <span class="label-text">kobieta</span>
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+            </div>
+
             <div class="age-group">
               <fieldset>
                 <legend>
-                  <label for="people-group">
-                    <h3>Wybierz grupę:</h3>
-                  </label>
+                  <h4>wiek</h4>
                 </legend>
-                <select name="people-group" id="people-group">
-                  <option value="pupils" selected>Uczniowie</option>
-                  <option value="adults">Dorości</option>
-                </select>
-              </fieldset>
-            </div>
-            <div class="gender">
-              <fieldset>
-                <legend>
-                  <h3>Wybierz płeć:</h3>
-                </legend>
-                <input type="radio" name="gender" id="male" value="male" checked>
-                <label class="male" for="male">mężczyźni</label>
-                <input type="radio" name="gender" id="female" value="female">
-                <label class="female" for="female"> kobiety</label>
+
+                <div class="field-body">
+
+                  <div class="wrapper">
+                    <input type="radio" name="age" id="pupils" value="pupils" checked>
+                    <label class="pupils" for="pupils">
+                      <span class="icon"></span>
+                      <span class="label-text">Uczniowie</span>
+                    </label>
+                  </div>
+
+                  <div class="wrapper">
+                    <input type="radio" name="age" id="adults" value="adults">
+                    <label class="adults" for="adults">
+                      <span class="icon"></span>
+                      <span class="label-text">Dorośli</span>
+                    </label>
+                  </div>
+
+                </div>
+
               </fieldset>
             </div>
           </div>

@@ -276,8 +276,8 @@ const displayError = (error, container) => {
   errorBox.classList.add("error-message");
   container.innerHTML = "";
   errorBox.innerHTML = '<button class="close-results"></button><span>Coś poszło nie tak, odśwież stronę lub spróbuj ponownie później!</span>';
-  // errorBox.textContent = "";
   container.appendChild(errorBox);
+  console.error(error);
 };
 
 const themeToggle = theme => {

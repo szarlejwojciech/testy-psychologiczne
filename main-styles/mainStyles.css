@@ -12,7 +12,7 @@
   --default-btn-bg: var(--secondary-bg);
   --epqr-main-color: hsl(201, 90%, 49%);
   --kwi-main-color: hsl(126, 86%, 50%);
-  --pkie-main-color: hsl(34, 90%, 50%);
+  --pkie-main-color: hsl(32, 100%, 54%);
   --prokos-main-color: hsl(348, 90%, 50%);
   --shadow-1dp: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
   --shadow-2dp: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
@@ -708,6 +708,7 @@ body.no-scroll {
 
 .app header.kwi h1 {
   background-color: var(--kwi-main-color);
+  color: var(--primary-text);
 }
 
 .app header.prokos h1 {
@@ -733,28 +734,39 @@ body.no-scroll {
 }
 
 .app section .group-select {
+  --primary-text: #212121;
+  --secondary-text: #ffffff;
+  --gap: 0.7rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-size: 1.6rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-weight: var(--fw500);
+}
+
+.app section .group-select .gender-group {
+  max-width: 22rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.app section .group-select .age-group {
+  max-width: 33rem;
+  width: 100%;
 }
 
 .app section .group-select fieldset {
   position: relative;
-  background: var(--secondary-bg);
-  padding: 2rem 30px 30px;
-  border-radius: 4px;
+  border-radius: 6px;
   border: none;
-  margin: 0px 0 0;
+  background-color: var(--secondary-bg);
 }
 
 .app section .group-select fieldset::before {
@@ -762,7 +774,7 @@ body.no-scroll {
   z-index: -1;
   position: absolute;
   display: block;
-  top: 2rem;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -783,65 +795,252 @@ body.no-scroll {
 
 .app section .group-select fieldset legend {
   width: 100%;
+  font-size: 1.2rem;
+  height: 2em;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  overflow: hidden;
 }
 
-.app section .group-select fieldset legend h3 {
-  display: block;
+.app section .group-select fieldset legend h4 {
+  line-height: 2;
   margin: 0;
-  text-align: center;
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  line-height: 2.2;
-  color: white;
-  background-color: #424242;
-  border-radius: 200px;
+  color: var(--primary-text);
+  background-color: var(--pkie-main-color);
+  font-weight: var(--fw500);
 }
 
-.app section .group-select .age-group {
-  margin: 1em 0 1.25em 0;
-}
-
-.app section .group-select .age-group select {
-  width: 15em;
-  padding: 0.7em 1.3em;
-  font-weight: var(--fw400);
-  -webkit-box-shadow: var(--shadow-1dp);
-          box-shadow: var(--shadow-1dp);
-}
-
-.app section .group-select .age-group select,
-.app section .group-select .age-group select option {
-  cursor: pointer;
-}
-
-.app section .group-select .gender {
+.app section .group-select fieldset .field-body {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  overflow: hidden;
+  padding: var(--gap);
+  height: 12rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.app section .group-select .gender input {
-  width: 1.5em;
-  height: 1.5em;
-  margin-right: 1.1em;
-  cursor: pointer;
+.app section .group-select fieldset .field-body .wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
+  padding: var(--gap);
+  font-size: 1rem;
 }
 
-.app section .group-select .gender input:last-of-type {
-  margin-left: 1.1em;
+.app section .group-select fieldset .field-body .wrapper input {
+  display: none;
 }
 
-.app section .group-select .gender label {
-  font-weight: var(--fw400);
+.app section .group-select fieldset .field-body .wrapper input:checked + label {
+  color: var(--pkie-main-color);
+  border-color: var(--pkie-main-color);
+  opacity: 1;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.app section .group-select fieldset .field-body .wrapper input:checked + label::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.app section .group-select fieldset .field-body .wrapper input:checked + label .icon {
+  background-image: url("../svg/men-icon-checked.svg");
+}
+
+.app section .group-select fieldset .field-body .wrapper input:focus + label {
+  opacity: 0.5;
+}
+
+.app section .group-select fieldset .field-body .wrapper label {
   cursor: pointer;
   position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid var(--primary-text);
+  border-radius: 5px;
+  background-color: var(--primary-bg);
+  opacity: 0.35;
+  text-transform: capitalize;
+  will-change: opacity;
+  -webkit-transition: opacity 150ms ease-out;
+  transition: opacity 150ms ease-out;
+}
+
+.app section .group-select fieldset .field-body .wrapper label::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  width: 1.2em;
+  height: 1.2em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  will-change: transform;
+  -webkit-transition: -webkit-transform 100ms ease-out;
+  transition: -webkit-transform 100ms ease-out;
+  transition: transform 100ms ease-out;
+  transition: transform 100ms ease-out, -webkit-transform 100ms ease-out;
+}
+
+.app section .group-select fieldset .field-body .wrapper label:hover {
+  opacity: 0.5;
+}
+
+.app section .group-select fieldset .field-body .wrapper label .icon {
+  display: block;
+  height: 3em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 0.2em;
+}
+
+.app section .group-select fieldset .field-body .wrapper label.male .icon {
+  background-image: url("../svg/men-icon-black.svg");
+}
+
+.app section .group-select fieldset .field-body .wrapper label.female .icon {
+  background-image: url("../svg/women-icon-black.svg");
+}
+
+.app section .group-select fieldset .field-body .wrapper label.pupils .icon {
+  background-image: url("../svg/pupils-icon-black.svg");
+}
+
+.app section .group-select fieldset .field-body .wrapper label.students .icon {
+  background-image: url("../svg/students-icon-black.svg");
+}
+
+.app section .group-select fieldset .field-body .wrapper label.adults .icon {
+  background-image: url("../svg/adults-icon-black.svg");
+}
+
+.app section .group-select.epqr fieldset legend h4 {
+  color: var(--secondary-text);
+  background-color: var(--epqr-main-color);
+}
+
+.app section .group-select.epqr fieldset .field-body .wrapper input:checked + label {
+  color: var(--epqr-main-color);
+  border-color: var(--epqr-main-color);
+}
+
+.app section .group-select.epqr fieldset .field-body .wrapper input:checked + label.male .icon {
+  background-image: url("../svg/men-icon-blue.svg");
+}
+
+.app section .group-select.epqr fieldset .field-body .wrapper input:checked + label.female .icon {
+  background-image: url("../svg/women-icon-blue.svg");
+}
+
+.app section .group-select.epqr fieldset .field-body .wrapper input:checked + label.pupils .icon {
+  background-image: url("../svg/pupils-icon-blue.svg");
+}
+
+.app section .group-select.epqr fieldset .field-body .wrapper input:checked + label.students .icon {
+  background-image: url("../svg/students-icon-blue.svg");
+}
+
+.app section .group-select.epqr fieldset .field-body .wrapper input:checked + label.adults .icon {
+  background-image: url("../svg/adults-icon-blue.svg");
+}
+
+.app section .group-select.epqr fieldset .field-body .wrapper label::before {
+  background-image: url("../svg/check-icon-blue.svg");
+}
+
+.app section .group-select.pkie .age-group {
+  max-width: 22rem;
+}
+
+.app section .group-select.pkie fieldset legend h4 {
+  color: var(--primary-text);
+  background-color: var(--pkie-main-color);
+}
+
+.app section .group-select.pkie fieldset .field-body .wrapper input:checked + label {
+  color: var(--pkie-main-color);
+  border-color: var(--pkie-main-color);
+}
+
+.app section .group-select.pkie fieldset .field-body .wrapper input:checked + label.male .icon {
+  background-image: url("../svg/men-icon-orange.svg");
+}
+
+.app section .group-select.pkie fieldset .field-body .wrapper input:checked + label.female .icon {
+  background-image: url("../svg/women-icon-orange.svg");
+}
+
+.app section .group-select.pkie fieldset .field-body .wrapper input:checked + label.pupils .icon {
+  background-image: url("../svg/pupils-icon-orange.svg");
+}
+
+.app section .group-select.pkie fieldset .field-body .wrapper input:checked + label.students .icon {
+  background-image: url("../svg/students-icon-orange.svg");
+}
+
+.app section .group-select.pkie fieldset .field-body .wrapper input:checked + label.adults .icon {
+  background-image: url("../svg/adults-icon-orange.svg");
+}
+
+.app section .group-select.pkie fieldset .field-body .wrapper label::before {
+  background-image: url("../svg/check-icon-orange.svg");
+}
+
+.app section .group-select.prokos fieldset legend h4 {
+  color: var(--secondary-text);
+  background-color: var(--prokos-main-color);
+}
+
+.app section .group-select.prokos fieldset .field-body .wrapper input:checked + label {
+  color: var(--prokos-main-color);
+  border-color: var(--prokos-main-color);
+}
+
+.app section .group-select.prokos fieldset .field-body .wrapper input:checked + label.male .icon {
+  background-image: url("../svg/men-icon-red.svg");
+}
+
+.app section .group-select.prokos fieldset .field-body .wrapper input:checked + label.female .icon {
+  background-image: url("../svg/women-icon-red.svg");
+}
+
+.app section .group-select.prokos fieldset .field-body .wrapper input:checked + label.pupils .icon {
+  background-image: url("../svg/pupils-icon-red.svg");
+}
+
+.app section .group-select.prokos fieldset .field-body .wrapper input:checked + label.students .icon {
+  background-image: url("../svg/students-icon-red.svg");
+}
+
+.app section .group-select.prokos fieldset .field-body .wrapper input:checked + label.adults .icon {
+  background-image: url("../svg/adults-icon-red.svg");
+}
+
+.app section .group-select.prokos fieldset .field-body .wrapper label::before {
+  background-image: url("../svg/check-icon-red.svg");
 }
 
 .app section .answers {
@@ -1744,17 +1943,13 @@ body.no-scroll {
 }
 
 .result-box .content .result-title.kwi {
+  color: var(--primary-text);
   background-color: var(--kwi-main-color);
 }
 
 .result-box .content .result-title.pkie {
   color: var(--primary-text);
   background-color: var(--pkie-main-color);
-}
-
-.result-box .content .result-title.pkie .close-results::before,
-.result-box .content .result-title.pkie .close-results::after {
-  background-color: var(--secondary-text);
 }
 
 .result-box .content .result-title.prokos {
@@ -2221,15 +2416,9 @@ body.no-scroll {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
-  .app section .group-select .age-group {
-    margin-right: 3.3em;
-  }
-  .app section .group-select .gender input {
-    margin: 0.3em 1.1em 0 0;
+  .app section .group-select .gender-group {
+    margin: 0 1.5rem 0 0;
   }
   .app section h3 {
     font-size: 2rem;
@@ -2305,6 +2494,12 @@ body.no-scroll {
   .app header h1 {
     font-size: 2.4rem;
     line-height: 2.3em;
+  }
+  .app section .group-select fieldset legend {
+    font-size: 1.4rem;
+  }
+  .app section .group-select fieldset .field-body .wrapper {
+    font-size: 1.2rem;
   }
   .app section .answers .answer-box {
     -webkit-box-flex: 0;
@@ -2556,6 +2751,35 @@ body.no-scroll {
   }
   .app > main {
     max-width: 1270px;
+  }
+  .app section .group-select .gender-group {
+    max-width: 30rem;
+    margin: 0 5rem 0 0;
+  }
+  .app section .group-select .age-group {
+    max-width: 44rem;
+  }
+  .app section .group-select.pkie .age-group {
+    max-width: 30rem;
+  }
+  .app section .group-select fieldset {
+    --gap: 1rem;
+  }
+  .app section .group-select fieldset legend {
+    font-size: 1.6rem;
+    height: 2.4em;
+  }
+  .app section .group-select fieldset legend h4 {
+    line-height: 2.4;
+  }
+  .app section .group-select fieldset .field-body {
+    height: 16rem;
+  }
+  .app section .group-select fieldset .field-body .wrapper {
+    font-size: 1.4rem;
+  }
+  .app section .group-select fieldset .field-body .wrapper label .icon {
+    font-size: 1.3em;
   }
   .app section .answers .answer-box {
     -webkit-box-flex: 0;

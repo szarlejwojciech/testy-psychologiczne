@@ -55,8 +55,8 @@ const renderResultBox = (container, groupName, raw, stens) => {
 
 const displayResult = async answers => {
   const STENS_URL = "./scripts/stens.json";
-  const gender = document.querySelector(".gender input:checked").value;
-  const ageGroup = document.querySelector("#people-group").value;
+  const gender = document.querySelector(".gender-group input:checked").value;
+  const ageGroup = document.querySelector(".age-group input:checked").value;
   const displayGenderSpan = resultBox.querySelector(".display-gender");
   const displayAgeGroupSpan = resultBox.querySelector(".display-group");
   let boxesContainer = resultBox.querySelector(".boxes");
@@ -74,6 +74,9 @@ const displayResult = async answers => {
     if (!answ.answer) return total + 0;
     else return total + (answ.reverseScoring ? 6 - answ.answer : answ.answer);
   }, 0);
+
+  console.log("gender" + gender, "age" + ageGroup);
+
   //fetch data
   try {
     const response = await fetch(STENS_URL);
@@ -88,7 +91,8 @@ const displayResult = async answers => {
       }, 0);
       // get range
       const pointRange = data[ageGroup][gender][groupName];
-      if (!pointRange) return console.log("nie ma: " + groupName); // delete clg
+      if (!pointRange) return;
+
       // destructure sten result of range
       const [sten] = pointRange
         .filter(({ min, max }) => {

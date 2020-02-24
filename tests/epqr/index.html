@@ -11,7 +11,6 @@
     <meta name="author" content="Wojciech Szarlej">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap&subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="../../menu-style/main.css">
     <link rel="shortcut icon" href="https://scontent.fwaw7-1.fna.fbcdn.net/v/t1.0-9/29216768_2402364656456012_6962585467959115776_n.jpg?_nc_cat=111&_nc_oc=AQleKMrz075Lt9nB6PK9iDW6iRQprS8Vb0GYG79c7luItpAvat5N4DEm6ifPFOWwhBc&_nc_ht=scontent.fwaw7-1.fna&oh=2862bbf4481d9c1251a4d506f9208915&oe=5E2184F9" type="image/x-icon">
     <title>Test epq-r</title>
     <link rel="stylesheet" href="../../main-styles/mainStyles.css">
@@ -75,30 +74,69 @@
       <main>
         <section>
           <h3>Wybierz grupę:</h3>
-          <div class="group-select">
+          <div class="group-select epqr">
+
+            <div class="gender-group">
+              <fieldset>
+                <legend>
+                  <h4>płeć</h3>
+                </legend>
+                <div class="field-body">
+
+                  <div class="wrapper">
+                    <input type="radio" name="gender" id="male" value="male" checked>
+                    <label class="male" for="male">
+                      <span class="icon"></span>
+                      <span class="label-text">męszczna</span>
+                    </label>
+                  </div>
+
+                  <div class="wrapper">
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label class="female" for="female">
+                      <span class="icon"></span>
+                      <span class="label-text">kobieta</span>
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+            </div>
+
             <div class="age-group">
               <fieldset>
                 <legend>
-                  <label for="people-group">
-                    <h3>Wybierz grupę:</h3>
-                  </label>
+                  <h4>wiek</h4>
                 </legend>
-                <select name="people-group" id="people-group">
-                  <option value="students" selected>Studenci</option>
-                  <option value="pupils">Uczniowie</option>
-                  <option value="adults">Dorości</option>
-                </select>
-              </fieldset>
-            </div>
-            <div class="gender">
-              <fieldset>
-                <legend>
-                  <h3>Wybierz płeć:</h3>
-                </legend>
-                <input type="radio" name="gender" id="male" value="male" checked>
-                <label for="male">mężczyźni</label>
-                <input type="radio" name="gender" id="female" value="female">
-                <label for="female">kobiety</label>
+
+                <div class="field-body">
+
+                  <div class="wrapper">
+                    <input type="radio" name="age" id="pupils" value="pupils" checked>
+                    <label class="pupils" for="pupils">
+                      <span class="icon"></span>
+                      <span class="label-text">Uczniowie</span>
+                    </label>
+                  </div>
+
+                  <div class="wrapper">
+                    <input type="radio" name="age" id="students" value="students">
+                    <label class="students" for="students">
+                      <span class="icon"></span>
+                      <span class="label-text">Studenci</span>
+                    </label>
+                  </div>
+
+                  <div class="wrapper">
+                    <input type="radio" name="age" id="adults" value="adults">
+                    <label class="adults" for="adults">
+                      <span class="icon"></span>
+                      <span class="label-text">Dorośli</span>
+                    </label>
+                  </div>
+
+                </div>
+
               </fieldset>
             </div>
           </div>
