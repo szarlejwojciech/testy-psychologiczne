@@ -850,10 +850,6 @@ body.no-scroll {
           transform: scale(1);
 }
 
-.app section .group-select fieldset .field-body .wrapper input:checked + label .icon {
-  background-image: url("../svg/men-icon-checked.svg");
-}
-
 .app section .group-select fieldset .field-body .wrapper input:focus + label {
   opacity: 0.5;
 }
@@ -917,24 +913,9 @@ body.no-scroll {
   margin-bottom: 0.2em;
 }
 
-.app section .group-select fieldset .field-body .wrapper label.male .icon {
-  background-image: url("../svg/men-icon-black.svg");
-}
-
-.app section .group-select fieldset .field-body .wrapper label.female .icon {
-  background-image: url("../svg/women-icon-black.svg");
-}
-
-.app section .group-select fieldset .field-body .wrapper label.pupils .icon {
-  background-image: url("../svg/pupils-icon-black.svg");
-}
-
-.app section .group-select fieldset .field-body .wrapper label.students .icon {
-  background-image: url("../svg/students-icon-black.svg");
-}
-
-.app section .group-select fieldset .field-body .wrapper label.adults .icon {
-  background-image: url("../svg/adults-icon-black.svg");
+.app section .group-select fieldset .field-body .wrapper label .icon svg {
+  width: auto;
+  height: 100%;
 }
 
 .app section .group-select.epqr fieldset legend h4 {
@@ -947,24 +928,8 @@ body.no-scroll {
   border-color: var(--epqr-main-color);
 }
 
-.app section .group-select.epqr fieldset .field-body .wrapper input:checked + label.male .icon {
-  background-image: url("../svg/men-icon-blue.svg");
-}
-
-.app section .group-select.epqr fieldset .field-body .wrapper input:checked + label.female .icon {
-  background-image: url("../svg/women-icon-blue.svg");
-}
-
-.app section .group-select.epqr fieldset .field-body .wrapper input:checked + label.pupils .icon {
-  background-image: url("../svg/pupils-icon-blue.svg");
-}
-
-.app section .group-select.epqr fieldset .field-body .wrapper input:checked + label.students .icon {
-  background-image: url("../svg/students-icon-blue.svg");
-}
-
-.app section .group-select.epqr fieldset .field-body .wrapper input:checked + label.adults .icon {
-  background-image: url("../svg/adults-icon-blue.svg");
+.app section .group-select.epqr fieldset .field-body .wrapper input:checked + label .icon svg path {
+  fill: var(--epqr-main-color);
 }
 
 .app section .group-select.epqr fieldset .field-body .wrapper label::before {
@@ -985,24 +950,8 @@ body.no-scroll {
   border-color: var(--pkie-main-color);
 }
 
-.app section .group-select.pkie fieldset .field-body .wrapper input:checked + label.male .icon {
-  background-image: url("../svg/men-icon-orange.svg");
-}
-
-.app section .group-select.pkie fieldset .field-body .wrapper input:checked + label.female .icon {
-  background-image: url("../svg/women-icon-orange.svg");
-}
-
-.app section .group-select.pkie fieldset .field-body .wrapper input:checked + label.pupils .icon {
-  background-image: url("../svg/pupils-icon-orange.svg");
-}
-
-.app section .group-select.pkie fieldset .field-body .wrapper input:checked + label.students .icon {
-  background-image: url("../svg/students-icon-orange.svg");
-}
-
-.app section .group-select.pkie fieldset .field-body .wrapper input:checked + label.adults .icon {
-  background-image: url("../svg/adults-icon-orange.svg");
+.app section .group-select.pkie fieldset .field-body .wrapper input:checked + label .icon svg path {
+  fill: var(--pkie-main-color);
 }
 
 .app section .group-select.pkie fieldset .field-body .wrapper label::before {
@@ -1019,24 +968,8 @@ body.no-scroll {
   border-color: var(--prokos-main-color);
 }
 
-.app section .group-select.prokos fieldset .field-body .wrapper input:checked + label.male .icon {
-  background-image: url("../svg/men-icon-red.svg");
-}
-
-.app section .group-select.prokos fieldset .field-body .wrapper input:checked + label.female .icon {
-  background-image: url("../svg/women-icon-red.svg");
-}
-
-.app section .group-select.prokos fieldset .field-body .wrapper input:checked + label.pupils .icon {
-  background-image: url("../svg/pupils-icon-red.svg");
-}
-
-.app section .group-select.prokos fieldset .field-body .wrapper input:checked + label.students .icon {
-  background-image: url("../svg/students-icon-red.svg");
-}
-
-.app section .group-select.prokos fieldset .field-body .wrapper input:checked + label.adults .icon {
-  background-image: url("../svg/adults-icon-red.svg");
+.app section .group-select.prokos fieldset .field-body .wrapper input:checked + label .icon svg path {
+  fill: var(--prokos-main-color);
 }
 
 .app section .group-select.prokos fieldset .field-body .wrapper label::before {
