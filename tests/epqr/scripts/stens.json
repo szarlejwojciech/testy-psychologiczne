@@ -1,0 +1,1268 @@
+{
+  "students": {
+    "male": {
+      "psyhotyzm": [
+        {
+          "min": 0,
+          "max": 2,
+          "sten": 1
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "sten": 2
+        },
+        {
+          "min": 4,
+          "max": 5,
+          "sten": 3
+        },
+        {
+          "min": 6,
+          "max": 7,
+          "sten": 4
+        },
+        {
+          "min": 8,
+          "max": 9,
+          "sten": 5
+        },
+        {
+          "min": 10,
+          "max": 11,
+          "sten": 6
+        },
+        {
+          "min": 12,
+          "max": 13,
+          "sten": 7
+        },
+        {
+          "min": 14,
+          "max": 16,
+          "sten": 8
+        },
+        {
+          "min": 17,
+          "max": 18,
+          "sten": 9
+        },
+        {
+          "min": 19,
+          "max": 32,
+          "sten": 10
+        }
+      ],
+      "extroversion": [
+        {
+          "min": 0,
+          "max": 3,
+          "sten": 1
+        },
+        {
+          "min": 4,
+          "max": 5,
+          "sten": 2
+        },
+        {
+          "min": 6,
+          "max": 7,
+          "sten": 3
+        },
+        {
+          "min": 8,
+          "max": 10,
+          "sten": 4
+        },
+        {
+          "min": 11,
+          "max": 14,
+          "sten": 5
+        },
+        {
+          "min": 15,
+          "max": 17,
+          "sten": 6
+        },
+        {
+          "min": 18,
+          "max": 19,
+          "sten": 7
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "sten": 8
+        },
+        {
+          "min": 21,
+          "max": 22,
+          "sten": 9
+        },
+        {
+          "min": 23,
+          "max": 23,
+          "sten": 10
+        }
+      ],
+      "neuroticism": [
+        {
+          "min": 0,
+          "max": 1,
+          "sten": 1
+        },
+        {
+          "min": 2,
+          "max": 3,
+          "sten": 2
+        },
+        {
+          "min": 4,
+          "max": 5,
+          "sten": 3
+        },
+        {
+          "min": 6,
+          "max": 8,
+          "sten": 4
+        },
+        {
+          "min": 9,
+          "max": 11,
+          "sten": 5
+        },
+        {
+          "min": 12,
+          "max": 14,
+          "sten": 6
+        },
+        {
+          "min": 15,
+          "max": 18,
+          "sten": 7
+        },
+        {
+          "min": 19,
+          "max": 20,
+          "sten": 8
+        },
+        {
+          "min": 21,
+          "max": 23,
+          "sten": 9
+        },
+        {
+          "min": 24,
+          "max": 24,
+          "sten": 10
+        }
+      ],
+      "lie": [
+        {
+          "min": 0,
+          "max": 1,
+          "sten": 1
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "sten": 2
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "sten": 3
+        },
+        {
+          "min": 4,
+          "max": 5,
+          "sten": 4
+        },
+        {
+          "min": 6,
+          "max": 8,
+          "sten": 5
+        },
+        {
+          "min": 9,
+          "max": 10,
+          "sten": 6
+        },
+        {
+          "min": 11,
+          "max": 12,
+          "sten": 7
+        },
+        {
+          "min": 13,
+          "max": 14,
+          "sten": 8
+        },
+        {
+          "min": 15,
+          "max": 16,
+          "sten": 9
+        },
+        {
+          "min": 17,
+          "max": 21,
+          "sten": 10
+        }
+      ]
+    },
+    "female": {
+      "psyhotyzm": [
+        {
+          "min": 0,
+          "max": 2,
+          "sten": 1
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "sten": 2
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "sten": 3
+        },
+        {
+          "min": 5,
+          "max": 6,
+          "sten": 4
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "sten": 5
+        },
+        {
+          "min": 8,
+          "max": 9,
+          "sten": 6
+        },
+        {
+          "min": 10,
+          "max": 11,
+          "sten": 7
+        },
+        {
+          "min": 12,
+          "max": 13,
+          "sten": 8
+        },
+        {
+          "min": 14,
+          "max": 16,
+          "sten": 9
+        },
+        {
+          "min": 17,
+          "max": 32,
+          "sten": 10
+        }
+      ],
+      "extroversion": [
+        {
+          "min": 0,
+          "max": 2,
+          "sten": 1
+        },
+        {
+          "min": 3,
+          "max": 5,
+          "sten": 2
+        },
+        {
+          "min": 6,
+          "max": 7,
+          "sten": 3
+        },
+        {
+          "min": 8,
+          "max": 10,
+          "sten": 4
+        },
+        {
+          "min": 11,
+          "max": 14,
+          "sten": 5
+        },
+        {
+          "min": 15,
+          "max": 16,
+          "sten": 6
+        },
+        {
+          "min": 17,
+          "max": 18,
+          "sten": 7
+        },
+        {
+          "min": 19,
+          "max": 20,
+          "sten": 8
+        },
+        {
+          "min": 21,
+          "max": 21,
+          "sten": 9
+        },
+        {
+          "min": 22,
+          "max": 23,
+          "sten": 10
+        }
+      ],
+      "neuroticism": [
+        {
+          "min": 0,
+          "max": 3,
+          "sten": 1
+        },
+        {
+          "min": 4,
+          "max": 6,
+          "sten": 2
+        },
+        {
+          "min": 7,
+          "max": 9,
+          "sten": 3
+        },
+        {
+          "min": 10,
+          "max": 12,
+          "sten": 4
+        },
+        {
+          "min": 13,
+          "max": 16,
+          "sten": 5
+        },
+        {
+          "min": 17,
+          "max": 18,
+          "sten": 6
+        },
+        {
+          "min": 19,
+          "max": 20,
+          "sten": 7
+        },
+        {
+          "min": 21,
+          "max": 22,
+          "sten": 8
+        },
+        {
+          "min": 23,
+          "max": 23,
+          "sten": 9
+        },
+        {
+          "min": 24,
+          "max": 24,
+          "sten": 10
+        }
+      ],
+      "lie": [
+        {
+          "min": 0,
+          "max": 1,
+          "sten": 1
+        },
+        {
+          "min": 2,
+          "max": 3,
+          "sten": 2
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "sten": 3
+        },
+        {
+          "min": 5,
+          "max": 6,
+          "sten": 4
+        },
+        {
+          "min": 7,
+          "max": 8,
+          "sten": 5
+        },
+        {
+          "min": 9,
+          "max": 10,
+          "sten": 6
+        },
+        {
+          "min": 11,
+          "max": 12,
+          "sten": 7
+        },
+        {
+          "min": 13,
+          "max": 13,
+          "sten": 8
+        },
+        {
+          "min": 14,
+          "max": 15,
+          "sten": 9
+        },
+        {
+          "min": 16,
+          "max": 21,
+          "sten": 10
+        }
+      ]
+    }
+  },
+  "pupils": {
+    "male": {
+      "psyhotyzm": [
+        {
+          "min": 0,
+          "max": 3,
+          "sten": 1
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "sten": 2
+        },
+        {
+          "min": 5,
+          "max": 6,
+          "sten": 3
+        },
+        {
+          "min": 7,
+          "max": 8,
+          "sten": 4
+        },
+        {
+          "min": 9,
+          "max": 10,
+          "sten": 5
+        },
+        {
+          "min": 11,
+          "max": 11,
+          "sten": 6
+        },
+        {
+          "min": 12,
+          "max": 14,
+          "sten": 7
+        },
+        {
+          "min": 15,
+          "max": 16,
+          "sten": 8
+        },
+        {
+          "min": 17,
+          "max": 19,
+          "sten": 9
+        },
+        {
+          "min": 20,
+          "max": 32,
+          "sten": 10
+        }
+      ],
+      "extroversion": [
+        {
+          "min": 0,
+          "max": 4,
+          "sten": 1
+        },
+        {
+          "min": 5,
+          "max": 7,
+          "sten": 2
+        },
+        {
+          "min": 8,
+          "max": 10,
+          "sten": 3
+        },
+        {
+          "min": 11,
+          "max": 12,
+          "sten": 4
+        },
+        {
+          "min": 13,
+          "max": 16,
+          "sten": 5
+        },
+        {
+          "min": 17,
+          "max": 18,
+          "sten": 6
+        },
+        {
+          "min": 19,
+          "max": 19,
+          "sten": 7
+        },
+        {
+          "min": 20,
+          "max": 20,
+          "sten": 8
+        },
+        {
+          "min": 21,
+          "max": 21,
+          "sten": 9
+        },
+        {
+          "min": 22,
+          "max": 23,
+          "sten": 10
+        }
+      ],
+      "neuroticism": [
+        {
+          "min": 0,
+          "max": 1,
+          "sten": 1
+        },
+        {
+          "min": 2,
+          "max": 3,
+          "sten": 2
+        },
+        {
+          "min": 4,
+          "max": 5,
+          "sten": 3
+        },
+        {
+          "min": 6,
+          "max": 7,
+          "sten": 4
+        },
+        {
+          "min": 8,
+          "max": 9,
+          "sten": 5
+        },
+        {
+          "min": 10,
+          "max": 13,
+          "sten": 6
+        },
+        {
+          "min": 14,
+          "max": 16,
+          "sten": 7
+        },
+        {
+          "min": 17,
+          "max": 18,
+          "sten": 8
+        },
+        {
+          "min": 19,
+          "max": 20,
+          "sten": 9
+        },
+        {
+          "min": 21,
+          "max": 24,
+          "sten": 10
+        }
+      ],
+      "lie": [
+        {
+          "min": 0,
+          "max": 1,
+          "sten": 1
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "sten": 2
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "sten": 3
+        },
+        {
+          "min": 4,
+          "max": 5,
+          "sten": 4
+        },
+        {
+          "min": 6,
+          "max": 7,
+          "sten": 5
+        },
+        {
+          "min": 8,
+          "max": 10,
+          "sten": 6
+        },
+        {
+          "min": 11,
+          "max": 12,
+          "sten": 7
+        },
+        {
+          "min": 13,
+          "max": 14,
+          "sten": 8
+        },
+        {
+          "min": 15,
+          "max": 17,
+          "sten": 9
+        },
+        {
+          "min": 18,
+          "max": 21,
+          "sten": 10
+        }
+      ]
+    },
+    "female": {
+      "psyhotyzm": [
+        {
+          "min": 0,
+          "max": 2,
+          "sten": 1
+        },
+        {
+          "min": 3,
+          "max": 4,
+          "sten": 2
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "sten": 3
+        },
+        {
+          "min": 6,
+          "max": 7,
+          "sten": 4
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "sten": 5
+        },
+        {
+          "min": 9,
+          "max": 10,
+          "sten": 6
+        },
+        {
+          "min": 11,
+          "max": 12,
+          "sten": 7
+        },
+        {
+          "min": 13,
+          "max": 15,
+          "sten": 8
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "sten": 9
+        },
+        {
+          "min": 17,
+          "max": 32,
+          "sten": 10
+        }
+      ],
+      "extroversion": [
+        {
+          "min": 0,
+          "max": 3,
+          "sten": 1
+        },
+        {
+          "min": 4,
+          "max": 6,
+          "sten": 2
+        },
+        {
+          "min": 7,
+          "max": 10,
+          "sten": 3
+        },
+        {
+          "min": 11,
+          "max": 13,
+          "sten": 4
+        },
+        {
+          "min": 14,
+          "max": 16,
+          "sten": 5
+        },
+        {
+          "min": 17,
+          "max": 18,
+          "sten": 6
+        },
+        {
+          "min": 19,
+          "max": 20,
+          "sten": 7
+        },
+        {
+          "min": 21,
+          "max": 21,
+          "sten": 8
+        },
+        {
+          "min": 22,
+          "max": 22,
+          "sten": 9
+        },
+        {
+          "min": 23,
+          "max": 23,
+          "sten": 10
+        }
+      ],
+      "neuroticism": [
+        {
+          "min": 0,
+          "max": 3,
+          "sten": 1
+        },
+        {
+          "min": 4,
+          "max": 5,
+          "sten": 2
+        },
+        {
+          "min": 6,
+          "max": 8,
+          "sten": 3
+        },
+        {
+          "min": 9,
+          "max": 11,
+          "sten": 4
+        },
+        {
+          "min": 12,
+          "max": 14,
+          "sten": 5
+        },
+        {
+          "min": 15,
+          "max": 17,
+          "sten": 6
+        },
+        {
+          "min": 18,
+          "max": 19,
+          "sten": 7
+        },
+        {
+          "min": 20,
+          "max": 21,
+          "sten": 8
+        },
+        {
+          "min": 22,
+          "max": 22,
+          "sten": 9
+        },
+        {
+          "min": 23,
+          "max": 24,
+          "sten": 10
+        }
+      ],
+      "lie": [
+        {
+          "min": 0,
+          "max": 2,
+          "sten": 1
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "sten": 2
+        },
+        {
+          "min": 4,
+          "max": 5,
+          "sten": 3
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "sten": 4
+        },
+        {
+          "min": 7,
+          "max": 9,
+          "sten": 5
+        },
+        {
+          "min": 10,
+          "max": 11,
+          "sten": 6
+        },
+        {
+          "min": 12,
+          "max": 13,
+          "sten": 7
+        },
+        {
+          "min": 14,
+          "max": 15,
+          "sten": 8
+        },
+        {
+          "min": 16,
+          "max": 16,
+          "sten": 9
+        },
+        {
+          "min": 17,
+          "max": 21,
+          "sten": 10
+        }
+      ]
+    }
+  },
+  "adults": {
+    "male": {
+      "psyhotyzm": [
+        {
+          "min": 0,
+          "max": 2,
+          "sten": 1
+        },
+        {
+          "min": 3,
+          "max": 4,
+          "sten": 2
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "sten": 3
+        },
+        {
+          "min": 6,
+          "max": 7,
+          "sten": 4
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "sten": 5
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "sten": 6
+        },
+        {
+          "min": 10,
+          "max": 13,
+          "sten": 7
+        },
+        {
+          "min": 14,
+          "max": 15,
+          "sten": 8
+        },
+        {
+          "min": 16,
+          "max": 19,
+          "sten": 9
+        },
+        {
+          "min": 20,
+          "max": 32,
+          "sten": 10
+        }
+      ],
+      "extroversion": [
+        {
+          "min": 0,
+          "max": 3,
+          "sten": 1
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "sten": 2
+        },
+        {
+          "min": 5,
+          "max": 7,
+          "sten": 3
+        },
+        {
+          "min": 8,
+          "max": 10,
+          "sten": 4
+        },
+        {
+          "min": 11,
+          "max": 14,
+          "sten": 5
+        },
+        {
+          "min": 15,
+          "max": 17,
+          "sten": 6
+        },
+        {
+          "min": 18,
+          "max": 18,
+          "sten": 7
+        },
+        {
+          "min": 19,
+          "max": 20,
+          "sten": 8
+        },
+        {
+          "min": 21,
+          "max": 21,
+          "sten": 9
+        },
+        {
+          "min": 22,
+          "max": 23,
+          "sten": 10
+        }
+      ],
+      "neuroticism": [
+        {
+          "min": 0,
+          "max": 0,
+          "sten": 1
+        },
+        {
+          "min": 1,
+          "max": 2,
+          "sten": 2
+        },
+        {
+          "min": 3,
+          "max": 4,
+          "sten": 3
+        },
+        {
+          "min": 5,
+          "max": 8,
+          "sten": 4
+        },
+        {
+          "min": 9,
+          "max": 11,
+          "sten": 5
+        },
+        {
+          "min": 12,
+          "max": 17,
+          "sten": 6
+        },
+        {
+          "min": 18,
+          "max": 19,
+          "sten": 7
+        },
+        {
+          "min": 20,
+          "max": 21,
+          "sten": 8
+        },
+        {
+          "min": 22,
+          "max": 22,
+          "sten": 9
+        },
+        {
+          "min": 23,
+          "max": 24,
+          "sten": 10
+        }
+      ],
+      "lie": [
+        {
+          "min": 0,
+          "max": 1,
+          "sten": 1
+        },
+        {
+          "min": 2,
+          "max": 2,
+          "sten": 2
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "sten": 3
+        },
+        {
+          "min": 4,
+          "max": 6,
+          "sten": 4
+        },
+        {
+          "min": 7,
+          "max": 8,
+          "sten": 5
+        },
+        {
+          "min": 9,
+          "max": 10,
+          "sten": 6
+        },
+        {
+          "min": 11,
+          "max": 13,
+          "sten": 7
+        },
+        {
+          "min": 14,
+          "max": 15,
+          "sten": 8
+        },
+        {
+          "min": 16,
+          "max": 17,
+          "sten": 9
+        },
+        {
+          "min": 18,
+          "max": 21,
+          "sten": 10
+        }
+      ]
+    },
+    "female": {
+      "psyhotyzm": [
+        {
+          "min": 0,
+          "max": 1,
+          "sten": 1
+        },
+        {
+          "min": 2,
+          "max": 3,
+          "sten": 2
+        },
+        {
+          "min": 4,
+          "max": 4,
+          "sten": 3
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "sten": 4
+        },
+        {
+          "min": 6,
+          "max": 7,
+          "sten": 5
+        },
+        {
+          "min": 8,
+          "max": 9,
+          "sten": 6
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "sten": 7
+        },
+        {
+          "min": 11,
+          "max": 13,
+          "sten": 8
+        },
+        {
+          "min": 14,
+          "max": 15,
+          "sten": 9
+        },
+        {
+          "min": 16,
+          "max": 32,
+          "sten": 10
+        }
+      ],
+      "extroversion": [
+        {
+          "min": 0,
+          "max": 4,
+          "sten": 1
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "sten": 2
+        },
+        {
+          "min": 6,
+          "max": 8,
+          "sten": 3
+        },
+        {
+          "min": 9,
+          "max": 10,
+          "sten": 4
+        },
+        {
+          "min": 11,
+          "max": 14,
+          "sten": 5
+        },
+        {
+          "min": 15,
+          "max": 16,
+          "sten": 6
+        },
+        {
+          "min": 17,
+          "max": 18,
+          "sten": 7
+        },
+        {
+          "min": 19,
+          "max": 20,
+          "sten": 8
+        },
+        {
+          "min": 21,
+          "max": 21,
+          "sten": 9
+        },
+        {
+          "min": 22,
+          "max": 23,
+          "sten": 10
+        }
+      ],
+      "neuroticism": [
+        {
+          "min": 0,
+          "max": 3,
+          "sten": 1
+        },
+        {
+          "min": 4,
+          "max": 5,
+          "sten": 2
+        },
+        {
+          "min": 6,
+          "max": 8,
+          "sten": 3
+        },
+        {
+          "min": 9,
+          "max": 12,
+          "sten": 4
+        },
+        {
+          "min": 13,
+          "max": 15,
+          "sten": 5
+        },
+        {
+          "min": 16,
+          "max": 18,
+          "sten": 6
+        },
+        {
+          "min": 19,
+          "max": 20,
+          "sten": 7
+        },
+        {
+          "min": 21,
+          "max": 21,
+          "sten": 8
+        },
+        {
+          "min": 22,
+          "max": 22,
+          "sten": 9
+        },
+        {
+          "min": 23,
+          "max": 24,
+          "sten": 10
+        }
+      ],
+      "lie": [
+        {
+          "min": 0,
+          "max": 2,
+          "sten": 1
+        },
+        {
+          "min": 3,
+          "max": 3,
+          "sten": 2
+        },
+        {
+          "min": 4,
+          "max": 5,
+          "sten": 3
+        },
+        {
+          "min": 6,
+          "max": 7,
+          "sten": 4
+        },
+        {
+          "min": 8,
+          "max": 9,
+          "sten": 5
+        },
+        {
+          "min": 10,
+          "max": 11,
+          "sten": 6
+        },
+        {
+          "min": 12,
+          "max": 13,
+          "sten": 7
+        },
+        {
+          "min": 14,
+          "max": 15,
+          "sten": 8
+        },
+        {
+          "min": 16,
+          "max": 17,
+          "sten": 9
+        },
+        {
+          "min": 18,
+          "max": 21,
+          "sten": 10
+        }
+      ]
+    }
+  }
+}

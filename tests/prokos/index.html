@@ -10,13 +10,14 @@
     <meta name="keywords" content="EPQ-R, aplikacja, ekstrawercja, psychotyzm, neurotyczność, skala kłamstwa">
     <meta name="author" content="Wojciech Szarlej">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap&subset=latin-ext" rel="stylesheet">
     <link rel="shortcut icon" href="https://scontent.fwaw7-1.fna.fbcdn.net/v/t1.0-9/29216768_2402364656456012_6962585467959115776_n.jpg?_nc_cat=111&_nc_oc=AQleKMrz075Lt9nB6PK9iDW6iRQprS8Vb0GYG79c7luItpAvat5N4DEm6ifPFOWwhBc&_nc_ht=scontent.fwaw7-1.fna&oh=2862bbf4481d9c1251a4d506f9208915&oe=5E2184F9" type="image/x-icon">
-    <title>Obliczanie PROKOS</title>
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="../../menu-style/main.css">
+    <title>Test prokos</title>
+    <link rel="stylesheet" href="../../main-styles/mainStyles.css">
+    <script src="../../scripts/time.js"></script>
+    <script src="../../scripts/menuSlide.js" defer></script>
+    <script src="../../helpers/helpers.js"></script>
     <script src="./scripts/prokos.js" defer></script>
-    <script src="../../menu-scripts/menu.js" defer></script>
   </head>
 
   <body>
@@ -59,124 +60,73 @@
           </ul>
         </nav>
       </div>
-      <footer class="nav-footer">© copyright 2019</footer>
+      <footer class="nav-footer">© copyright 2019 - <span id="current-year"></span></footer>
     </div>
     <div class="app">
-      <header>
-        <h1>Obliczanie wyników testu PROKOS</h1>
+      <header class="prokos">
+        <h1>
+          <span class="for-desktop">Obliczanie wyników testu&nbsp;PROKOS</span>
+          <span class="for-mobile">Test PROKOS</span>
+        </h1>
       </header>
       <main>
         <section>
-          <h3>Wybierz płeć:</h3>
-          <div class="group-select">
-            <div class="gender">
-              <input type="radio" name="gender" id="male" value="male" checked>
-              <label class="male" for="male">mężczyźni</label>
-              <input type="radio" name="gender" id="female" value="female">
-              <label class="female" for="female"> kobiety</label>
+          <h3>Wybierz grupę:</h3>
+          <div class="group-select prokos">
+
+            <div class="gender-group">
+              <fieldset>
+                <legend>
+                  <h4>płeć</h4>
+                </legend>
+                <div class="field-body">
+
+                  <div class="wrapper">
+                    <input type="radio" name="gender" id="male" value="male" checked>
+                    <label class="male" for="male">
+                      <span class="icon">
+                        <svg width="10" height="30" viewBox="0 0 10 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M4.90909 7.5C6.71421 7.5 8.18182 5.81836 8.18182 3.75C8.18182 1.68164 6.71421 0 4.90909 0C3.10398 0 1.63636 1.68164 1.63636 3.75C1.63636 5.81836 3.10398 7.5 4.90909 7.5ZM7.5733 8.46094C6.80625 9.03516 5.89091 9.375 4.90909 9.375C3.92727 9.375 3.01193 9.03516 2.24489 8.46094C0.986932 8.58398 0 9.7793 0 11.25V19.2188C0 19.998 0.547159 20.625 1.22727 20.625H1.63636V28.5938C1.63636 29.373 2.18352 30 2.86364 30H6.95455C7.63466 30 8.18182 29.373 8.18182 28.5938V20.625H8.59091C9.27102 20.625 9.81818 19.998 9.81818 19.2188V11.25C9.81818 9.7793 8.83125 8.58398 7.5733 8.46094Z" fill="#424242" />
+                        </svg>
+                      </span>
+                      <span class="label-text">męszczna</span>
+                    </label>
+                  </div>
+
+                  <div class="wrapper">
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label class="female" for="female">
+                      <span class="icon">
+                        <svg width="16" height="30" viewBox="0 0 16 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7.6361 7.5C9.74207 7.5 11.4543 5.81836 11.4543 3.75C11.4543 1.68164 9.74207 0 7.6361 0C5.53014 0 3.81792 1.68164 3.81792 3.75C3.81792 5.81836 5.53014 7.5 7.6361 7.5ZM15.2307 20.7715L12.5103 9.88477C12.3134 9.09375 11.5855 8.53711 10.7324 8.4668C9.83753 9.03516 8.77559 9.375 7.63014 9.375C6.48468 9.375 5.42275 9.03516 4.52786 8.4668C3.67474 8.53711 2.94689 9.09375 2.75002 9.88477L0.0295621 20.7715C-0.179245 21.6562 0.536665 22.5 1.50314 22.5H4.77246V28.5938C4.77246 29.373 5.41082 30 6.20428 30H9.06792C9.86139 30 10.4997 29.373 10.4997 28.5938V22.5H13.7691C14.7355 22.5 15.4515 21.6562 15.2307 20.7715Z" fill="#424242" />
+                        </svg>
+                      </span>
+                      <span class="label-text">kobieta</span>
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
             </div>
           </div>
         </section>
         <section>
           <h3>Zaznacz odpowiedzi:</h3>
-          <div class="answers"></div>
+          <div class="answers prokos"></div>
           <div class="buttons">
             <button id="result">Oblicz</button>
             <button id="reset">Resetuj</button>
+            <button class="theme-btn"></button>
           </div>
         </section>
         <div class="result-box">
           <div class="content">
+            <header class="result-title prokos">
+              <h2>Wyniki dla <span class="display-gender"></span></h2>
+              <button unsele class="close-results"></button>
+            </header>
 
-            <h2>Wyniki dla <span class="display-gender"></span></h2>
-            <button unsele class="close-results"></button>
-
-            <div class="boxes">
-              <div class="box">
-                <div class="wrapper">
-                  <h3>Kompetencje asertywne</h3>
-                </div>
-                <div class="wrapper">
-                  <span>wynik surowy</span>
-                  <span>steny</span>
-                </div>
-                <div class="wrapper">
-                  <span class="group-a-raw">0</span>
-                  <span class="group-a-stens">0</span>
-                </div>
-              </div>
-
-              <div class="box">
-                <div class="wrapper">
-                  <h3>Kompetencje kooperacyjne</h3>
-                </div>
-                <div class="wrapper">
-                  <span>wynik surowy</span>
-                  <span>steny</span>
-                </div>
-                <div class="wrapper">
-                  <span class="group-k-raw">0</span>
-                  <span class="group-k-stens">0</span>
-                </div>
-              </div>
-
-              <div class="box">
-                <div class="wrapper">
-                  <h3>Kompetencje towarzyskie</h3>
-                </div>
-                <div class="wrapper">
-                  <span>wynik surowy</span>
-                  <span>steny</span>
-                </div>
-                <div class="wrapper">
-                  <span class="group-t-raw">0</span>
-                  <span class="group-t-stens">0</span>
-                </div>
-              </div>
-
-              <div class="box">
-                <div class="wrapper">
-                  <h3>Zazdrość społeczna</h3>
-                </div>
-                <div class="wrapper">
-                  <span>wynik surowy</span>
-                  <span>steny</span>
-                </div>
-                <div class="wrapper">
-                  <span class="group-z-raw">0</span>
-                  <span class="group-z-stens">0</span>
-                </div>
-              </div>
-
-              <div class="box">
-                <div class="wrapper">
-                  <h3>Kompetencje społecznikowskie</h3>
-                </div>
-                <div class="wrapper">
-                  <span>wynik surowy</span>
-                  <span>steny</span>
-                </div>
-                <div class="wrapper">
-                  <span class="group-s-raw">0</span>
-                  <span class="group-s-stens">0</span>
-                </div>
-              </div>
-
-              <div class="box">
-                <div class="wrapper">
-                  <h3>Wynik ogólny</h3>
-                </div>
-                <div class="wrapper">
-                  <span>wynik surowy</span>
-                  <span>steny</span>
-                </div>
-                <div class="wrapper">
-                  <span class="total-raw">0</span>
-                  <span class="total-stens">0</span>
-                </div>
-              </div>
-
-            </div>
+            <div class="boxes"></div>
           </div>
       </main>
 

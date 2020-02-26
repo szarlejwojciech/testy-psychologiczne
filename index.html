@@ -10,9 +10,12 @@
     <meta name="description" content='Aplikacja zawierająca testy obliczające rodzaj osobowości składa się z testów: "EPQ-R", "KWI", "PKIE", "PROKOS".'>
     <meta name="keywords" content="epq-r, kwi, pkie, prokos, psychologia, osobowość">
     <meta name="author" content="Wojciech Szarlej">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap&subset=latin-ext" rel="stylesheet">
     <link rel="shortcut icon" href="https://scontent.fwaw7-1.fna.fbcdn.net/v/t1.0-9/29216768_2402364656456012_6962585467959115776_n.jpg?_nc_cat=111&_nc_oc=AQleKMrz075Lt9nB6PK9iDW6iRQprS8Vb0GYG79c7luItpAvat5N4DEm6ifPFOWwhBc&_nc_ht=scontent.fwaw7-1.fna&oh=2862bbf4481d9c1251a4d506f9208915&oe=5E2184F9" type="image/x-icon">
-    <link rel="stylesheet" href="./menu-style/main.css">
+    <link rel="stylesheet" href="./main-styles/mainStyles.css">
+    <script src="./scripts/time.jsq"></script>
+    <script src="./helpers/helpers.js" defer></script>
+    <script src="./scripts/homePage.js" defer></script>
   </head>
 
   <body>
@@ -24,7 +27,7 @@
         <nav>
           <ul class="nav-links-list">
             <li>
-              <a class="nav-btn blue-btn" href="/tests/epqr/index.html">
+              <a class="nav-btn blue-btn" href="./tests/epqr/index.html">
                 <span class="main-text">epqr</span>
                 <span class="detail-text">kwestionariusz osobowości Eysencka</span>
               </a>
@@ -49,9 +52,10 @@
             </li>
           </ul>
         </nav>
-        <footer class="nav-footer">© copyright 2019</footer>
+        <footer class="nav-footer">© copyright 2019 - <span id="current-year"></span></footer>
       </div>
     </div>
+    <button class="theme-btn"></button>
   </body>
 
 </html>
