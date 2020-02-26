@@ -1,358 +1,202 @@
-const defaultAnswers = () => {
-  const array = [];
-
-  for (let i = 0; i < 106; i++) {
-    const id = i + 1;
-    let type = "";
-    let className = "";
-
-    switch (id) {
-      case 25:
-      case 29:
-      case 30:
-      case 34:
-      case 37:
-      case 42:
-      case 48:
-      case 50:
-      case 56:
-      case 73:
-      case 75:
-      case 91:
-      case 95:
-        type = "psyhotyzm-yes";
-        className = "psyhotyzm";
-
-        break;
-      case 2:
-      case 5:
-      case 7:
-      case 9:
-      case 12:
-      case 14:
-      case 18:
-      case 21:
-      case 41:
-      case 54:
-      case 59:
-      case 64:
-      case 68:
-      case 79:
-      case 81:
-      case 85:
-      case 88:
-      case 96:
-      case 99:
-        type = "psyhotyzm-no";
-        className = "psyhotyzm";
-
-        break;
-
-      case 1:
-      case 6:
-      case 11:
-      case 16:
-      case 20:
-      case 28:
-      case 36:
-      case 40:
-      case 45:
-      case 51:
-      case 55:
-      case 58:
-      case 61:
-      case 63:
-      case 67:
-      case 69:
-      case 72:
-      case 78:
-      case 90:
-      case 94:
-        type = "extroversion-yes";
-        className = "extroversion";
-        break;
-      case 24:
-      case 33:
-      case 47:
-        type = "extroversion-no";
-        className = "extroversion";
-        break;
-      case 3:
-      case 8:
-      case 13:
-      case 17:
-      case 22:
-      case 26:
-      case 31:
-      case 35:
-      case 38:
-      case 43:
-      case 46:
-      case 52:
-      case 60:
-      case 65:
-      case 70:
-      case 74:
-      case 76:
-      case 80:
-      case 83:
-      case 84:
-      case 87:
-      case 92:
-      case 97:
-      case 100:
-        type = "neuroticism-yes";
-        className = "neuroticism";
-        break;
-      case 15:
-      case 23:
-      case 39:
-      case 62:
-      case 86:
-      case 98:
-        type = "lie-yes";
-        className = "lie";
-        break;
-      case 4:
-      case 10:
-      case 19:
-      case 27:
-      case 32:
-      case 44:
-      case 49:
-      case 53:
-      case 57:
-      case 66:
-      case 71:
-      case 77:
-      case 82:
-      case 89:
-      case 93:
-        type = "lie-no";
-        className = "lie";
-        break;
-      default:
-        type = "";
-        className = "";
-        break;
-    }
-    const item = {
-      id: i + 1,
-      type: type,
-      className: "default",
-      answer: "none"
-    };
-    array.push(item);
-  }
-  return array;
-};
-
-const answers = JSON.parse(localStorage.getItem("answers")) || defaultAnswers();
-
-//preveiw boxes
-const answersDiv = document.querySelector(".answers"),
-  psyhoPosDiv = document.querySelector(".psyhotyzm-positive"),
-  psyhoNegDiv = document.querySelector(".psyhotyzm-negative"),
-  neuroPosDiv = document.querySelector(".neuroticism-positive"),
-  neuroNegDiv = document.querySelector(".neuroticism-negative"),
-  extroPosDiv = document.querySelector(".extroversion-positive"),
-  extroNegDiv = document.querySelector(".extroversion-negative"),
-  liePosDiv = document.querySelector(".lie-positive"),
-  lieNegDiv = document.querySelector(".lie-negative");
-
-//btns
-const resetBtn = document.getElementById("reset"),
-  resultBtn = document.getElementById("result");
-
-//results boxes
-const resultBox = document.querySelector(".result-box"),
-  titleGender = resultBox.querySelector("span.gender"),
-  titleGroup = resultBox.querySelector("span.group");
+const defaultAnswers = groupAssignment(epqrDefault);
+const answers = JSON.parse(localStorage.getItem(localStorageNames.epqr)) || defaultAnswers;
 
 const calculateAnswers = array => {
-  return [{
-      items: array.filter(
-        item => item.type === "psyhotyzm-yes" && item.answer === "yes"
-      ),
+  return [
+    {
+      items: array.filter(item => item.type === "psyhotyzm-yes" && item.answer === "yes"),
       divName: psyhoPosDiv,
       group: "psyhotyzm"
     },
     {
-      items: array.filter(
-        item => item.type === "psyhotyzm-no" && item.answer === "no"
-      ),
+      items: array.filter(item => item.type === "psyhotyzm-no" && item.answer === "no"),
       divName: psyhoNegDiv,
       group: "psyhotyzm"
     },
 
     {
-      items: array.filter(
-        item => item.type === "extroversion-yes" && item.answer === "yes"
-      ),
+      items: array.filter(item => item.type === "extroversion-yes" && item.answer === "yes"),
       divName: extroPosDiv,
       group: "extroversion"
     },
 
     {
-      items: array.filter(
-        item => item.type === "extroversion-no" && item.answer === "no"
-      ),
+      items: array.filter(item => item.type === "extroversion-no" && item.answer === "no"),
       divName: extroNegDiv,
       group: "extroversion"
     },
 
     {
-      items: array.filter(
-        item => item.type === "neuroticism-yes" && item.answer === "yes"
-      ),
+      items: array.filter(item => item.type === "neuroticism-yes" && item.answer === "yes"),
       divName: neuroPosDiv,
       group: "neuroticism"
     },
 
     {
-      items: array.filter(
-        item => item.type === "lie-yes" && item.answer === "yes"
-      ),
+      items: array.filter(item => item.type === "lie-yes" && item.answer === "yes"),
       divName: liePosDiv,
       group: "lie"
     },
 
     {
-      items: array.filter(
-        item => item.type === "lie-no" && item.answer === "no"
-      ),
+      items: array.filter(item => item.type === "lie-no" && item.answer === "no"),
       divName: lieNegDiv,
       group: "lie"
     }
   ];
 };
 
-const renderPreview = array => {
-  array.map(
-    el =>
-    (el.divName.innerHTML = el.items
-      .map(item => `<li class="${item.className}">${item.id}</li>`)
-      .join(""))
-  );
+const renderPreview = (answers, container) => {
+  const groups = epqrDefault.groups.map(({ type }) => type);
+  container.innerHTML = `
+      <h3>Podgląd:</h3>
+      <div class="container">
+        ${groups
+          .map(group => {
+            let plGroup = "";
+            switch (group.toLowerCase()) {
+              case "psyhotyzm":
+                plGroup = "Psyhotyzm";
+                break;
+              case "extroversion":
+                plGroup = "Ekstrawersja";
+                break;
+              case "neuroticism":
+                plGroup = "Neurotyczność";
+                break;
+              case "lie":
+                plGroup = "Skala kłamstwa";
+                break;
+              default:
+                plGroup = "";
+                break;
+            }
+            if (!group) return;
+
+            const positiveAnswers = answers.filter(({ id, type, answer }) => type === `${group}-yes` && answer === "yes");
+            const negativeAnswers = answers.filter(({ id, type, answer }) => type === `${group}-no` && answer === "no");
+
+            return `
+              <div>
+              <h4>${plGroup}</h4>
+                <div>
+                  <span>Tak</span>
+                  <ul class="${group}-positive">
+                    ${positiveAnswers.map(({ id, answer }) => `<li class="${answer}">${id}</li>`).join("")}
+                  </ul>
+                </div>
+                ${
+                  group !== "neuroticism"
+                    ? `<div>
+                        <span>Nie</span>
+                        <ul class="${group}-negative">
+                          ${negativeAnswers.map(({ id, answer }) => `<li class="${answer}">${id}</li>`).join("")}
+                        </ul>
+                      </div>`
+                    : ""
+                }
+                </div>`;
+          })
+          .join("")}
+      </div>
+  `;
 };
 
-const render = array => {
-  answersDiv.innerHTML = array
-    .map(
-      item =>
-      `<button class="${item.className}" data-id="${item.id}" data-type="${item.type}" data-answer="${item.answer}" >${item.id}</button>`
-    )
-    .join("");
-  const newArray = calculateAnswers(array);
-  renderPreview(newArray);
-};
-render(answers);
+const renderResultBox = (container, groupName, raw, stens) => {
+  let polishGroupName = "";
 
-const changeAnswer = e => {
-  if (e.target === answersDiv) return;
-  const index = e.target.dataset.id - 1;
+  switch (groupName) {
+    case "psyhotyzm":
+      polishGroupName = "Psychotyzm";
+      break;
+    case "extroversion":
+      polishGroupName = "Ekstrawersja";
+      break;
+    case "neuroticism":
+      polishGroupName = "Neurotyczność";
+      break;
+    case "lie":
+      polishGroupName = "Skala kłamstwa";
+      break;
 
-  if (answers[index].answer === "none") {
-    answers[index].answer = "yes";
-    answers[index].className = "yes";
-  } else if (answers[index].answer === "yes") {
-    answers[index].answer = "no";
-    answers[index].className = "no";
-  } else if (answers[index].answer === "no") {
-    answers[index].answer = "none";
-    answers[index].className = "default";
+    default:
+      polishGroupName = "";
+      break;
   }
-  localStorage.setItem("answers", JSON.stringify(answers));
-  render(answers);
-  document.querySelectorAll(".answers button")[index].focus();
+  container.innerHTML += `
+    <div class="box">
+      <div class="wrapper">
+        <h3>${polishGroupName}</h3>
+      </div>
+      <div class="wrapper">
+        <span>Wynik surowy</span>
+        <span>steny</span>
+      </div>
+      <div class="wrapper">
+        <span>${raw}</span>
+        <span>${stens}</span>
+      </div>
+    </div>`;
 };
 
-const getSten = (group, scale, gender, rawR, stens) =>
-  stens[group][scale][gender][rawR];
-
-const displayResult = arr => {
-  const group = document.querySelector("#people-group").value;
-  const gender = document.querySelector('[name="gender"]:checked').value;
-  const resultSpans = document.querySelectorAll(".result-box span[data-type]");
-
-  const rawPsyhoResult = [
-    ...arr.filter(item => item.group === "psyhotyzm")[0].items,
-    ...arr.filter(item => item.group === "psyhotyzm")[1].items
-  ].length;
-  const rawExtroResult = [
-    ...arr.filter(item => item.group === "extroversion")[0].items,
-    ...arr.filter(item => item.group === "extroversion")[1].items
-  ].length;
-  const rawNeuroResult = [
-    ...arr.filter(item => item.group === "neuroticism")[0].items
-  ].length;
-  const rawLieResult = [
-    ...arr.filter(item => item.group === "lie")[0].items,
-    ...arr.filter(item => item.group === "lie")[1].items
-  ].length;
-
-  const results = {
-    rawPsyhoResult,
-    stenPsyhoResult: getSten(group, "psyhotyzm", gender, rawPsyhoResult, stens),
-    rawExtroResult,
-    stenExtroResult: getSten(
-      group,
-      "extroversion",
-      gender,
-      rawExtroResult,
-      stens
-    ),
-    rawNeuroResult,
-    stenNeuroResult: getSten(
-      group,
-      "neuroticism",
-      gender,
-      rawNeuroResult,
-      stens
-    ),
-    rawLieResult,
-    stenLieResult: getSten(group, "lie", gender, rawLieResult, stens)
-  };
-
-  resultSpans.forEach(span => (span.textContent = results[span.dataset.type]));
-
-  titleGender.textContent = gender === "male" ? "męszczyzn" : "kobiet";
-  titleGroup.textContent = `${
-    group === "students"
-      ? "Studenci"
-      : group === "pupils"
-      ? "Uczniowie"
-      : group === "adults"
-      ? "Dorośli"
-      : ""
-  }`;
+const displayResult = async answers => {
+  const STENS_URL = "./scripts/stens.json";
+  const resultBox = document.querySelector(".result-box");
+  const gender = document.querySelector(".gender-group input:checked").value;
+  const ageGroup = document.querySelector(".age-group input:checked").value;
+  const displayGenderSpan = resultBox.querySelector(".display-gender");
+  const displayAgeGroupSpan = resultBox.querySelector(".display-group");
+  const boxesContainer = resultBox.querySelector(".boxes");
+  const groupNamesList = ["psyhotyzm", "extroversion", "neuroticism", "lie"];
 
   resultBox.classList.add("visible");
   document.body.classList.add("no-scroll");
-};
+  boxesContainer.innerHTML = "";
 
-const resetAnswers = array => {
-  array.forEach(el => {
-    el.className = "default";
-    el.answer = "none";
-  });
+  displayGenderSpan.textContent = gender === "male" ? "mężczyzn" : "kobiet";
+  if (ageGroup === "pupils") displayAgeGroupSpan.textContent = '"uczniowie"';
+  else if (ageGroup === "adults") displayAgeGroupSpan.textContent = '"dorośli"';
+  else displayAgeGroupSpan.textContent = '"studenci"';
 
-  localStorage.setItem("answers", JSON.stringify(array));
-  render(array);
-};
-
-const closeResultBox = e => {
-  if (e.target === resultBox || e.target.classList.contains("close-results")) {
-    resultBox.classList.remove("visible");
-    document.body.classList.remove("no-scroll");
+  try {
+    const response = await fetch(STENS_URL);
+    const data = await response.json();
+    groupNamesList.map(groupName => {
+      const positiveTotal = answers.filter(({ type, answer }) => type === `${groupName}-yes` && answer === "yes").length;
+      const negativeTotal = answers.filter(({ type, answer }) => type === `${groupName}-no` && answer === "no").length;
+      const groupTotal = positiveTotal + negativeTotal;
+      const pointRange = data[ageGroup][gender][groupName];
+      const [sten] = pointRange.filter(({ min, max }) => groupTotal >= min && groupTotal <= max).map(item => item.sten);
+      renderResultBox(boxesContainer, groupName, groupTotal, sten);
+    });
+  } catch (err) {
+    displayError(err, resultBox);
   }
 };
 
-answersDiv.addEventListener("click", changeAnswer);
-resultBtn.addEventListener("click", () =>
-  displayResult(calculateAnswers(answers))
-);
-resetBtn.addEventListener("click", () => resetAnswers(answers));
+document.addEventListener("DOMContentLoaded", () => {
+  const answersDiv = document.querySelector(".answers");
+  const previewContainer = document.querySelector(".preview");
+  const resultBox = document.querySelector(".result-box");
 
-resultBox.addEventListener("click", closeResultBox);
-resultBox.addEventListener("touchstart", closeResultBox);
+  const resetBtn = document.getElementById("reset");
+  const resultBtn = document.getElementById("result");
+
+  const currentTheme = localStorage.getItem("current-theme") || "light";
+  const themeToggler = document.querySelector(".theme-btn");
+
+  renderPreview(answers, previewContainer);
+  renderAnswers(epqrDefault.testName, answers, answersDiv);
+
+  themeToggler.addEventListener("click", () => themeToggle(currentTheme));
+  answersDiv.addEventListener("click", e => {
+    changeAnswer(e, answers, localStorageNames.epqr);
+    renderPreview(answers, previewContainer);
+  });
+  resultBtn.addEventListener("click", () => displayResult(answers));
+  resetBtn.addEventListener("click", () => resetAnswers(answers, localStorageNames.epqr, epqrDefault.testName, renderAnswers, answersDiv));
+
+  resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.body));
+  if (currentTheme === "dark") document.body.classList.add("dark-theme");
+  else document.body.classList.remove("dark-theme");
+});
