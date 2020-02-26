@@ -10,14 +10,14 @@
     <meta name="keywords" content="EPQ-R, aplikacja, ekstrawercja, psychotyzm, neurotyczność, skala kłamstwa">
     <meta name="author" content="Wojciech Szarlej">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap&subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="../../menu-style/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap&subset=latin-ext" rel="stylesheet">
     <link rel="shortcut icon" href="https://scontent.fwaw7-1.fna.fbcdn.net/v/t1.0-9/29216768_2402364656456012_6962585467959115776_n.jpg?_nc_cat=111&_nc_oc=AQleKMrz075Lt9nB6PK9iDW6iRQprS8Vb0GYG79c7luItpAvat5N4DEm6ifPFOWwhBc&_nc_ht=scontent.fwaw7-1.fna&oh=2862bbf4481d9c1251a4d506f9208915&oe=5E2184F9" type="image/x-icon">
-    <title>Obliczanie EPQ-R</title>
-    <link rel="stylesheet" href="./style/style.css">
-    <script src="./scripts/stens.js" defer></script>
+    <title>Test epq-r</title>
+    <link rel="stylesheet" href="../../main-styles/mainStyles.css">
+    <script src="../../scripts/time.js"></script>
+    <script src="../../scripts/menuSlide.js" defer></script>
+    <script src="../../helpers/helpers.js"></script>
     <script src="./scripts/epqr.js" defer></script>
-    <script src="../../menu-scripts/menu.js" defer></script>
 
   </head>
 
@@ -61,29 +61,101 @@
           </ul>
         </nav>
       </div>
-      <footer class="nav-footer">© copyright 2019</footer>
+      <footer class="nav-footer">© copyright 2019 - <span id="current-year"></span></footer>
     </div>
     <div class="app">
-      <header>
-        <h1>Obliczanie wyników&nbsp;EPQ&nbsp;-&nbsp;R</h1>
+      <header class="epqr">
+        <h1>
+          <span class="for-desktop">Obliczanie wyników testu&nbsp;EPQ&nbsp;-&nbsp;R</span>
+          <span class="for-mobile">Test EPQ&nbsp;-&nbsp;R</span>
+        </h1>
       </header>
 
       <main>
         <section>
           <h3>Wybierz grupę:</h3>
-          <div class="group-select">
-            <div class="age-group">
-              <select name="people-group" id="people-group">
-                <option value="students" selected>Studenci</option>
-                <option value="pupils">Uczniowie</option>
-                <option value="adults">Dorości</option>
-              </select>
+          <div class="group-select epqr">
+
+            <div class="gender-group">
+              <fieldset>
+                <legend>
+                  <h4>płeć</h3>
+                </legend>
+                <div class="field-body">
+
+                  <div class="wrapper">
+                    <input type="radio" name="gender" id="male" value="male" checked>
+                    <label class="male" for="male">
+                      <span class="icon"><svg width="10" height="30" viewBox="0 0 10 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M4.90909 7.5C6.71421 7.5 8.18182 5.81836 8.18182 3.75C8.18182 1.68164 6.71421 0 4.90909 0C3.10398 0 1.63636 1.68164 1.63636 3.75C1.63636 5.81836 3.10398 7.5 4.90909 7.5ZM7.5733 8.46094C6.80625 9.03516 5.89091 9.375 4.90909 9.375C3.92727 9.375 3.01193 9.03516 2.24489 8.46094C0.986932 8.58398 0 9.7793 0 11.25V19.2188C0 19.998 0.547159 20.625 1.22727 20.625H1.63636V28.5938C1.63636 29.373 2.18352 30 2.86364 30H6.95455C7.63466 30 8.18182 29.373 8.18182 28.5938V20.625H8.59091C9.27102 20.625 9.81818 19.998 9.81818 19.2188V11.25C9.81818 9.7793 8.83125 8.58398 7.5733 8.46094Z" fill="#424242" />
+                        </svg></span>
+                      <span class="label-text">męszczna</span>
+                    </label>
+                  </div>
+
+                  <div class="wrapper">
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label class="female" for="female">
+                      <span class="icon"><svg width="16" height="30" viewBox="0 0 16 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7.6361 7.5C9.74207 7.5 11.4543 5.81836 11.4543 3.75C11.4543 1.68164 9.74207 0 7.6361 0C5.53014 0 3.81792 1.68164 3.81792 3.75C3.81792 5.81836 5.53014 7.5 7.6361 7.5ZM15.2307 20.7715L12.5103 9.88477C12.3134 9.09375 11.5855 8.53711 10.7324 8.4668C9.83753 9.03516 8.77559 9.375 7.63014 9.375C6.48468 9.375 5.42275 9.03516 4.52786 8.4668C3.67474 8.53711 2.94689 9.09375 2.75002 9.88477L0.0295621 20.7715C-0.179245 21.6562 0.536665 22.5 1.50314 22.5H4.77246V28.5938C4.77246 29.373 5.41082 30 6.20428 30H9.06792C9.86139 30 10.4997 29.373 10.4997 28.5938V22.5H13.7691C14.7355 22.5 15.4515 21.6562 15.2307 20.7715Z" fill="#424242" />
+                        </svg>
+                      </span>
+                      <span class="label-text">kobieta</span>
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
             </div>
-            <div class="gender">
-              <input type="radio" name="gender" id="male" value="male" checked>
-              <label for="male">mężczyźni</label>
-              <input type="radio" name="gender" id="female" value="female">
-              <label for="female">kobiety</label>
+
+            <div class="age-group">
+              <fieldset>
+                <legend>
+                  <h4>wiek</h4>
+                </legend>
+
+                <div class="field-body">
+
+                  <div class="wrapper">
+                    <input type="radio" name="age" id="pupils" value="pupils" checked>
+                    <label class="pupils" for="pupils">
+                      <span class="icon">
+                        <svg width="36" height="28" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12.4655 13.5829C16.3999 13.5829 19.5886 10.5427 19.5886 6.79147C19.5886 3.04024 16.3999 0 12.4655 0C8.53108 0 5.34236 3.04024 5.34236 6.79147C5.34236 10.5427 8.53108 13.5829 12.4655 13.5829ZM17.4517 15.2808H16.5224C15.2869 15.822 13.9124 16.1297 12.4655 16.1297C11.0186 16.1297 9.64963 15.822 8.40865 15.2808H7.4793C3.3501 15.2808 0 18.4749 0 22.4118V24.6191C0 26.0251 1.19647 27.1659 2.67118 27.1659H17.9692C17.8357 26.8051 17.78 26.4231 17.8245 26.0357L18.203 22.8045L18.2697 22.2155L18.7094 21.7964L23.0111 17.695C21.6477 16.2252 19.6721 15.2808 17.4517 15.2808V15.2808ZM19.9726 22.9902L19.5942 26.2267C19.533 26.7679 20.0116 27.2242 20.5736 27.1606L23.9627 26.7998L31.6368 19.483L27.6467 15.6787L19.9726 22.9902V22.9902ZM35.2262 14.2674L33.117 12.2565C32.5995 11.763 31.7536 11.763 31.2361 12.2565L29.1325 14.2621L28.9044 14.4796L32.9 18.2839L35.2262 16.0661C35.7437 15.5673 35.7437 14.7661 35.2262 14.2674V14.2674Z" fill="#424242" />
+                        </svg>
+                      </span>
+                      <span class="label-text">Uczniowie</span>
+                    </label>
+                  </div>
+
+                  <div class="wrapper">
+                    <input type="radio" name="age" id="students" value="students">
+                    <label class="students" for="students">
+                      <span class="icon">
+                        <svg width="26" height="28" viewBox="0 0 26 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17.9304 17.0118L12.5749 22.0736L7.21931 17.0118C3.20546 17.1763 0 20.2802 0 24.111V24.6204C0 26.0264 1.20696 27.1672 2.69461 27.1672H22.4551C23.9427 27.1672 25.1497 26.0264 25.1497 24.6204V24.111C25.1497 20.2802 21.9442 17.1763 17.9304 17.0118V17.0118ZM0.763473 4.23538L1.12275 4.31497V7.41357C0.72979 7.63641 0.449102 8.02374 0.449102 8.49065C0.449102 8.93634 0.707335 9.30775 1.07223 9.5359L0.196482 12.8414C0.101048 13.2075 0.314371 13.5842 0.623129 13.5842H2.96969C3.27844 13.5842 3.49177 13.2075 3.39633 12.8414L2.52058 9.5359C2.88548 9.30775 3.14371 8.93634 3.14371 8.49065C3.14371 8.02374 2.86302 7.63641 2.47006 7.41357V4.6227L6.17515 5.46633C5.69237 6.37893 5.38922 7.39765 5.38922 8.49065C5.38922 12.2419 8.60591 15.2821 12.5749 15.2821C16.5438 15.2821 19.7605 12.2419 19.7605 8.49065C19.7605 7.39765 19.463 6.37893 18.9746 5.46633L24.3806 4.23538C25.4023 4.00192 25.4023 2.7975 24.3806 2.56404L13.692 0.123361C12.9622 -0.0411202 12.1931 -0.0411202 11.4633 0.123361L0.763473 2.55874C-0.25262 2.79219 -0.25262 4.00192 0.763473 4.23538V4.23538Z" fill="#424242" />
+                        </svg>
+
+                      </span>
+                      <span class="label-text">Studenci</span>
+                    </label>
+                  </div>
+
+                  <div class="wrapper">
+                    <input type="radio" name="age" id="adults" value="adults">
+                    <label class="adults" for="adults">
+                      <span class="icon">
+                        <svg width="26" height="28" viewBox="0 0 26 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12.5749 13.5829C16.5438 13.5829 19.7605 10.5427 19.7605 6.79147C19.7605 3.04024 16.5438 0 12.5749 0C8.60591 0 5.38922 3.04024 5.38922 6.79147C5.38922 10.5427 8.60591 13.5829 12.5749 13.5829ZM17.9528 15.3126L15.2695 25.468L13.4731 18.2521L15.2695 15.2808H9.88024L11.6766 18.2521L9.88024 25.468L7.19686 15.3126C3.19424 15.493 0 18.5863 0 22.4118V24.6191C0 26.0251 1.20696 27.1659 2.69461 27.1659H22.4551C23.9427 27.1659 25.1497 26.0251 25.1497 24.6191V22.4118C25.1497 18.5863 21.9555 15.493 17.9528 15.3126Z" fill="#424242" />
+                        </svg>
+                      </span>
+                      <span class="label-text">Dorośli</span>
+                    </label>
+                  </div>
+
+                </div>
+
+              </fieldset>
             </div>
           </div>
         </section>
@@ -97,117 +169,24 @@
             <span class="no">- nie</span>
             <span class="default">- nie zaznaczono</span>
           </div>
-          <div class="buttons">
-            <button id="result">Oblicz</button><button id="reset">Resetuj</button>
-          </div>
         </section>
-        <section class="previev">
-          <h3>Podgląd:</h3>
-          <div class="container">
-            <div>
-              <h4>Psyhotyzm</h4>
-              <div>
-                <span>Tak</span>
-                <ul class="psyhotyzm-positive"></ul>
-                </ul>
-              </div>
-              <div>
-                <span>Nie</span>
-                <ul class="psyhotyzm-negative"></ul>
-              </div>
-            </div>
-            <div>
-              <h4>Neurotyczność</h4>
-              <div>
-                <span>Tak</span>
-                <ul class="neuroticism-positive"></ul>
-              </div>
-            </div>
-            <div>
-              <h4>Ekstrawersja</h4>
-              <div>
-                <span>Tak</span>
-                <ul class="extroversion-positive"></ul>
-              </div>
-              <div>
-                <span>Nie</span>
-                <ul class="extroversion-negative"></ul>
-              </div>
-            </div>
-            <div>
-              <h4>Skala kłamstwa</h4>
-              <div>
-                <span>Tak</span>
-                <ul class="lie-positive"></ul>
-              </div>
-              <div>
-                <span>Nie</span>
-                <ul class="lie-negative"></ul>
-              </div>
-            </div>
-          </div>
-        </section>
+        <section class="preview"></section>
+
         <div class="result-box">
           <div class="content">
-            <h2>Wyniki dla <span class="gender"></span> z&nbsp;grupy&nbsp;"<span class="group"></span>"</h2>
-            <button class="close-results"></button>
-            <div class="boxes">
-              <div class="box">
-                <div class="wrapper">
-                  <h3>Psychotyzm</h3>
-                </div>
-                <div class="wrapper">
-                  <span>Wynik surowy</span>
-                  <span>Steny</span>
-                </div>
-                <div class="wrapper">
-                  <span data-type="rawPsyhoResult">0</span>
-                  <span data-type="stenPsyhoResult">0</span>
-                </div>
-              </div>
-              <div class="box">
-                <div class="wrapper">
-                  <h3>Ekstrawersja</h3>
-                </div>
-                <div class="wrapper">
-                  <span>Wynik surowy</span>
-                  <span>Steny</span>
-                </div>
-                <div class="wrapper">
-                  <span data-type="rawExtroResult">0</span>
-                  <span data-type="stenExtroResult">0</span>
-                </div>
-              </div>
-              <div class="box">
-                <div class="wrapper">
-                  <h3>Neurotyczność</h3>
-                </div>
-                <div class="wrapper">
-                  <span>Wynik surowy</span>
-                  <span>Steny</span>
-                </div>
-                <div class="wrapper">
-                  <span data-type="rawNeuroResult">0</span>
-                  <span data-type="stenNeuroResult">0</span>
-                </div>
-              </div>
-              <div class="box">
-                <div class="wrapper">
-                  <h3>Skala kłamstwa</h3>
-                </div>
-                <div class="wrapper">
-                  <span>Wynik surowy</span>
-                  <span>Steny</span>
-                </div>
-                <div class="wrapper">
-                  <span data-type="rawLieResult">0</span>
-                  <span data-type="stenLieResult">0</span>
-                </div>
-              </div>
-            </div>
+            <header class="result-title epqr">
+              <h2>Wyniki dla <span class="display-gender"></span> z&nbsp;grupy&nbsp;<span class="display-group"></span></h2>
+              <button class="close-results"></button>
+            </header>
+            <div class="boxes"></div>
           </div>
         </div>
       </main>
+    </div>
+    <div class="buttons">
+      <button id="result">Oblicz</button>
+      <button id="reset">Resetuj</button>
+      <button class="theme-btn"></button>
     </div>
   </body>
 
