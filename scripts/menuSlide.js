@@ -7,6 +7,11 @@ const slideMenu = ({ currentTarget: chamburgerBtn }, menu) => {
   //   document.body.style.overflowY =
   //     bodyScrollY === "hidden" ? "auto" : "hidden";
   // }, 1400);
+
+  /* const navContent = document.querySelector(".nav-content");
+  document.body.addEventListener("click", e => {
+    console.log(e.target);
+  }); */
 };
 
 document.addEventListener("DOMContentLoaded", () => {

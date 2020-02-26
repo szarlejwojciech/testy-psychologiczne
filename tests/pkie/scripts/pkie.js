@@ -1,18 +1,5 @@
 const defaultAnswers = groupAssignment(pkieDefault);
-
 const answers = JSON.parse(localStorage.getItem(localStorageNames.pkie)) || defaultAnswers;
-
-//containers
-const answersDiv = document.querySelector(".answers");
-const resultBox = document.querySelector(".result-box");
-//btns
-const resetBtn = document.getElementById("reset");
-const resultBtn = document.getElementById("result");
-//theme
-const currentTheme = localStorage.getItem("current-theme") || "light";
-const themeToggler = document.querySelector(".theme-btn");
-
-renderAnswers(pkieDefault.testName, answers, answersDiv);
 
 const renderResultBox = (container, groupName, raw, stens) => {
   let polishGroupName = "";
@@ -55,12 +42,14 @@ const renderResultBox = (container, groupName, raw, stens) => {
 
 const displayResult = async answers => {
   const STENS_URL = "./scripts/stens.json";
+  const resultBox = document.querySelector(".result-box");
   const gender = document.querySelector(".gender-group input:checked").value;
   const ageGroup = document.querySelector(".age-group input:checked").value;
   const displayGenderSpan = resultBox.querySelector(".display-gender");
   const displayAgeGroupSpan = resultBox.querySelector(".display-group");
   const boxesContainer = resultBox.querySelector(".boxes");
   const groupNamesList = ["group-akc", "group-emp", "group-kon", "group-roz", "total"];
+
   boxesContainer.innerHTML = "";
   resultBox.classList.add("visible");
   document.body.classList.add("no-scroll");
@@ -107,14 +96,26 @@ const displayResult = async answers => {
   }
 };
 
-answersDiv.addEventListener("click", e => changeAnswer(e, answers, localStorageNames.pkie));
-resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.body));
-
-resultBtn.addEventListener("click", () => displayResult(answers));
-resetBtn.addEventListener("click", () => resetAnswers(answers, localStorageNames.pkie, pkieDefault.testName, renderAnswers, answersDiv));
-
-themeToggler.addEventListener("click", () => themeToggle(currentTheme));
 document.addEventListener("DOMContentLoaded", () => {
+  //containers
+  const answersDiv = document.querySelector(".answers");
+  const resultBox = document.querySelector(".result-box");
+  //btns
+  const resetBtn = document.getElementById("reset");
+  const resultBtn = document.getElementById("result");
+  //theme
+  const currentTheme = localStorage.getItem("current-theme") || "light";
+  const themeToggler = document.querySelector(".theme-btn");
+
+  renderAnswers(pkieDefault.testName, answers, answersDiv);
+
+  answersDiv.addEventListener("click", e => changeAnswer(e, answers, localStorageNames.pkie));
+  resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.body));
+
+  resultBtn.addEventListener("click", () => displayResult(answers));
+  resetBtn.addEventListener("click", () => resetAnswers(answers, localStorageNames.pkie, pkieDefault.testName, renderAnswers, answersDiv));
+
+  themeToggler.addEventListener("click", () => themeToggle(currentTheme));
   if (currentTheme === "dark") document.body.classList.add("dark-theme");
   else document.body.classList.remove("dark-theme");
 });

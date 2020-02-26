@@ -1,19 +1,5 @@
 const defaultAnswers = groupAssignment(prokosDefault);
-
 const answers = JSON.parse(localStorage.getItem(localStorageNames.prokos)) || defaultAnswers;
-
-//containers
-const answersDiv = document.querySelector(".answers");
-const resultBox = document.querySelector(".result-box");
-//btns
-const resetBtn = document.getElementById("reset");
-const resultBtn = document.getElementById("result");
-
-//theme
-const currentTheme = localStorage.getItem("current-theme") || "light";
-const themeToggler = document.querySelector(".theme-btn");
-
-renderAnswers(prokosDefault.testName, answers, answersDiv);
 
 const renderResultBox = (container, groupName, raw, stens) => {
   let polishGroupName = "";
@@ -59,6 +45,7 @@ const renderResultBox = (container, groupName, raw, stens) => {
 
 const displayResult = async answers => {
   const STENS_URL = "./scripts/stens.json";
+  const resultBox = document.querySelector(".result-box");
   const gender = document.querySelector(".gender-group input:checked").value;
   const displayGenderSpan = resultBox.querySelector(".display-gender");
   const boxesContainer = resultBox.querySelector(".boxes");
@@ -93,14 +80,26 @@ const displayResult = async answers => {
   }
 };
 
-answersDiv.addEventListener("click", e => changeAnswer(e, answers, localStorageNames.prokos));
-resultBtn.addEventListener("click", () => displayResult(answers));
-resetBtn.addEventListener("click", () => resetAnswers(answers, localStorageNames.prokos, prokosDefault.testName, renderAnswers, answersDiv));
-
-resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.body));
-
-themeToggler.addEventListener("click", () => themeToggle(currentTheme));
 document.addEventListener("DOMContentLoaded", () => {
+  //containers
+  const answersDiv = document.querySelector(".answers");
+  const resultBox = document.querySelector(".result-box");
+  //btns
+  const resetBtn = document.getElementById("reset");
+  const resultBtn = document.getElementById("result");
+
+  //theme
+  const currentTheme = localStorage.getItem("current-theme") || "light";
+  const themeToggler = document.querySelector(".theme-btn");
+
+  renderAnswers(prokosDefault.testName, answers, answersDiv);
+
+  answersDiv.addEventListener("click", e => changeAnswer(e, answers, localStorageNames.prokos));
+  resultBtn.addEventListener("click", () => displayResult(answers));
+  resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.body));
+  resetBtn.addEventListener("click", () => resetAnswers(answers, localStorageNames.prokos, prokosDefault.testName, renderAnswers, answersDiv));
+  themeToggler.addEventListener("click", () => themeToggle(currentTheme));
+
   if (currentTheme === "dark") document.body.classList.add("dark-theme");
   else document.body.classList.remove("dark-theme");
 });

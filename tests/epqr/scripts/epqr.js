@@ -1,24 +1,5 @@
 const defaultAnswers = groupAssignment(epqrDefault);
-
 const answers = JSON.parse(localStorage.getItem(localStorageNames.epqr)) || defaultAnswers;
-
-//preveiw boxes
-const answersDiv = document.querySelector(".answers"),
-  previewContainer = document.querySelector(".preview");
-
-//btns
-const resetBtn = document.getElementById("reset"),
-  resultBtn = document.getElementById("result");
-
-//results boxes
-const resultBox = document.querySelector(".result-box"),
-  titleGender = resultBox.querySelector("span.gender"),
-  titleGroup = resultBox.querySelector("span.group");
-
-//theme
-const currentTheme = localStorage.getItem("current-theme") || "light";
-const themeToggler = document.querySelector(".theme-btn");
-themeToggler.addEventListener("click", () => themeToggle(currentTheme));
 
 const calculateAnswers = array => {
   return [
@@ -120,9 +101,6 @@ const renderPreview = (answers, container) => {
       </div>
   `;
 };
-renderPreview(answers, previewContainer);
-
-renderAnswers(epqrDefault.testName, answers, answersDiv);
 
 const renderResultBox = (container, groupName, raw, stens) => {
   let polishGroupName = "";
@@ -160,19 +138,22 @@ const renderResultBox = (container, groupName, raw, stens) => {
       </div>
     </div>`;
 };
+
 const displayResult = async answers => {
-  resultBox.classList.add("visible");
-  document.body.classList.add("no-scroll");
   const STENS_URL = "./scripts/stens.json";
+  const resultBox = document.querySelector(".result-box");
   const gender = document.querySelector(".gender-group input:checked").value;
   const ageGroup = document.querySelector(".age-group input:checked").value;
   const displayGenderSpan = resultBox.querySelector(".display-gender");
   const displayAgeGroupSpan = resultBox.querySelector(".display-group");
   const boxesContainer = resultBox.querySelector(".boxes");
   const groupNamesList = ["psyhotyzm", "extroversion", "neuroticism", "lie"];
+
+  resultBox.classList.add("visible");
+  document.body.classList.add("no-scroll");
   boxesContainer.innerHTML = "";
 
-  displayGenderSpan.textContent = gender === "male" ? "męszczyzn" : "kobiet";
+  displayGenderSpan.textContent = gender === "male" ? "mężczyzn" : "kobiet";
   if (ageGroup === "pupils") displayAgeGroupSpan.textContent = '"uczniowie"';
   else if (ageGroup === "adults") displayAgeGroupSpan.textContent = '"dorośli"';
   else displayAgeGroupSpan.textContent = '"studenci"';
@@ -180,14 +161,11 @@ const displayResult = async answers => {
   try {
     const response = await fetch(STENS_URL);
     const data = await response.json();
-
     groupNamesList.map(groupName => {
       const positiveTotal = answers.filter(({ type, answer }) => type === `${groupName}-yes` && answer === "yes").length;
       const negativeTotal = answers.filter(({ type, answer }) => type === `${groupName}-no` && answer === "no").length;
       const groupTotal = positiveTotal + negativeTotal;
-
       const pointRange = data[ageGroup][gender][groupName];
-
       const [sten] = pointRange.filter(({ min, max }) => groupTotal >= min && groupTotal <= max).map(item => item.sten);
       renderResultBox(boxesContainer, groupName, groupTotal, sten);
     });
@@ -196,15 +174,29 @@ const displayResult = async answers => {
   }
 };
 
-answersDiv.addEventListener("click", e => {
-  changeAnswer(e, answers, localStorageNames.epqr);
-  renderPreview(answers, previewContainer);
-});
-resultBtn.addEventListener("click", () => displayResult(answers));
-resetBtn.addEventListener("click", () => resetAnswers(answers, localStorageNames.epqr, epqrDefault.testName, renderAnswers, answersDiv));
-
-resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.body));
 document.addEventListener("DOMContentLoaded", () => {
+  const answersDiv = document.querySelector(".answers");
+  const previewContainer = document.querySelector(".preview");
+  const resultBox = document.querySelector(".result-box");
+
+  const resetBtn = document.getElementById("reset");
+  const resultBtn = document.getElementById("result");
+
+  const currentTheme = localStorage.getItem("current-theme") || "light";
+  const themeToggler = document.querySelector(".theme-btn");
+
+  renderPreview(answers, previewContainer);
+  renderAnswers(epqrDefault.testName, answers, answersDiv);
+
+  themeToggler.addEventListener("click", () => themeToggle(currentTheme));
+  answersDiv.addEventListener("click", e => {
+    changeAnswer(e, answers, localStorageNames.epqr);
+    renderPreview(answers, previewContainer);
+  });
+  resultBtn.addEventListener("click", () => displayResult(answers));
+  resetBtn.addEventListener("click", () => resetAnswers(answers, localStorageNames.epqr, epqrDefault.testName, renderAnswers, answersDiv));
+
+  resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.body));
   if (currentTheme === "dark") document.body.classList.add("dark-theme");
   else document.body.classList.remove("dark-theme");
 });

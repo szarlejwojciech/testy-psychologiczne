@@ -236,6 +236,10 @@
   background-color: lime;
 }
 
+:root body.dark-theme .result-box .content .boxes .box .chart-wrapper {
+  background-image: url("../svg/diagram-dark-theme.svg");
+}
+
 :root body.dark-theme .result-box .content .boxes .box .wrapper h3 {
   text-shadow: none;
 }
@@ -2113,7 +2117,7 @@ body.no-scroll {
   height: 90vw;
   max-width: 30rem;
   max-height: 30rem;
-  background: url("../svg/result-graphic.svg") center no-repeat;
+  background: url("../svg/diagram-default.svg") center no-repeat;
   background-size: contain;
 }
 
@@ -2231,14 +2235,20 @@ body.no-scroll {
           transform: translateX(50%) rotate(-308.4deg);
 }
 
-.result-box .content .boxes .box .chart-wrapper .path {
+.result-box .content .boxes .box .chart-wrapper .path-wrapper {
   position: absolute;
   top: 0.6%;
   bottom: 0.6%;
   left: 0.6%;
   right: 0.6%;
-  background: rgba(0, 188, 229, 0.6);
   z-index: 1;
+  -webkit-filter: drop-shadow(0 3px 0 #042f08) drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 3px 0 #042f08) drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+}
+
+.result-box .content .boxes .box .chart-wrapper .path-wrapper .path {
+  height: 100%;
+  background: radial-gradient(120% 120% at 84% 6%, var(--kwi-main-color) 33.79%, black 100%);
 }
 
 .result-box.with-chart .box .wrapper span:first-of-type {

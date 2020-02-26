@@ -1,18 +1,5 @@
 const defaultAnswers = groupAssignment(kwiDefault); //"imported" from helpers.js
-
 const answers = JSON.parse(localStorage.getItem(localStorageNames.kwi)) || defaultAnswers;
-
-//containers
-const answersDiv = document.querySelector(".answers");
-const resultBox = document.querySelector(".result-box");
-//btns
-const resetBtn = document.getElementById("reset");
-const resultBtn = document.getElementById("result");
-//theme
-const currentTheme = localStorage.getItem("current-theme") || "light";
-const themeToggler = document.querySelector(".theme-btn");
-
-renderAnswers(kwiDefault.testName, answers, answersDiv);
 
 const getPercentCords = (container, box) => {
   const { x: containerX, y: containerY, width: containerW, height: containerH } = container.getBoundingClientRect();
@@ -27,6 +14,7 @@ const getPercentCords = (container, box) => {
 };
 
 const displayResult = answers => {
+  const resultBox = document.querySelector(".result-box");
   const pointsContainer = document.querySelector(`.points`);
   const path = document.querySelector(".path");
   resultBox.classList.add("visible");
@@ -35,11 +23,11 @@ const displayResult = answers => {
   const groupNamesList = ["linguistic", "math", "visual", "music", "interpersonal", "intrapersonal", "kinesthetic"];
 
   let chartPathCords = "";
-  const groupTotal = group.reduce((total, answ) => total + answ.answer, 0);
 
   resultBox.addEventListener("transitionend", () => {
     groupNamesList.map(groupName => {
       const group = answers.filter(answ => answ.type === groupName);
+      const groupTotal = group.reduce((total, answ) => total + answ.answer, 0);
       const maxPoints = 20;
       // get spans and display results
       const groupSpan = document.querySelector(`.${groupName}`);
@@ -61,13 +49,25 @@ const displayResult = answers => {
   });
 };
 
-answersDiv.addEventListener("click", e => changeAnswer(e, answers, localStorageNames.kwi));
-resultBtn.addEventListener("click", () => displayResult(answers));
-resetBtn.addEventListener("click", () => resetAnswers(answers, localStorageNames.kwi, kwiDefault.testName, renderAnswers, answersDiv));
-resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.body));
-themeToggler.addEventListener("click", () => themeToggle(currentTheme));
-
 document.addEventListener("DOMContentLoaded", () => {
+  //containers
+  const answersDiv = document.querySelector(".answers");
+  const resultBox = document.querySelector(".result-box");
+  //btns
+  const resetBtn = document.getElementById("reset");
+  const resultBtn = document.getElementById("result");
+  //theme
+  const currentTheme = localStorage.getItem("current-theme") || "light";
+  const themeToggler = document.querySelector(".theme-btn");
+
+  renderAnswers(kwiDefault.testName, answers, answersDiv);
+
+  answersDiv.addEventListener("click", e => changeAnswer(e, answers, localStorageNames.kwi));
+  resultBtn.addEventListener("click", () => displayResult(answers));
+  resetBtn.addEventListener("click", () => resetAnswers(answers, localStorageNames.kwi, kwiDefault.testName, renderAnswers, answersDiv));
+  resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.body));
+  themeToggler.addEventListener("click", () => themeToggle(currentTheme));
+
   if (currentTheme === "dark") document.body.classList.add("dark-theme");
   else document.body.classList.remove("dark-theme");
 });
