@@ -175,28 +175,20 @@ const displayResult = async answers => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+  onDOMLoad();
+
   const answersDiv = document.querySelector(".answers");
   const previewContainer = document.querySelector(".preview");
-  const resultBox = document.querySelector(".result-box");
-
   const resetBtn = document.getElementById("reset");
   const resultBtn = document.getElementById("result");
-
-  const currentTheme = localStorage.getItem("current-theme") || "light";
-  const themeToggler = document.querySelector(".theme-btn");
 
   renderPreview(answers, previewContainer);
   renderAnswers(epqrDefault.testName, answers, answersDiv);
 
-  themeToggler.addEventListener("click", () => themeToggle(currentTheme));
   answersDiv.addEventListener("click", e => {
     changeAnswer(e, answers, localStorageNames.epqr);
     renderPreview(answers, previewContainer);
   });
   resultBtn.addEventListener("click", () => displayResult(answers));
   resetBtn.addEventListener("click", () => resetAnswers(answers, localStorageNames.epqr, epqrDefault.testName, renderAnswers, answersDiv));
-
-  resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.body));
-  if (currentTheme === "dark") document.body.classList.add("dark-theme");
-  else document.body.classList.remove("dark-theme");
 });

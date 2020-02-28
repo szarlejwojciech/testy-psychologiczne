@@ -81,25 +81,15 @@ const displayResult = async answers => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  //containers
+  onDOMLoad();
+
   const answersDiv = document.querySelector(".answers");
-  const resultBox = document.querySelector(".result-box");
-  //btns
   const resetBtn = document.getElementById("reset");
   const resultBtn = document.getElementById("result");
 
-  //theme
-  const currentTheme = localStorage.getItem("current-theme") || "light";
-  const themeToggler = document.querySelector(".theme-btn");
-
-  renderAnswers(prokosDefault.testName, answers, answersDiv);
+  renderAnswers(prokosDefault.testName, answers, answersDiv, 16);
 
   answersDiv.addEventListener("click", e => changeAnswer(e, answers, localStorageNames.prokos));
   resultBtn.addEventListener("click", () => displayResult(answers));
-  resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.body));
   resetBtn.addEventListener("click", () => resetAnswers(answers, localStorageNames.prokos, prokosDefault.testName, renderAnswers, answersDiv));
-  themeToggler.addEventListener("click", () => themeToggle(currentTheme));
-
-  if (currentTheme === "dark") document.body.classList.add("dark-theme");
-  else document.body.classList.remove("dark-theme");
 });
