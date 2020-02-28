@@ -278,3 +278,41 @@ const themeToggle = theme => {
   if (theme === "light") localStorage.setItem("current-theme", "dark");
   else localStorage.setItem("current-theme", "light");
 };
+
+const debounce = (func, delay) => {
+  let debounceTimer;
+  return function() {
+    const context = this;
+    const args = arguments;
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => func.apply(context, args), delay);
+  };
+};
+
+const changeVisibilityScrollTopBtn = btn => (window.scrollY > 100 ? btn.classList.add("visible") : btn.classList.remove("visible"));
+
+const scrollTop = () => {
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: "smooth"
+  });
+};
+
+const onDOMLoad = () => {
+  const resultBox = document.querySelector(".result-box");
+  resultBox.addEventListener("click", e => closeResultBox(e, resultBox, document.body));
+
+  const scrollTopBtn = document.querySelector(".scroll-top-btn");
+  scrollTopBtn.addEventListener("click", scrollTop);
+  window.addEventListener(
+    "scroll",
+    debounce(() => changeVisibilityScrollTopBtn(scrollTopBtn), 50)
+  );
+
+  const currentTheme = localStorage.getItem("current-theme") || "light";
+  const themeToggler = document.querySelector(".theme-btn");
+  themeToggler.addEventListener("click", () => themeToggle(currentTheme));
+  if (currentTheme === "dark") document.body.classList.add("dark-theme");
+  else document.body.classList.remove("dark-theme");
+};
